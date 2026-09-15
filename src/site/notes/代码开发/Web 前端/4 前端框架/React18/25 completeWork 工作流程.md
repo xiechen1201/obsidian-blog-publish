@@ -106,3 +106,115 @@ function World(){
 
 ## update 阶段
 
+上面的 mount 阶段完成的是属性的初始化，那么这个 update 流程完成的就是属性的更新标记。
+
+`updateHostComponent()` 的主要逻辑是在 `diffProperties()` 里面，这个方法会包含两次遍历：
+- 第一次遍历：主要标记更新前有，更新没有的属性，实际上也就是标记删除了的属性；
+- 第二次遍历：主要是标记更新前后有变化的属性，实际上也就是标记更新了的属性；
+
+相关代码如下：
+
+```js
+function diffProperties(domElement, tag, lastRawProps, nextRawProps, rootContainer){
+  // 保存变化属性的 key、value
+  let updatePayload = null;
+  // 更新前的属性
+  let lastProps;
+  // 更新后的属性
+  let nextProps;
+  
+  //...
+  
+  // 标记删除“更新前有，更新后没有”的属性
+  for(propKey in lastProps){
+    if(
+	    nextProps.hasOwnProperty(propKey) || 
+	    !lastProps.hasOwnProperty(propKey) || 
+	    lastProps[propKey] == null
+    ){
+      continue;
+    }
+    
+    if(propKey === STYLE){
+      // 处理 style
+    } else {
+      //其他属性
+      (updatePayload = updatePayload || []).push(propKey, null);
+    }
+  }
+  
+  // 标记更新“update流程前后发生改变”的属性
+  for(propKey in lastProps){
+    let nextProp = nextProps[propKey];
+    let lastProp = lastProps != null ? lastProps[propKey] : undefined;
+    
+    if(!nextProps.hasOwnProperty(propKey) || nextProp === lastProp || nextProp == null && lastProp == null){
+      continue;
+    }
+    
+    if(propKey === STYLE) {
+      // 处理 stlye
+    } else if(propKey === DANGEROUSLY_SET_INNER_HTML){
+      // 处理 innerHTML
+    } else if(propKey === CHILDREN){
+      // 处理单一文本类型的 children
+    } else if(registrationNameDependencies.hasOwnProperty(propKey)) {
+      if(nextProp != null) {
+        // 处理 onScroll 事件
+      } else {
+        // 处理其他属性
+      }
+    }
+  }
+  //...
+  return updatePayload;
+}
+```
+
+所有更新了的属性的 key 和 value 都会保存在当前 FiberNode.updateQueue 里面，数据是以 key、value 作为数组相邻的两项的形式进行保存的。
+
+```jsx
+export default ()=>{
+  const [num, updateNum] = useState(0);
+  return (
+    <div
+      onClick = {()=>updateNum(num + 1)}
+      style={{color : `#${num}${num}${num}`}}
+      title={num + ''}
+    ></div>
+  );
+}
+```
+
+点击 div 元素触发更新，那么这个时候 style、title 属性就会发生变化，变化的数据会以下面的形式保存在 FiberNode.updateQueue 里面：
+
+```js
+["title", "1", "style", {"color": "#111"}]
+```
+
+并且，当前的 FiberNode 会标记 Update：
+
+```js
+workInProgress.flags |= Update;
+```
+
+## flags 冒泡
+
+我们知道，当整个 Reconciler 完成工作后，会得到一颗完整的 workInProgress FiberTree，这颗 wip FiberTree 是由一颗一颗 FiberNode 组成的，这些 FiberNode 中有一些是标记了 flags ，有一些没有标记，现在就存在一个问题，我们应该如何高效的找到散落在这颗 wip FiberTree 中有 flag 标记的 FiberNode，那么此时就可以使用 flags 冒泡。
+
+我们知道 completeWork 属于归阶段，整体流程是自下往上，就非常实用用来收集副作用，收集的相关代码如下：
+
+```js
+let subtreeFlags = NoFlags;
+
+// 收集子 FiberNode 的子孙 FiberNode 中标记的 flags
+subtreeFlags |= child.subtreeFlags;
+// 收集子 FiberNode 中标记的 flags
+subtreeFlags ｜= child.flags;
+// 将收集到的所有 flags 附加到当前 FiberNode 的 subtreeFlags 上面
+completeWork.subtreeFlags |= subtreeFlags;
+```
+
+这样的收集方式有一个好处，在渲染阶段通过任意一级的 FiberNode.subtreeFlags 都可以快速确定该 FiberNode 以及子树是否存在副作用，从而判断是否需要执行和副作用相关的操作。
+
+在早期的时候，React 实际上并没有使用 subtreeFlags 来通过 flags 冒泡收集副作用，而是使用 effect list（链表）来收集副作用，使用 subtreeFlags 有一个好处就是能确定某一个 FiberNode 它的子树的副作用。
