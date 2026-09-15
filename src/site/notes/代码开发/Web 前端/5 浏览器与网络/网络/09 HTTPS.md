@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/5 浏览器与网络/网络/09 HTTPS/","dg-note-properties":{}}
 ---
 
----
----
 因为 HTTP 请求的过程中是明文传输的，例如当你在浏览器中输入一个网址并按下回车键时，你的计算机会向服务器发送一个 HTTP 请求。这个请求包含了你想要访问的网页的 URL，以及可能包含的其他信息，如你的浏览器类型、操作系统等。如果这个请求没有通过 HTTPS 传输，那么这些信息就可以被网络中的其他设备（如中间的路由器、Wi-Fi热点等）轻易地读取。
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/5%20%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/_assets/1740731732271-c8157375-8d3e-4404-bb0e-e4adae06ad02.png)
@@ -25,7 +23,7 @@ SSL (Secure Sockets Layer) 和 TLS (Transport Layer Security) 是加密协议，
 4. 双方通过 TLS 协议协商加密密钥，建立安全通道。
 5. 后续通信通过对称加密进行。
 
-## 🔢 CA 机构
+## CA 机构
 HTTPS 的核心就是这个 CA （Certificate Authority）证书颁发机构。它是一种权威的机构，当客户端接收到服务端返回的证书后会给整个证书进行校验。证书一般需要进行购买。
 
 证书的颁发流程：
@@ -66,7 +64,7 @@ Info
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/5%20%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/_assets/1740735530053-921df86d-6e73-41d3-9861-1cafdb0e37f6.png)
 
-## 🔢 漏洞
+## 漏洞
 难道 HTTPS 真的就可以完全防范中间人攻击了吗？
 
 答案是不一定。

@@ -44,7 +44,7 @@ export default{
 
 <br/>
 
-## 🔢 props
+## props
 
 ```vue
 <template>
@@ -202,7 +202,7 @@ export default{
 </script>
 ```
 
-## 🔢 context
+## context
 
 `context`对象里面包含了`attrs`、`emit`、`slots`、`expose`这 4 个对象。
 
@@ -234,7 +234,7 @@ export default{
 
 此外还需注意，和`props`不同，`attrs`和`slots`的属性都不是响应式的。如果你想要基于`attrs`或`slots`的改变来执行副作用，那么你应该在`onBeforeUpdate`生命周期钩子中编写相关逻辑。
 
-## 🔢 expose
+## expose
 
 `expose()`是干什么的？
 
@@ -353,7 +353,7 @@ export default {
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1685694065993-015169c8-5791-41b4-8365-04a52418fea4.png)
 
-## 🔢 getCurrentInstance()
+## getCurrentInstance()
 
 在`setup()`函数中，我们可以通过导入`getCurrentInstance()`方法来获取当前组件的实例对象：
 

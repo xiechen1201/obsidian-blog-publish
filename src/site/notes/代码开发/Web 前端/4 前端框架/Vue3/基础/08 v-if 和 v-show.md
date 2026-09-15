@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/08 v-if 和 v-show/","dg-note-properties":{}}
 ---
 
-## 🔢 v-if 和 v-show 的认识
+## v-if 和 v-show 的认识
 
 在`Vue`框架中，我们可以通过`v-if/v-else-if/v-else`和`v-show`来控制元素或组件的渲染，当`v-if`和`v-show`的指令表达式条件返回`true`的时候就会渲染元素或组件。
 
@@ -27,7 +27,7 @@
 
 <br/>
 
-## 🔢 模拟实现 v-if 和 v-show
+## 模拟实现 v-if 和 v-show
 
 我们如何模拟实现一个`v-if`和`v-show`这样的操作呢？
 
@@ -165,7 +165,7 @@ export default VueTest;
 
 ![画板](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1673333074467-ea88b4a3-6205-4b0a-90d8-a59f73f091da.jpeg)
 
-## 🔢 第一件事：数据拦截
+## 第一件事：数据拦截
 
 到这里，基本的架子已经差不多了，下面我们先做第一件事，那就是对数据进行拦截：
 
@@ -225,7 +225,7 @@ export default VueTest;
 
 ```
 
-## 🔢 第二件事：存储数据池
+## 第二件事：存储数据池
 
 第二件事情，对数据池进行初始化（可以对应上面的思维导图去理解）：
 
@@ -394,7 +394,7 @@ export default VueTest;
 
 ![70、71行代码结果，数据池的对应关系](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1673334089568-cf7a57cf-8da5-415a-9e8f-42f5b0c6102f.png)
 
-## 🔢 第三件事：绑定事件
+## 第三件事：绑定事件
 
 到目前为止，数据拦截已经完成，`dom`和数据的对应关系也已经完成，接下来我们要绑定事件：
 
@@ -495,7 +495,7 @@ export default VueTest;
 
 可以看到实例对象上有了`showImg1`和`showImg2`这两个方法啦。
 
-## 🔢 第四件事：渲染 dom
+## 第四件事：渲染 dom
 
 最重要的事情来了，那就是渲染`dom`，我们要判断`dom`对应的指令是`v-if`还是`v-show`来决定如何隐藏`dom`。
 
@@ -618,7 +618,7 @@ export default VueTest;
 
 这样页面第一次加载就会触发`render`函数，该函数内负责对`dom`的隐藏/显示进行控制。
 
-## 🔢 第五件事：更新视图
+## 第五件事：更新视图
 
 最后一件事就是在调用`methods`的方法后，去更新视图，更改`isShowImg1`或`isShowImg2`的时候就会触发`initData`里面的拦截器，拦截器在`set`处理函数中又调用了`update`函数。
 
@@ -799,7 +799,7 @@ export default VueTest;
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1673339903608-7737f8cd-4fd8-44b3-a62e-ad80ed5769fc.gif)
 
-## 🔢 添加声明周期函数
+## 添加声明周期函数
 
 我们还可以添加一些生命周期函数，在相应的阶段进行执行。
 

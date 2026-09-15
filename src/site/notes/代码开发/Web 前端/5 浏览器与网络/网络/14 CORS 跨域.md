@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/5 浏览器与网络/网络/14 CORS 跨域/","dg-note-properties":{}}
 ---
 
----
----
 JSONP 并不是一个很好的解决跨域的方案，它至少存在下面两个严重的问题：
 
 1、会打乱服务器的响应格式：JSONP 要求服务器返回一段 JS 代码。
@@ -12,7 +10,7 @@ JSONP 并不是一个很好的解决跨域的方案，它至少存在下面两�
 
 所以，CORS 是一种更好的解决跨域的方案。
 
-## 🔢 概述
+## 概述
 CORS 是基于 HTTP1.1 的一种跨域解决方案，全称是 Cross-Origin Resource Sharing，跨域资源共享。其总体思路是：如果浏览器要跨域访问服务器的资源，需要获得服务器的允许。
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/5%20%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/_assets/1748248542699-0d67ec59-a51d-4259-b147-98ae3431f801.png)
@@ -27,7 +25,7 @@ CORS 是基于 HTTP1.1 的一种跨域解决方案，全称是 Cross-Origin Reso
 - 预检请求；
 - 附带身份凭证的请求；
 
-## 🔢 简单请求
+## 简单请求
 当 JS 发起一个请求的时候，浏览器首先会判断这个请求属于哪一种请求。
 
 当请求同时满足以下条件的时候，浏览器会认为这是一个简单请求：
@@ -141,7 +139,7 @@ Access-Control-Allow-Origin: http://my.com
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/5%20%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/_assets/1748249644991-79c9f100-6aa9-4719-927a-706a95a4e504.png)
 
-## 🔢 需要预检的请求
+## 需要预检的请求
 简单请求对服务器的威胁不大，所以允许使用上述的简单交互即可完成。
 
 但是，如果浏览器不认为某个请求是简单请求，就会按照下面的流程进行：
@@ -250,7 +248,7 @@ Access-Control-Allow-Origin: http://my.com
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/5%20%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/_assets/1748251123648-67d45950-de4b-49b0-8e3f-b37185f45ae2.png)
 
-## 🔢 附带身份凭证的请求
+## 附带身份凭证的请求
 默认情况下，JS 发起 AJAX 的跨域请求并不会携带 Cookie，这样一来某些需要权限的操作就无法进行。不过，可以通过简单的配置就可以实现携带 Cookie 了。
 
 ```js
@@ -276,7 +274,7 @@ fetch(url, {
 
 另外还需要注意，对于携带身份凭证的请求，服务器不能设置`Access-Control-Allow-Origin: *`，这就是为什么不推荐使用`*`的原因。
 
-## 🔢 获取响应头
+## 获取响应头
 在跨域访问的时候，JS 只能获取到一些基本的响应头，例如：`Cache-Control`、`Conent-Language`、`Conent-Type`、`Expires`、`Last-Modified`、`Pragma`，如果要访问其他的头信息，则需要服务器设置本响应头。
 
 ```http

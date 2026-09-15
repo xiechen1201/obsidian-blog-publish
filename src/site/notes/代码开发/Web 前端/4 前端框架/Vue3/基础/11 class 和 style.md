@@ -11,7 +11,7 @@
 
 `Vue`对`v-bind`的`class`和`style`进行了特殊的封装，形式比较多，主要是对象和数组的绑定方式。
 
-## 🔢 class
+## class
 
 1、`class`属性绑定为一个对象
 
@@ -134,7 +134,7 @@ const app = {
 }
 ```
 
-## 🔢 style
+## style
 
 1、`style`属性支持绑定为一个对象
 

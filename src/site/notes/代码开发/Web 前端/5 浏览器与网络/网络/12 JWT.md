@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/5 浏览器与网络/网络/12 JWT/","dg-note-properties":{}}
 ---
 
----
----
 首先回顾一下之前讲 Cookie 登录的流程：
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/5%20%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/_assets/1740463189999-45700f7a-95fe-4394-b997-c301bec6cb53.png)
@@ -45,7 +43,7 @@ Authorization: jwt令牌
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/5%20%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/_assets/1740464691285-da7cda5d-1a72-46d2-a0a5-1d5370d8fab0.png)
 
-## 🔢 JWT 的组成
+## JWT 的组成
 那么 JWT 是由什么组成的呢？它为什么可以防止被篡改呢？
 
 为了保证数据的安全性，JWT 由三个部分组成：
@@ -66,7 +64,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsaWNlbnNlIjoibWFkZSBieSB3YW5neSIsInJhbmR
 - payload: eyJsaWNlbnNlIjoibWFkZSBieSB3YW5neSIsInJhbmRvbS0iOjE3Mzk3NzUzNjM3NzIsInVzZXJfbmFtZSI6IjE2ODkyMTY3OTg0Iiwic2NvcGUiOlsic2VydmVyIl0sImV4cCI6MTczOTg2MTc2MywidXNlcklkIjo1NDAwMDQsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIkNSTV9TTkFJTF9BRE1JTiJdLCJqdGkiOiJjOTg0ZDk2My1iNmMzLTRmZjMtOWRlMC0zYTFlODQwY2M4MjMiLCJjbGllbnRfaWQiOiJwaWcifQ
 - signature: 98E4Ocs35tdw12G9BV3JkoGiiRht3BxIrLmQ5ewYh30
 
-## 🔢 header
+## header
 它是令牌的头部，记录了整个令牌的类型和签名算法。它的格式就是一个 JSON 对象，例如：
 
 ```json
@@ -109,7 +107,7 @@ window.atob("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9")
 // 得到字符串：{"alg":"HS256","typ":"JWT"}
 ```
 
-## 🔢 payload
+## payload
 这是 JWT 的主体信息，它依然是一个 JSON 对象，它可以包含以下内容：
 
 ```json
@@ -169,7 +167,7 @@ window.btoa(JSON.stringify({
 // 得到字符串：eyJsaWNlbnNlIjoibWFkZSBieSB3YW5neSIsInJhbmRvbS0iOjE3Mzk3NzUzNjM3NzIsInVzZXJfbmFtZSI6IjE2ODkyMTY3OTg0Iiwic2NvcGUiOlsic2VydmVyIl0sImV4cCI6MTczOTg2MTc2MywidXNlcklkIjo1NDAwMDQsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIkNSTV9TTkFJTF9BRE1JTiJdLCJqdGkiOiJjOTg0ZDk2My1iNmMzLTRmZjMtOWRlMC0zYTFlODQwY2M4MjMiLCJjbGllbnRfaWQiOiJwaWcifQ
 ```
 
-## 🔢 signature
+## signature
 这一部分是 JWT 的签名，正是它的存在保证了 JWT 不能被篡改。
 
 这部分的生成，是对前面两个部分的编码结果，按照头部指定的方式进行加密。

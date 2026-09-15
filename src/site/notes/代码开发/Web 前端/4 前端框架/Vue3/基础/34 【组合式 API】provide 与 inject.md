@@ -6,7 +6,7 @@
 
 [19、依赖注入 provide/inject](https://www.yuque.com/xiechen/de54wv/wuiuyqdscrgrgr9x)
 
-## 🔢 基础使用
+## 基础使用
 
 本篇主要看一下组合式 API provide/inject 的区别，在组合式 API 中 provide/inject 都需要从 Vue 中进行导入：
 
@@ -65,7 +65,7 @@ export default {
 }
 ```
 
-## 🔢 和响应式数据配合使用
+## 和响应式数据配合使用
 
 当提供/注入响应式的数据时，要尽量的把变更数据的方法都写在父组件内，而不是让子组件去更改提供的数据，使其更容易维护！！！
 

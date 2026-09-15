@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/5 浏览器与网络/网络/08 减少 HTTP 请求的方法/","dg-note-properties":{}}
 ---
 
----
----
 首先回顾一下用户输入 URL 后发送的过程：
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/5%20%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C/_assets/1658909598185-9c9c24c1-b2fb-42c2-a48e-900a2653e278.png)

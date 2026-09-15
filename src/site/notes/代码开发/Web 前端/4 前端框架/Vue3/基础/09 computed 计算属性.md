@@ -27,7 +27,7 @@ const App = {
 
 <br/>
 
-## 🔢 计算属性的特点
+## 计算属性的特点
 
 1、多次复用相同值的数据，计算属性只会调用一次
 
@@ -90,7 +90,7 @@ const App = {
 
 3、计算属性会缓存其依赖的上一次计算出的数据结果
 
-## 🔢 computed 和 methods 的区别
+## computed 和 methods 的区别
 
 1. 在使用时，`computed`可以当做属性使用，而`methods`则可以当做方法调用。
 2. `computed`可以具有`getter`和`setter`方法，因此可以赋值，而`methods`是不行的。

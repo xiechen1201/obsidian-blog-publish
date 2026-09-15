@@ -113,7 +113,7 @@ export default {
 </tempalte>
 ```
 
-## 🔢 钩子函数
+## 钩子函数
 
 因为`<keep-alive>`会缓存组件的实例，不再进行初始化，所以当我们切换 Tab 的时候 Intro 组件的`mounted`和`unmounted`生命周期函数将不会再执行，取而代之的是`<keep-alive>`的钩子函数`activated`和`deactivated`：
 
@@ -139,7 +139,7 @@ export default {
 
 因为 Intro 组件没有进行销毁，所以不会执行`unmounted`函数！
 
-## 🔢 属性
+## 属性
 
 `<keep-alive>`允许我们传递 prop：
 
@@ -210,7 +210,7 @@ export default {
 </keep-alive>
 ```
 
-## 🔢 模拟简易的 keep-alive
+## 模拟简易的 keep-alive
 
 ```plain
 Demo

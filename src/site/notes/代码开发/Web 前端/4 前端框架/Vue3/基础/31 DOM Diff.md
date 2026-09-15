@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/31 DOM Diff/","dg-note-properties":{}}
 ---
 
-## 🔢 基本认识
+## 基本认识
 
 什么是 DOM Diff ?
 
@@ -54,7 +54,7 @@ const vDom = {
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1685007054762-c7173a1a-2720-4860-a3e6-e987aa5a8d89.jpeg)
 
-## 🔢 模拟一个 h 函数
+## 模拟一个 h 函数
 
 例如我们想要用自己写的函数来创建一段这样的虚拟节点对象：
 
@@ -297,7 +297,7 @@ export { createElement, render, renderDOM, setAtrrs };
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1685067731905-b0204744-2fe4-47c9-862e-6db1d6894a81.png)
 
-## 🔢 模拟一个 diff 函数
+## 模拟一个 diff 函数
 
 假如我现在要对以上的 DOM 进行更改，更改内容如下：
 

@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/10 watch 侦听器/","dg-note-properties":{}}
 ---
 
-## 🔢 基本认识
+## 基本认识
 
 `watch`和`computed`的区别：
 
@@ -30,7 +30,7 @@ export default {
 };
 ```
 
-## 🔢 简单实现
+## 简单实现
 
 例如我们实现一个简单的`watch`侦听器，先看一下我们的结构目录：
 

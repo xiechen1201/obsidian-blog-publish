@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/38 【组合式 API】响应式 API 特性/","dg-note-properties":{}}
 ---
 
-## 🔢 reactive()
+## reactive()
 
 在组合式 API 中，如果我们想要创建一个响应式的对象（数据发生变化视图也会变化就是响应式）需要使用`reactive()`方法。
 
@@ -59,7 +59,7 @@ setup() {
 }
 ```
 
-## 🔢 isReactive()
+## isReactive()
 
 可以通过`isReactive()`方法来判断一个对象是不是`reactive()`包装过的对象：
 
@@ -80,7 +80,7 @@ export default {
 };
 ```
 
-## 🔢 shallowReactive()
+## shallowReactive()
 
 `shallowReactive()`和`reactive()`方法作用相同也是把一个对象包装为一个响应式的数据。但`shallowReactive()`包装后的数据是浅层响应式的，`reactive()`是深层的。
 
@@ -119,7 +119,7 @@ export default {
 
 可以看到，1 秒后数据发生了变化，但是页面没有进行更新！！！
 
-## 🔢 reactive() 的局限性
+## reactive() 的局限性
 
 1、只能针对 Array、Map、Set、Object 这样的引用类型有效，无法包装 String、Number、Boolean 这样的原始类型。
 
@@ -166,7 +166,7 @@ callSomeFunction(state.count)
 
 所以，`ref()`函数就诞生了，`ref()`就是为了解决所有值类型都能使用 “引用” 机制。
 
-## 🔢 ref()
+## ref()
 
 `ref()`是针对所有值的定制化的包装引用！包装响应式的同时还可以进行相应的操作和传递，例如解构、函数传参数。
 
@@ -214,9 +214,9 @@ objectRef.value = { count: 1 }
 
 简言之，`ref()`让我们能创造一种对任意值的 “引用”，并能够在不丢失响应性的前提下传递这些引用。
 
-## 🔢 ref() 自动解包
+## ref() 自动解包
 
-## 🔢 在模版中解包
+## 在模版中解包
 
 当 ref 在模板中作为顶层属性被访问时，它们会被自动“解包”，所以不需要使用`.value`。
 
@@ -299,7 +299,7 @@ const { foo } = object
 {{ object.foo }}
 ```
 
-## 🔢 在对象中解包
+## 在对象中解包
 
 当使用`reactive()`包装一个「对象」的时，如果对象的属性值是一个 ref 对象，ref 对象会自动把`.value`提取出来，这和普通属性是一样的：
 
@@ -351,7 +351,7 @@ const map = reactive(new Map([['count', ref(0)]]))
 console.log(map.get('count').value)
 ```
 
-## 🔢 isRef()
+## isRef()
 
 我们可以使用`isRef()`方法来判断一个数据是不是 ref 对象：
 
@@ -361,7 +361,7 @@ console.log(count.value); // 0
 console.log(isRef(count)); // true
 ```
 
-## 🔢 shallowRef()
+## shallowRef()
 
 和`ref()`方法一样，`shallowRef()`也可以把数据包装为 ref 对象，只不过是浅层的包装：
 
@@ -384,7 +384,7 @@ export default {
 };
 ```
 
-## 🔢 toRef() 与 toRefs()
+## toRef() 与 toRefs()
 
 前面我们说过，当使用`reactive()`包装对象后我们不能把对象的属性进行解构使用，因为这会导致响应式的丢失，所以我们可以使用`toRefs()`把对象的属性全部转换为响应式的属性：
 
@@ -430,7 +430,7 @@ export default {
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1686559206903-5d0fe0d3-65c5-4ab4-8a73-fbbbdac76cc9.png)
 
-## 🔢 unref()
+## unref()
 
 如果参数是 ref，则返回内部值，否则返回参数本身。
 

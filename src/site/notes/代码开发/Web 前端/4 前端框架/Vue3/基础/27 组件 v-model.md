@@ -56,7 +56,7 @@ v-model 可以在组件上使用实现双向绑定。
 <CustomInput v-model="searchText" />
 ```
 
-## 🔢 v-model 的参数
+## v-model 的参数
 
 默认情况下，`v-model`在组件上都是使用 modelValue 作为 prop，并以`update:modelValue`作为对应的事件。我们可以通过给`v-model`指定一个参数来更改这些名字：
 
@@ -84,7 +84,7 @@ export default {
 </script>
 ```
 
-## 🔢 多个 v-model 绑定
+## 多个 v-model 绑定
 
 利用刚才在 v-model 参数小节中学到的指定参数与事件名的技巧，我们可以在单个组件实例上创建多个 v-model 双向绑定。
 
@@ -124,7 +124,7 @@ export default {
 </script>
 ```
 
-## 🔢 处理 v-model 修饰符
+## 处理 v-model 修饰符
 
 在学习输入绑定时，我们知道了 v-model 有一些内置的修饰符，例如`.trim`、`.number`和`.lazy`。在某些场景下，你可能想要一个自定义组件的 v-model 支持自定义的修饰符。
 

@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/5 浏览器与网络/网络/11 Sessoin/","dg-note-properties":{}}
 ---
 
----
----
 Cookie 是保存在客户端的，虽然可以给服务器减少了很多的压力，但是某些情况下还是会出现麻烦。
 
 例如下面的情况：
