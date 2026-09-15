@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/00 DOM 基础/05 innerHTML 拓展篇/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 innerHTML/outerHTML
+## innerHTML/outerHTML
 `innerHTML`表示设置或者获取元素的`HTML`，另外还有个`outerHTML`属性表示替换掉包含父元素的所有内容。
 
 ```html
@@ -45,7 +43,7 @@ oBox.outerHTML = "<h1>这是span</h1>";
 
 可以看到`outerHTML`把父节点`div`也给替换了！！！
 
-## 🔢 innerHTML 的执行过程
+## innerHTML 的执行过程
 `innerHTML`的操作过程是比较消费性能的，每次设置`innerHTML`都会经过如下的步骤：
 
 1. `h1.innerHTML = "<h1>123</h1>"`设置元素内容
@@ -53,7 +51,7 @@ oBox.outerHTML = "<h1>这是span</h1>";
 3. 用`DocumentFragment`将这个文档结构变成`DOM`节点
 4. 用原本父元素上所有的内容然后替换成这个`DOM`节点
 
-## 🔢 innerHTML 安全问题
+## innerHTML 安全问题
 `HTML5`和现代浏览器都会阻止通过`innerHTML`嵌入`script`脚步的程序执行。
 
 ```js
@@ -61,7 +59,7 @@ oBox.outerHTML = "<h1>这是span</h1>";
 document.documentElement.innerHTML= "<script>alert(123)</script>";
 ```
 
-## 🔢 textContent/innerText
+## textContent/innerText
 `textContent`和`innerText`都表示设置或获取元素文本内容。
 
 当我们给元素插入的内容是纯文本的时候，要避免使用`innerHTML`！！！

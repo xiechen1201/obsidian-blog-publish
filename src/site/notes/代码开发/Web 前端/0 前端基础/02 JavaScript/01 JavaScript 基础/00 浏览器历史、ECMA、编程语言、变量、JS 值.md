@@ -2,13 +2,10 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/01 JavaScript 基础/00 浏览器历史、ECMA、编程语言、变量、JS 值/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 1、浏览器的历史和JS的诞生
+## 1、浏览器的历史和JS的诞生
 ![画板](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1675923741413-9ce07d83-c8a7-4bb5-994f-3b81f456705c.jpeg)
 
-## 🔢 🔢
-## 🔢 2、五大浏览器
+## 2、五大浏览器
 | 浏览器 | 内核 |
 | --- | --- |
 | IE | trident |
@@ -24,12 +21,12 @@
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1666698859590-e56ba7b5-2db0-4e40-b849-237757f24da9.png)
 
-## 🔢 3、ECMA
+## 3、ECMA
 `ECMA`的全称是 `European computer manufacturers association` 欧洲计算机制造联合会，该联合会主要是：评估、开发、认可电信、计算机的标准。
 
 它管理了许多语言的规范，其中`ECMA-262` 是脚本语言的规范。
 
-## 🔢 4、编程语言
+## 4、编程语言
 编程语言分为「编译型」和「解释型」语言。
 
 他们执行的过程如下：
@@ -44,7 +41,7 @@
 
 `JavaScript`引擎是单线程执行；
 
-## 🔢 5、JavaScript 的使用
+## 5、JavaScript 的使用
 1、写在 `script`标签中
 
 ```html
@@ -70,7 +67,7 @@
 </script>
 ```
 
-## 🔢 6、变量
+## 6、变量
 要定义变量可以使`var`关键字：
 
 ```js
@@ -104,7 +101,7 @@ var x = 1,
 
 4、小驼峰和大驼峰
 
-## 🔢 7、JS 的值
+## 7、JS 的值
 JS 的值分为「原始数据」和「引用数据」
 
 原始数据包括：`number`、`string`、`boolean`、`undefined`、`null`、`symbol`
@@ -126,7 +123,7 @@ var a = 1;
 
 因为`JavaScript`是弱类型语言，`a`的数据类型是在`=`后面进行判断的，也就是`1`是`number`类型。
 
-## 🔢 8、栈和堆
+## 8、栈和堆
 ![画板](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1646726077435-f5712886-49f5-457d-9a27-47f262b1f695.jpeg)
 
 总结：

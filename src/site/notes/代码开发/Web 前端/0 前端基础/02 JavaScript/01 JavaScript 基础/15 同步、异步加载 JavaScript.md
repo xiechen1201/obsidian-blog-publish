@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/01 JavaScript 基础/15 同步、异步加载 JavaScript/","dg-note-properties":{}}
 ---
 
----
----
 在`HTML`中加载`JS`文件都是同步加载的，这是为了避免因页面还没有渲染完成，`JS`文件内可能存在对`DOM`操作而产生错误。
 
 相关文章：

@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/01 JavaScript 基础/08 Object 对象/02 对象属性遍历、this、caller callee/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 链式操作
+## 链式操作
 如何实现「对象.方法.方法.方法」这样的链式操作呢？
 
 可以在方法内返回对象的形式。
@@ -27,8 +25,8 @@ var sched = {
 sched.wakeup().morning().noon();
 ```
 
-## 🔢 对象相关的方法和属性
-## 🔢 for...in...
+## 对象相关的方法和属性
+## for...in...
 
 `for...in...`方法可以用来遍历对象。
 
@@ -91,7 +89,7 @@ for (const key in arr) {
 }
 ```
 
-## 🔢 in 语句
+## in 语句
 
 `in`用来判断实例对象是否包含某个属性，该语句和`hasOwnProperty`最大的区别就是`in`语句会到实例对象的原型上查找属性（会到原型上寻找）。
 
@@ -118,7 +116,7 @@ var car = new Car();
 console.log("displacement" in car); // true
 ```
 
-## 🔢 instanceof 语句
+## instanceof 语句
 
 `instanceof`语句用来判断某个对象是否是某个构造函数的实例对象（类似`A`对象的原型里到底有没有`B`构造函数的原型，原型链的关系）。
 
@@ -186,7 +184,7 @@ if(Object.prototype.toString.call(a) === "[object Array]"){
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/08%20Object%20%E5%AF%B9%E8%B1%A1/_assets/1651820548899-23640703-0a7b-4fb1-844e-ed6dc86ac296.png)
 
-## 🔢 this 指向
+## this 指向
 再谈谈`this`指向的问题，只要记住：谁调用函数`this`就指向谁。
 
 普通函数内部的`this`默认指向`window`：
@@ -253,7 +251,7 @@ var test = new Test();
  */
 ```
 
-## 🔢 callee
+## callee
 
 `callee`的作用是指向当前所在函数的引用。
 
@@ -311,7 +309,7 @@ var sum = (function (n) {
 console.log(sum)
 ```
 
-## 🔢 caller
+## caller
 
 `caller`属性返回函数被调用是所在的函数的引用。
 

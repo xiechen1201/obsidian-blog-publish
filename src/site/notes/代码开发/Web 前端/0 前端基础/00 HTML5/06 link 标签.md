@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/00 HTML5/06 link 标签/","dg-note-properties":{}}
 ---
 
----
----
 `<link />`元素用于规定当前 HTML 文档和外部资源的关系，该元素最常用的场景就是用于链接 CSS 样式，除此之外还可以链接网站的图标等等。
 
 例如链接一个 CSS 样式：

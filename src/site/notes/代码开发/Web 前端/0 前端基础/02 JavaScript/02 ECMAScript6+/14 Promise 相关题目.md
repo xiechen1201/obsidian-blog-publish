@@ -2,11 +2,9 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/02 ECMAScript6+/14 Promise 相关题目/","dg-note-properties":{}}
 ---
 
----
----
 本文主要是结合事件循环、Promise 来练习一些题目：
 
-## 🔢 题目一
+## 题目一
 ```js
 const pro = new Promise((resolve, reject) => {
   console.log(1);
@@ -33,7 +31,7 @@ console.log(4);
 - 继续往下执行，输出结果 4；
 - 这个时候全局的代码执行完成，开始事件循环机制，执行「微任务」队列，输出结果 3；
 
-## 🔢 题目二
+## 题目二
 ```js
 const pro = new Promise((resolve, reject) => {
   console.log(1);
@@ -64,7 +62,7 @@ console.log(5);
 - 接着执行，输出结果 3（一定是执行完定时器的回调后才能开始下一次的事件循环）；
 - 继续下一次的事件循环，执行「微任务」队列的`.then`回调，输出结果 4；
 
-## 🔢 题目三
+## 题目三
 ```js
 const pro1 = new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -102,7 +100,7 @@ setTimeout(() => {
 - 全局代码执行完成，开始事件循环机制。由于第一个定时器先推入「宏任务」自然先执行第一个定时器的回调，该回调内将`pro`的状态更改为 fulfilled 的。由于`pro2`是依赖于`pro1`的且`pro2`只处理了`pro1`错误的情况没有处理成功的情况，所以`pro2`的状态和`pro1`一样的；
 - 执行完第一个定时器回调后，继续执行第二个定时器回调，输出结果：`promise1 Promise{<fulfilled>}`、`promise2 Promise{<fulfilled>}`;
 
-## 🔢 题目四
+## 题目四
 ```js
 async function m() {
   console.log(0);
@@ -141,7 +139,7 @@ console.log(2);
 
 <br/>
 
-## 🔢 题目五
+## 题目五
 ```js
 async function m() {
   console.log(0);
@@ -186,7 +184,7 @@ async function m() {
 console.log(3);
 ```
 
-## 🔢 题目六
+## 题目六
 ```js
 async function m1() {
   return 1;
@@ -255,7 +253,7 @@ console.log(4);
 - 执行第二个「微任务」，打印结果 3；
 - 执行第三个「微任务」，打印结果 1；
 
-## 🔢 题目七
+## 题目七
 ```js
 Promise.resolve(1)
   .then(1)
@@ -271,7 +269,7 @@ Promise.resolve(1)
 - 如果`.then`的参数不是函数则会被忽略，类似于`.then(null)`。
 - 然后继续向后处理，直到`.then(console.log)`；
 
-## 🔢 题目八
+## 题目八
 ```js
 var a;
 var b = new Promise((resolve, reject) => {
@@ -323,7 +321,7 @@ console.log('end');
 - 继续执行打印`after1`；
 - 继续执行`await a`，等待`a`执行完成（这会导致死锁，因为 a 永远不会完成）；
 
-## 🔢 题目九
+## 题目九
 ```js
 async function async1() {
   console.log('async1 start');

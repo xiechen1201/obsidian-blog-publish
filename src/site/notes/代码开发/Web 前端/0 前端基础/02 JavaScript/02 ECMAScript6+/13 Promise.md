@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/02 ECMAScript6+/13 Promise/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 基础
+## 基础
 假如现在小明要向 4 个女孩表白，并且是串行执行的，也就是先给 A 发送短信，然后等待 A 的回复，如果 A 拒绝了表白，那就继续给 B 发送短信，继续等待 B 的回复，如果 B 答应了表白，那么就不再给 C 发送短信。
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/02%20ECMAScript6+/_assets/1721183029371-b0bfef25-21ed-4652-aeb5-6a3e4af462c9.png)
@@ -70,7 +68,7 @@ sendMessage(
 
 所以 ES6 提供了 Promise 来解决回调地狱！
 
-## 🔢 Promises/A+ 规范
+## Promises/A+ 规范
 Promises/A+ 规范就是一种规范，定义了 Promise 的行为和接口，也就是说规定了如何实现 Promise。
 
 <br/>tips
@@ -104,7 +102,7 @@ Promises/A+ 的规定：
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/02%20ECMAScript6+/_assets/1721184030313-be777b61-1f6e-49d1-b5b4-c6111b8eb86e.png)
 
-## 🔢 Promise API
+## Promise API
 ES6 提供了一套 API，实现了 Promises/A+ 规范。
 
 基本使用：
@@ -241,7 +239,7 @@ pro1.finally(onFinally); // Finally
 pro2.finally(onFinally); // Finally
 ```
 
-## 🔢 链式调用
+## 链式调用
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/02%20ECMAScript6+/_assets/1721185953304-2767a957-1f6a-4eff-8c66-c630663be855.png)
 
 在 Promise API 中，被`.then()`处理后「必定返回一个新的 Promise」，也可以理解为返回一个新的异步任务。
@@ -573,7 +571,7 @@ new Promise((resolve, reject) => {
 
 以上代码能够打印出 3 是因为`.then()`方法内的`data.toString()`发生了报错（因为`undefined`无法调用`.toString()`方法），然后被后续的`.catch()`处理了，`.catch()`内部没有错误所以继续往下执行到`.then()`方法，打印出数字 3。
 
-## 🔢 Promise 静态方法
+## Promise 静态方法
 ### > Promise.resolve()
 该方法直接返回一个完成状态的任务。
 

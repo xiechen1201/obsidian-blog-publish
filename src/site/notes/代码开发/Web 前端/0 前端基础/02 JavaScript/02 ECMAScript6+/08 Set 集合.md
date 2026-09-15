@@ -2,13 +2,11 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/02 ECMAScript6+/08 Set 集合/","dg-note-properties":{}}
 ---
 
----
----
 一直以来 JS 只能使用数组和对象来保存多数据，缺乏像其他语言那样拥有丰富的集合类型。因此 ES6 新增了两种集合类型：`Set`和`Map`，用于在不同的场景下发挥作用。
 
 其中，`Set`对象用于存放不重复的数据。
 
-## 🔢 创建 Set 集合
+## 创建 Set 集合
 要创建`Set`对象实例化`Set()`构造函数即可：
 
 ```js
@@ -39,7 +37,7 @@ const s3 = new Set('hello');
 console.log(s3); // Set(4) { 'h', 'e', 'l', 'o' }
 ```
 
-## 🔢 Set 集合的方法
+## Set 集合的方法
 1、`.add(value)`向集合的末尾添加元素，如果数据已存在则不进行任何的操作。
 
 如何判断数据是否重复？
@@ -99,7 +97,7 @@ s.add(2);
 console.log(s.size); // 2
 ```
 
-## 🔢 Set 集合和数组转换
+## Set 集合和数组转换
 `Set`去重并转换为数组：
 
 ```js
@@ -121,7 +119,7 @@ str = [...new Set(str)].join('');
 console.log(str); // helo
 ```
 
-## 🔢 Set 集合遍历
+## Set 集合遍历
 1、因为`Set`集合也是可迭代对象，所以可以使用`for...of...`进行迭代。
 
 ```js
@@ -223,7 +221,7 @@ for (const element of s.entries()) {
 */
 ```
 
-## 🔢 模拟 Set 集合
+## 模拟 Set 集合
 ```js
 class MySet {
   constructor(iterator = []) {

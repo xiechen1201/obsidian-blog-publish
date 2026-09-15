@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/02 ECMAScript6+/07 Symbol/","dg-note-properties":{}}
 ---
 
----
----
 `Symbol`（符号）是 ES6 新增的原始数据类型，表示独一无二的值，它是通过`Symbol(描述)`来创建的。
 
 `ES5`的原始数据类型：`string`、`number`、`boolean`、`null`、`undefined`。
@@ -51,7 +49,7 @@ const hero = {
 
 所以 ES6 使用`Symbol()`来创建私有属性。
 
-## 🔢 普通符号
+## 普通符号
 1、`Symbol()`的基础使用：
 
 ```js
@@ -192,7 +190,7 @@ const symbol = Symbol();
 console.log(String(symbol) + 'abc'); // Symbol()abc
 ```
 
-## 🔢 共享符号
+## 共享符号
 共享符号的意思是根据某个符号描述来得到同一个符号。
 
 ```js
@@ -274,7 +272,7 @@ console.log(obj); // {Symbol(foo): 3}
 
 <br/>
 
-## 🔢 知名符号
+## 知名符号
 知名符号是一些具有特殊含义的共享符号，通过`Symbol`的静态属性得到。
 
 ES6 延续了 ES5 的思想，尽量为这个语言减少魔法，暴露出内部的实现，因此 ES6 用知名符号暴露某些场景的内部实现。

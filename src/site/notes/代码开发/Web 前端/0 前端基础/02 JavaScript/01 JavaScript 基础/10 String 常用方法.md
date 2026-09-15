@@ -2,11 +2,9 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/01 JavaScript 基础/10 String 常用方法/","dg-note-properties":{}}
 ---
 
----
----
 [String - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String)
 
-## 🔢 charAt()
+## charAt()
 
 描述：从一个字符串中返回指定的字符
 
@@ -21,7 +19,7 @@ console.log(anyString.charAt(0)); // B
 console.log(anyString.charAt(1)); // r
 ```
 
-## 🔢 indexOf()
+## indexOf()
 
 描述：查找字符在字符串中的首次出现的下标
 
@@ -38,7 +36,7 @@ console.log(anyString.charAt(1)); // r
 "string".indexOf("i", 2); // 3
 ```
 
-## 🔢 lastIndexOf()
+## lastIndexOf()
 
 描述：查找字符在字符串中的最后出现的下标，
 
@@ -55,7 +53,7 @@ console.log(anyString.charAt(1)); // r
 'canal'.lastIndexOf('a', 2); // 1
 ```
 
-## 🔢 concat()
+## concat()
 
 描述：将一个或多个字符串进行合并
 
@@ -73,7 +71,7 @@ console.log(hello.concat('Kevin', '. Have a nice day.'))
 // Hello, Kevin. Have a nice day.
 ```
 
-## 🔢 match()
+## match()
 
 描述：返回一个字符串匹配正则表达式的结果
 
@@ -91,7 +89,7 @@ const found = paragraph.match(regex);
 console.log(found); // ["T", "I"]
 ```
 
-## 🔢 search()
+## search()
 
 描述：返回正则在字符串中的下标
 
@@ -107,7 +105,7 @@ console.log(str.search(re)); // 4
 console.log(str.search(re2)); // -1
 ```
 
-## 🔢 replace
+## replace
 
 描述：替换字符串中的字符
 
@@ -137,7 +135,7 @@ console.log(p.replace(regex, 'ferret'));
 
 [RegExp 正则](https://www.yuque.com/xiechen/px9euv/klhpk2#cjTVc)
 
-## 🔢 split()
+## split()
 
 描述：按照指定的字符规则将字符串「分裂」为数组
 
@@ -161,7 +159,7 @@ console.log(arr.join(" "));
 // The quick brown fox jumps over the lazy dog.
 ```
 
-## 🔢 slice()
+## slice()
 
 描述：提取某个字符串的一部分，
 
@@ -191,7 +189,7 @@ str.slice(-3, -1); // 'us'
 str.slice(0, -1);  // 'The morning is upon us'
 ```
 
-## 🔢 substring()
+## substring()
 
 描述：返回一个字符串在开始索引到结束索引之间的一个字符串
 
@@ -235,7 +233,7 @@ console.log(anyString.substring(0,7));
 console.log(anyString.substring(0,10));
 ```
 
-## 🔢 toLowerCase() / toUpperCase()
+## toLowerCase() / toUpperCase()
 
 描述：将字符串转为小/大写形式
 
@@ -252,7 +250,7 @@ console.log( "ALPHABET".toLowerCase()); // "alphabet"
 console.log('alphabet'.toUpperCase()); // 'ALPHABET'
 ```
 
-## 🔢 trim() / trimStart() / trimEnd()
+## trim() / trimStart() / trimEnd()
 
 描述：删除字符串的两端/之前/之后的空白字符
 

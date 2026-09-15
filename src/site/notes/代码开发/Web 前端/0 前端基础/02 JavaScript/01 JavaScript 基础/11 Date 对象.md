@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/01 JavaScript 基础/11 Date 对象/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 创建 Date
+## 创建 Date
 `Date`对象表示时间，用实例化`Date`函数来创建时间。
 
 `new Date()`返回一个时间片段，不会实时更新！！！
@@ -13,7 +11,7 @@
 var now = new Date();
 ```
 
-## 🔢 Date 的参数
+## Date 的参数
 在不给`new Date()`传递参数的情况下，`new Date()`返回当前系统的时间。
 
 ```js
@@ -30,8 +28,8 @@ new Date("2022/07/11 09:00:00");
 new Date("2022-07-11 09:00:00");
 ```
 
-## 🔢 Date 的方法
-## 🔢 toLocaleString()、toString()、valueOf() 和 toUTCString()
+## Date 的方法
+## toLocaleString()、toString()、valueOf() 和 toUTCString()
 `Date` 类型重写了 `toLocaleString()`、`toString()`和 `valueOf()` 方法。
 
 - `new Date().toLocaleString()` 方法返回与浏览器运行的本地环境一致的日期和时间（例如 2/1/2019 12:00:00 AM）。
@@ -42,7 +40,7 @@ new Date("2022-07-11 09:00:00");
 - `new Date().valueOf()` 方法被重写后返回的是日期的毫秒（例如 1622704543951）。
 - `new Date().toUTCString()`方法返回的是 UTC 时间。
 
-## 🔢 getTime() / setTime()
+## getTime() / setTime()
 
 `getTime()`用于返回一个时间戳，和`valueOf()`结果一致
 
@@ -64,7 +62,7 @@ new Date("2022/07/12 23:59:59").getTime(); // 获取 7 月 12 日的时间戳
 new Date().setTime(1657505268625);
 ```
 
-## 🔢 获取/设置年月日时分秒毫秒
+## 获取/设置年月日时分秒毫秒
 | 方法 | 说明 |
 | --- | --- |
 | `getFullYear()`/`setFullYear()` | 获取/设置日期的年 |
@@ -76,20 +74,20 @@ new Date().setTime(1657505268625);
 | `getSeconds()`/`setSeconds()` | 获取/设置日期的秒 |
 | `getMilliseconds()`/`setMilliseconds()` | 获取/设置日期的毫秒 |
 
-## 🔢 实例
-## 🔢 自定义时间格式
+## 实例
+## 自定义时间格式
 ```js
 var d = new Date("1998-09-09");   // 没有时分秒,默认是早上8点
 ```
 
-## 🔢 设置时间
+## 设置时间
 ```js
 var now = new Date();
 // 设置9天后的时间
 now.setDate( now.getDate() + 9 );
 ```
 
-## 🔢 时间差
+## 时间差
 ```js
 function diff(start,end){
   //返回时间差 单位 秒
@@ -97,7 +95,7 @@ function diff(start,end){
 }
 ```
 
-## 🔢 倒计时
+## 倒计时
 ```js
 var showtime = function () {
   var nowtime = new Date(),  //获取当前时间

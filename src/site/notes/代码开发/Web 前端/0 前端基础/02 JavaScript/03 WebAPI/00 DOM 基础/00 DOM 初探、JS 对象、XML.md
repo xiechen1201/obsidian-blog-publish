@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/00 DOM 基础/00 DOM 初探、JS 对象、XML/","dg-note-properties":{}}
 ---
 
----
----
 `JavaScript`包括`ECMAScript`、`DOM`、`BOM`三大部分组成。
 
 `DOM`的全称是`Document Object Model`文档对象模型。

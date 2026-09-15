@@ -2,10 +2,8 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/00 DOM 基础/02 节点属性、封装方法、DOM 结构/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 节点属性
-## 🔢 nodeName
+## 节点属性
+## nodeName
 
 `node.nodeName`返回节点的名字
 
@@ -39,7 +37,7 @@ console.log(document.getElementsByTagName("div")[0].childNodes[1].nodeName); // 
 console.log(document.getElementsByTagName("div")[0].childNodes[3].nodeName); // H1
 ```
 
-## 🔢 nodeValue
+## nodeValue
 
 `node.nodeValue`返回节点的值
 
@@ -56,7 +54,7 @@ console.log(document.getElementsByTagName("div")[0].childNodes[1].nodeValue); //
 console.log(document.getElementsByTagName("div")[0].getAttributeNode("id").nodeValue); // box，getAttributeNode 获取属性节点(了解即可)
 ```
 
-## 🔢 nodeType
+## nodeType
 
 `node.nodeType`返回节点的类型值
 
@@ -97,7 +95,7 @@ let res = elementChildren(document.getElementsByTagName("div")[0]);
 console.log(res); // [h1, a, p]
 ```
 
-## 🔢 attributes
+## attributes
 
 返回节点的属性集合
 
@@ -111,7 +109,7 @@ console.log(document.getElementsByTagName("div")[0].attributes[0]); // class=“
 console.log(document.getElementsByTagName("div")[0].attributes[0].nodeValue); // box
 ```
 
-## 🔢 tagName
+## tagName
 
 返回元素节点的大写标签名
 
@@ -121,7 +119,7 @@ console.log(document.getElementsByTagName("div")[0].attributes[0].nodeValue); //
 document.getElementsByTagName("div")[0].tagName; // DIV
 ```
 
-## 🔢 DOM 结构
+## DOM 结构
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653293339456-8fdd6ba0-808f-4990-a1f0-fed0faaf06da.png)
 
 `DOM`结构树分为多种对象，它们之间是一种原型链的继承关系。
@@ -144,7 +142,7 @@ HTMLElement.prototype.__proto_ => Element.prototype
 XMLElement.prototype.__proto_ => Element.prototype
 ```
 
-## 🔢 获取全部标签
+## 获取全部标签
 `document.getElementsByTagName()`方法可以接受通配符`*`来获取文档全部的标签。
 
 ```js
@@ -152,7 +150,7 @@ console.log(document.getElementsByTagName("*"));
 // HTMLCollection(13) [html, head, meta, meta, meta, title, body, span, div#box.box, h1, a, p, script, viewport: meta, box: div#box.box]
 ```
 
-## 🔢 获取文档信息
+## 获取文档信息
 获取文档的`head`
 
 ```js

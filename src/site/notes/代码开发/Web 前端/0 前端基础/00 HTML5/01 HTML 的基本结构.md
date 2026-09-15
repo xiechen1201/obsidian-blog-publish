@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/00 HTML5/01 HTML 的基本结构/","dg-note-properties":{}}
 ---
 
----
----
 HTML 是由 W3C 组织定义的语言标准，HTML 是用于描述页面结构的语言。也就是页面中有什么东西，这个东西具有什么含义。
 
 一个基本的 HTML 结构：

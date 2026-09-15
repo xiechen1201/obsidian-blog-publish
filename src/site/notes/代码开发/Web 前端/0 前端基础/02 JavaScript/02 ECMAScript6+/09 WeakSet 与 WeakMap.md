@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/02 ECMAScript6+/09 WeakSet 与 WeakMap/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 对象引用
+## 对象引用
 如何理解对象的引用呢？
 
 ```js
@@ -88,7 +86,7 @@ setTimeout(() => {
 
 因为`WeakMap`是弱引用，它不知道自己的键值什么时候就会被回收掉了，所以`WeakMap`没有遍历的方法！！！
 
-## 🔢 和 Set、Map 的区别
+## 和 Set、Map 的区别
 `WeakMap`和`WeakSet`与`Map`和`Set`对象用法基本上一致，简单理解就是削弱版的`Map`和`Set`
 
 ```js

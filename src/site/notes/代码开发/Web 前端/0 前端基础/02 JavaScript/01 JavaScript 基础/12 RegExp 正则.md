@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/01 JavaScript 基础/12 RegExp 正则/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 转义符号 & 转义字符
+## 转义符号 & 转义字符
 在`javaScript`字符串中`\`表示「转义」！！！
 
 在`\`后面跟上一个特定的符号或者字母就表示「转义字符」！！！
@@ -58,7 +56,7 @@ console.log(str);
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1655359954288-4549e884-f033-4920-9ade-e5dab6e1e61d.png)
 
-## 🔢 RegExp 正则表达式
+## RegExp 正则表达式
 
 `RegExp（regular expression）`正则表达式就是“将字符串按照一定的规则进行匹配或者检索这个规则中执行的字符类型”。
 
@@ -86,7 +84,7 @@ var reg = /正则/修饰符;
 var reg = new RegExp("正则","修饰符");
 ```
 
-## 🔢 正则的引用关系
+## 正则的引用关系
 ```js
 // new 的时候是完全新的正则对象（深拷贝）
 var reg1 = /test/;
@@ -101,8 +99,8 @@ reg1.a = 1;
 console.log(reg2.a); // 1
 ```
 
-## 🔢 正则的字符/括号
-## 🔢 修饰符
+## 正则的字符/括号
+## 修饰符
 正则表达式有以下修饰符
 
 | `i` | 不区分大小写 |
@@ -160,7 +158,7 @@ var str = "Test is a function; \nTest is important;";
 console.log(str.match(reg)); // ['Test', 'Test']
 ```
 
-## 🔢 元字符（转义字符）
+## 元字符（转义字符）
 | `\w` | 表示任意一个字母、数字或下划线 |
 | --- | --- |
 | `\W` | 表示非... |
@@ -221,7 +219,7 @@ var str = "This is a test";
 console.log(str.match(reg)); // ['This']
 ```
 
-## 🔢 量词
+## 量词
 > 个人对量词的理解📗：
 >
 > 正则默认只会按着一位进行匹配，量词是设置前面的字符按照`n`位进行匹配
@@ -299,7 +297,7 @@ var reg = /^138\d{8}/;
 console.log(reg.test(str));
 ```
 
-## 🔢 单字符
+## 单字符
 | `|` | 表示或者，可以和`()`组合 |
 | --- | --- |
 | `.` | 表示任意一个非空白字符 |
@@ -365,7 +363,7 @@ var str = "abcd123123abcd";
 console.log(str.match(reg)); // ['abcd123123abcd']
 ```
 
-## 🔢 正向预查和反向预查
+## 正向预查和反向预查
 相关链接：
 
 [javascript正则表达式---正向预查 - chenby - 博客园](https://www.cnblogs.com/dh-dh/p/5261044.html)
@@ -422,7 +420,7 @@ var reg = /(?:a)(b)(c)/;
 console.log(str.match(reg));  // ['abc', 'b', 'c']
 ```
 
-## 🔢 括号表达式
+## 括号表达式
 | `[]` | 表示只要是括号内的任意一位 |
 | --- | --- |
 | `()` | 表达式的引用，一般和表达式一起使用（或者理解为一个分组） |
@@ -479,7 +477,7 @@ var reg = /(\w)\1(\w)\2/g;
 console.log(str.match(reg)); // ['bbaa', 'aacc', 'aaaa', 'aaaa']
 ```
 
-## 🔢 正则对象的属性
+## 正则对象的属性
 正则表达式是个对象，所以它有相关的属性。
 
 ```js
@@ -490,8 +488,8 @@ console.log(reg.multiline); // 是否设置 m 修饰符
 console.log(reg.source); // 正则表达式的本体
 ```
 
-## 🔢 正则对象的方法
-## 🔢 reg.test(str)
+## 正则对象的方法
+## reg.test(str)
 
 用正则去检测字符串是否符合正则的规则！
 
@@ -504,7 +502,7 @@ var reg = /^138\d{8}/;
 console.log(reg.test(str));
 ```
 
-## 🔢 reg.exec(str)
+## reg.exec(str)
 
 根据正则表达式查找，结果会返回一个长度为1的数组 （数组只有一个值）
 
@@ -529,7 +527,7 @@ console.log(reg.exec(str));
 
 [String 字符串相关的方法](https://www.yuque.com/xiechen/px9euv/uulxg4)
 
-## 🔢 贪婪模式和非贪婪模式
+## 贪婪模式和非贪婪模式
 正则表达式默认是「贪婪模式」（能匹配多绝不匹配少）。
 
 比如我们想匹配`{{}}`的字符串：
@@ -568,7 +566,7 @@ var reg = /\w??/g;
 console.log(str.match(reg)); // ['', '', '', '', '', '', '']
 ```
 
-## 🔢 和 String.prototype.replace() 联合的案例：
+## 和 String.prototype.replace() 联合的案例：
 
 该方法用来替换字符串中的字符，接收两个参数
 

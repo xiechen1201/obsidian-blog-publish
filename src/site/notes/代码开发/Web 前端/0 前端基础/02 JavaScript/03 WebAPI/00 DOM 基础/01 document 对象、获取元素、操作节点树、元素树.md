@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/00 DOM 基础/01 document 对象、获取元素、操作节点树、元素树/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 document 对象
+## document 对象
 `html`就是一个文档，也就是`document`。
 
 `html`的「父节点」是`document`，`html`的「父元素」是`null`
@@ -17,8 +15,8 @@ console.log(html.parentElement);
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653014180208-aa0df93c-d4a3-435e-be79-81e0b3d199b2.png)
 
-## 🔢 获取元素
-## 🔢 getElementById("IdName")
+## 获取元素
+## getElementById("IdName")
 
 通过元素的`id`来获取元素，返回元素对象
 
@@ -33,7 +31,7 @@ console.log(html.parentElement);
 document.getElementById("testid");
 ```
 
-## 🔢 getElementsByTagName("tagName")
+## getElementsByTagName("tagName")
 
 通过元素的「标签名」来获取元素，返回元素集合伪数组
 
@@ -43,7 +41,7 @@ document.getElementById("testid");
 document.getElementsByTagName("p");
 ```
 
-## 🔢 getElementsByClassName("className")
+## getElementsByClassName("className")
 
 通过元素的「类名」来获取元素，返回元素集合伪数组
 
@@ -58,7 +56,7 @@ document.getElementsByTagName("p");
 document.getElementsByClassName(".header");
 ```
 
-## 🔢 getElementsByName("testName")
+## getElementsByName("testName")
 
 通过元素的`name`属性来获取元素，返回元素集合伪数组
 
@@ -68,7 +66,7 @@ document.getElementsByClassName(".header");
 document.getElementsByName("name");
 ```
 
-## 🔢 querySelector("str")
+## querySelector("str")
 
 以`CSS`选择器的方式来获取元素，返回元素对象
 
@@ -83,7 +81,7 @@ document.querySelector(".class"); // 用类名
 document.querySelector(".box > .item");
 ```
 
-## 🔢 querySelectorAll("str")
+## querySelectorAll("str")
 
 以`CSS`选择器的方式来获取元素，返回元素集合伪数组
 
@@ -131,7 +129,7 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 可以明显的看到`querySelectorAll()`子元素删除后打印依然是4个元素！！！
 
-## 🔢 节点类型
+## 节点类型
 🌴  要理解「节点包含元素，元素只是节点的一部分！！！」
 
 节点的类型总共包括：
@@ -172,8 +170,8 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 </script>
 ```
 
-## 🔢 获取节点树
-## 🔢 parentNode
+## 获取节点树
+## parentNode
 
 查找元素的父节点
 
@@ -183,7 +181,7 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653017449002-f0a5d501-aec5-4fde-831c-f81621f46ffe.png)
 
-## 🔢 childNodes
+## childNodes
 
 查找元素的子节点
 
@@ -197,7 +195,7 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 返回的多种元素节点，其中空格也属于文本节点！！！
 
-## 🔢 firstChild
+## firstChild
 
 查找元素的第一个子节点
 
@@ -207,7 +205,7 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653025920189-580eff1c-f490-4842-bf3e-f1de17ed64a1.png)
 
-## 🔢 lastChild
+## lastChild
 
 查找元素的最后一个子节点
 
@@ -219,7 +217,7 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 因为`p`元素下只有`我是段落标签`这段文字，所以`firstChild`和`lastChild`返回内容一样。
 
-## 🔢 previousSibling
+## previousSibling
 
 查找元素的前一个节点
 
@@ -231,7 +229,7 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 因为`p`元素的前面是空格，空格也属性节点，所以返回文本节点
 
-## 🔢 nextSibling
+## nextSibling
 
 查找元素的后一个节点
 
@@ -245,8 +243,8 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653018728971-a0b4f76a-a81e-44df-a26e-3b2e85035f96.png)
 
-## 🔢 获取元素树
-## 🔢 parentElement
+## 获取元素树
+## parentElement
 
 查找元素的父元素
 
@@ -261,7 +259,7 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653025365167-e526bae3-30e3-4bd1-8446-6e42252f1c91.png)
 
-## 🔢 children
+## children
 
 查找元素的子元素
 
@@ -273,7 +271,7 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 元素还有个`childElementCount`属性，返回子元素的数量（该数量里不包括文本和注释等）！！！
 
-## 🔢 firstElementChild
+## firstElementChild
 
 查找元素的第一个子元素
 
@@ -286,7 +284,7 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653026258000-7032c760-0097-43e2-a02a-ad9af6a3579a.png)
 
-## 🔢 lastElementChild
+## lastElementChild
 
 查找元素的最后一个子元素
 
@@ -299,7 +297,7 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653026331740-4c4592b1-bf4f-4314-8b06-382e070959e3.png)
 
-## 🔢 previousElementSibling
+## previousElementSibling
 
 查找元素的前一个元素
 
@@ -312,7 +310,7 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653026456263-05740627-00dc-40d4-97b6-0fd0738fff7e.png)
 
-## 🔢 nextElementSibling
+## nextElementSibling
 
 查找元素的后一个元素
 
@@ -325,8 +323,8 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653026384820-46043ef8-d36e-4a28-8b36-024e8e18727d.png)
 
-## 🔢 是否有子节点
-## 🔢 hasChildNodes()
+## 是否有子节点
+## hasChildNodes()
 
 该方法用于判断父节点下有没有子节点，包括文本、注释、元素节点等，返回`true`或者`false`
 

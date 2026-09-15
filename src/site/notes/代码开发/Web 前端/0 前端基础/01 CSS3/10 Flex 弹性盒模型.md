@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/01 CSS3/10 Flex 弹性盒模型/","dg-note-properties":{}}
 ---
 
----
----
 弹性盒模型（Flexible Box），能够让子元素之间提高空间分布和对齐能力。
 
 如果想要将一个普通的盒子设置为弹性盒，需要使用`display`属性：
@@ -35,8 +33,8 @@
 
 2、弹性容器 Flex Contanier 下所有的子成员都会变为 Flex Item（弹性项目）。
 
-## 🔢 弹性容器属性
-## 🔢 flex-direction
+## 弹性容器属性
+## flex-direction
 用于设置弹性容器的主轴方向，默认是横向的！
 
 语法：
@@ -73,7 +71,7 @@ flex-direction: value;
 
 ![column-reverse](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667134541072-6edf4793-85e2-436c-9aa1-6df3f195bea8.png)
 
-## 🔢 flex-wrap
+## flex-wrap
 当弹性容器内有多个子项目占不下一行的时候，会把所有的子项目进行压缩，强制在一行，该属性就是用于设置是否换行。
 
 语法：
@@ -108,7 +106,7 @@ flex-wrap: value;
 
 ![wrap-reverse](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667135077207-c75236c2-59f9-44b6-a909-18d555c7df3f.png)
 
-## 🔢 flex-flow
+## flex-flow
 该属性是`flex-direction`和`flex-wrap`两个属性的复合属性。
 
 ```css
@@ -121,7 +119,7 @@ flex-wrap: value;
 }
 ```
 
-## 🔢 justify-content
+## justify-content
 该属性用于设置子项目在弹性容器内在主轴上的对齐方式。
 
 语法：
@@ -162,7 +160,7 @@ justify-content: value;
 
 ![space-around](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667135450985-c63fb652-f22f-4f96-9645-97cc4312449d.png)
 
-## 🔢 align-items
+## align-items
 该属性用于设置「单列」弹性项目在交叉轴（侧轴）上的对齐方式。
 
 语法：
@@ -205,7 +203,7 @@ align-items: value;
 
 ![stretch](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667136778118-b575ad23-55f9-4213-9fae-072fa081f4c8.png)
 
-## 🔢 align-content
+## align-content
 定义多根主轴线的对齐方式，如果父元只有一根轴线，该属性不起作用，必须设置`flex-wrap: wrap;`。
 
 语法：
@@ -250,8 +248,8 @@ align-content: value;
 
 ![stretch](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667136958807-6110d6dd-5026-40ba-b757-2494b7dac90d.png)
 
-## 🔢 弹性项目属性
-## 🔢 flex-grow
+## 弹性项目属性
+## flex-grow
 该属性用于设置弹性项目放大比例，前提弹性容器有空间剩余才会生效！
 
 语法：
@@ -320,7 +318,7 @@ flex-grow: number;
 - 200 + 133.33 = 333.33px
 - 300 + 200 = 500px
 
-## 🔢 flex-shrink
+## flex-shrink
 该属性用于设置弹性项目缩小比例，前提是空间不足的时候才会缩小。
 
 语法：
@@ -369,7 +367,7 @@ flex-shrink: number;
 }
 ```
 
-## 🔢 flex-basis
+## flex-basis
 放大和缩小都是按照基准线来计算的，该属性就是更改基准值的。
 
 语法：
@@ -384,7 +382,7 @@ flex-basis: value;
     - `auto`也就是元素本身的宽度；
     - 具体宽度像素；
 
-## 🔢 flex
+## flex
 该属性是`flex-grow`、`flex-shrink`和`flex-basis`的复合值。
 
 ```css
@@ -394,7 +392,7 @@ flex-basis: value;
 }
 ```
 
-## 🔢 order
+## order
 设置弹性项排序优先级。
 
 语法：
@@ -442,7 +440,7 @@ order: number;
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667138156374-9a805839-4454-48f1-98f0-7d37cc47a40c.png)
 
-## 🔢 align-self
+## align-self
 单独设置单个弹性项目在侧轴的对齐方式。
 
 语法：

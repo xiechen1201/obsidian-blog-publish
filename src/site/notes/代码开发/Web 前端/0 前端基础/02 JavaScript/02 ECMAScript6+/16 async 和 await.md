@@ -2,13 +2,11 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/02 ECMAScript6+/16 async 和 await/","dg-note-properties":{}}
 ---
 
----
----
 到目前为止，我们可以发现`Promise`并没有消除回调，但是消除了回调地狱，改成使用`.then`进行链式操作让程序可以有序的进行。
 
 ES2016 推出了两个关键字`async`和`await`，用于简化`Promise`的使用。
 
-## 🔢 async
+## async
 使用`async`关键字是用来修饰函数的，必须书写在函数的最前面。
 
 ```js
@@ -71,7 +69,7 @@ async function foo() {
 console.log(foo()); // Promise {<rejected>: Error: 错误！}
 ```
 
-## 🔢 await
+## await
 `await`表示「等待」某个`Promise`完成，它必须书写在`async`函数内部！
 
 当`Promise`状态落定为成功后，可以得到`Promise`的结果。

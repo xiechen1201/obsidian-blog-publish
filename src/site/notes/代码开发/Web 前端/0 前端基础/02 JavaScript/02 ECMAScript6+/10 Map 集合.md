@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/02 ECMAScript6+/10 Map 集合/","dg-note-properties":{}}
 ---
 
----
----
 `Map`集合是专门用于存储多个键值对的集合。
 
 在`Map`出现之前使用的是对象来存储键值对，使用对象来存储有个特点：键名不能重复。
@@ -26,7 +24,7 @@ console.log(m); // {[object Object]: 'bar'}
 
 3、键名很容易和原型的键产生冲突。
 
-## 🔢 创建 Map 集合
+## 创建 Map 集合
 要创建`Map`集合实例化`Map()`构造函数即可：
 
 ```js
@@ -69,7 +67,7 @@ console.log(map.get(NaN)); // 20
 console.log(map.size); // 6
 ```
 
-## 🔢 Map 集合的方法
+## Map 集合的方法
 1、`.set(key, value)`向`Map`集合中添加键值对，键和值可以是任意的类型。如何`Map`中不存在要添加键则进行添加，如果已经存在键则进行修改键对应的值。
 
 ```js
@@ -141,7 +139,7 @@ m.set({}, '李四');
 console.log(m.size); // 2
 ```
 
-## 🔢 Map 集合转化为数组
+## Map 集合转化为数组
 ```js
 let m = new Map([
   ['name', '张三'],
@@ -155,7 +153,7 @@ let arr = [...m];
 console.log(arr); // [ [ 'name', '张三' ], [ 'age', 18 ], [ 'gender', '男' ] ]
 ```
 
-## 🔢 Map 集合遍历
+## Map 集合遍历
 1、因为`Map`集合也是可迭代对象，所以可以使用`for...of...`进行迭代。
 
 ```js
@@ -239,7 +237,7 @@ for (const element of m.entries()) {
 */
 ```
 
-## 🔢 模拟 Map 集合
+## 模拟 Map 集合
 ```js
 class MyMap {
   constructor(iterator = []) {

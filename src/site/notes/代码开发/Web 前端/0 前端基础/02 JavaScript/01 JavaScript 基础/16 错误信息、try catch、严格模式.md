@@ -2,10 +2,8 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/01 JavaScript 基础/16 错误信息、try catch、严格模式/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 错误信息
-## 🔢 1、SyntaxError 语法错误
+## 错误信息
+## 1、SyntaxError 语法错误
 例如变量名以数字开头
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1652420614399-a0bd96da-0c90-4297-9c1c-1ec4ca683fe0.png)
@@ -18,7 +16,7 @@
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1652420703311-bf65eb02-7c4e-4903-9eda-815da12261e6.png)
 
-## 🔢 2、引用错误
+## 2、引用错误
 变量或者函数未被声明然后直接调用
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1652420803362-68b3b286-fb8e-4609-b591-a6243dffd391.png)
@@ -29,12 +27,12 @@
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1652420841466-f59c1356-4c22-42d5-a9f6-713c488e02be.png)
 
-## 🔢 3、RangeError 范围错误
+## 3、RangeError 范围错误
 数组长度为负数的时候
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1652420900529-cb618d9d-2409-4f8c-bcef-cdaa79c5f6c7.png)
 
-## 🔢 4、TypeError 类型错误
+## 4、TypeError 类型错误
 调用不存在的方法
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1652420973521-5d0fb37f-71de-417f-b833-6a8413b0959e.png)
@@ -43,12 +41,12 @@
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1652421003691-49802552-46d8-407a-897e-b6e498158a18.png)
 
-## 🔢 5、URIError
+## 5、URIError
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1652421139481-65453c7b-f6d6-40e1-a191-9581dcb8fded.png)
 
-## 🔢 6、eval() 函数执行错误
+## 6、eval() 函数执行错误
 
-## 🔢 自定义错误类型
+## 自定义错误类型
 ```js
 new Error("代码错误");
 
@@ -56,7 +54,7 @@ new Error("代码错误");
 //    at <anonymous>:1:1
 ```
 
-## 🔢 try...catch...finally...
+## try...catch...finally...
 当`try`代码块内发生报错，程序不会停止执行会直接到`catch`中继续执行。
 
 `catch`代码块的主要作用就是捕获`try`块中的错误然后执行相关的逻辑。
@@ -151,7 +149,7 @@ try {
 // JSON字符串为空
 ```
 
-## 🔢 严格模式
+## 严格模式
 `JavaScript`是由`ECMAScript`、`DOM`和`BOM`三部分组成的，「严格模式」指的是`ECMAScript5.0`版本后的语法、方法规范。
 
 `ECMAScript`的历史

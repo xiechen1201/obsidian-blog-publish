@@ -2,11 +2,9 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/01 JavaScript 基础/08 Object 对象/01 Object.defineProperty 和 defineProperties/","dg-note-properties":{}}
 ---
 
----
----
 `Object.defineProperty()`和`Object.defineProperties()`都是`Object`构造函数的静态方法，作用是定义数据！！！
 
-## 🔢 defineProperty()
+## defineProperty()
 
 参数1: 需要被定义的对象
 
@@ -35,7 +33,7 @@ var obj = {
 console.log(obj); // {test: undefined}
 ```
 
-## 🔢 属性配置
+## 属性配置
 可事实真的如此吗？下面我们将两种方式对象进行对比。
 
 ```js
@@ -135,7 +133,7 @@ delete obj.test;
 console.log(obj); // {}
 ```
 
-## 🔢 get()/set()
+## get()/set()
 每个属性在定义的时候都会存在`getter`和`setter`的机制，所以`Object.defineProperty()`的参数 3 还有`set()`和`get()`方法。
 
 ```js
@@ -214,7 +212,7 @@ dateArr.val = 234;
 console.log(dateArr.getArr()); // [{val: 123}, {val: 234}]
 ```
 
-## 🔢 互斥
+## 互斥
 <br/>danger
 注意 ⚠️
 
@@ -262,7 +260,7 @@ var obj3 = Object.defineProperty({}, "a" ,{
 });
 ```
 
-## 🔢 defineProperties()
+## defineProperties()
 `Object.defineProperty()`方法只能对对象的一个属性进行定义，那么如何定义对象的多个属性呢？
 
 可以使用`Object.defineProperties()`来定义多个属性。

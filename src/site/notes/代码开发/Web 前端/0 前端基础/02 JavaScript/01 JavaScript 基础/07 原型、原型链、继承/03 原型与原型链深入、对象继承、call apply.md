@@ -2,10 +2,8 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/01 JavaScript 基础/07 原型、原型链、继承/03 原型与原型链深入、对象继承、call apply/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/07%20%E5%8E%9F%E5%9E%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE%E3%80%81%E7%BB%A7%E6%89%BF/_assets/1658203019103-4473db85-e60f-40af-8d3d-e3b455a3353a.png)
-## 🔢 原型
+## ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/07%20%E5%8E%9F%E5%9E%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE%E3%80%81%E7%BB%A7%E6%89%BF/_assets/1658203019103-4473db85-e60f-40af-8d3d-e3b455a3353a.png)
+## 原型
 `__proto__`保存的「原型」指向`function.prototype`
 
 ```js
@@ -24,7 +22,7 @@ console.log(car);
 
 ![画板](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/07%20%E5%8E%9F%E5%9E%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE%E3%80%81%E7%BB%A7%E6%89%BF/_assets/1650953861745-c9ad0f6c-e8e7-47f4-895e-c5fec2ad2b8a.jpeg)
 
-## 🔢 函数的原型
+## 函数的原型
 在 JS 中函数也属于对象，但是函数的原型和普通对象的原型是不一样的：
 
 ```js
@@ -69,7 +67,7 @@ obj.__proto__ → Object.prototype → null
 Person.__proto__ → Function.prototype → Object.prototype → null
 ```
 
-## 🔢 原型链
+## 原型链
 其实上面👆的情况就是「原型链」。
 
 「原型链」就是去「原型对象」里一层一层寻找相应的属性的这样的继承属性链就是「原型链」（没有的属性先到我自己的实例上寻找，实例上找不到就去原型对象上寻找，如果原型对象上也没有就继续到原型对象的原型对象去寻找）。
@@ -102,7 +100,7 @@ console.log(student.tSkill);
 
 `student`实例对象是完全可以访问到`mSkill`和`tSkill`的，他会沿着原型链条一直寻找，直到顶端。
 
-## 🔢 原型链的顶端
+## 原型链的顶端
 原型链的顶端是`Object.prototype`:
 
 ```js
@@ -116,7 +114,7 @@ console.log(Professor.prototype);
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/07%20%E5%8E%9F%E5%9E%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE%E3%80%81%E7%BB%A7%E6%89%BF/_assets/1650955605885-4c207862-7f63-431d-84e1-42656bb8a6dd.png)
 
-## 🔢 实例对象操作原型链上的属性
+## 实例对象操作原型链上的属性
 ```js
 function Professor() {}
 Professor.prototype.tSkill = "JAVA";
@@ -173,7 +171,7 @@ console.log(student, teacher);
 - 实例对象更改原型链上的「引用数值」会更改原型链上的属性；
 - 实例对象更改原型链上的「原始数值」会新增到自己的实例上；
 
-## 🔢 this 指向
+## this 指向
 当构造函数和构造函数原型上有相同的属性时，谁使用`this`访问，`this`就指向谁！！！
 
 ```js
@@ -195,7 +193,7 @@ car.intor(); // 我是Benz车
 car.prototype.intor(); // 我是Mazsa车
 ```
 
-## 🔢 Object.create()
+## Object.create()
 
 `Object`构造函数静态方法。
 
@@ -270,13 +268,13 @@ obj.__proto__ = obj1; // 这里的赋值相当于赋值了一个普通的属性
 console.log(obj.count); // 所以无法直接访问 count
 ```
 
-## 🔢 new 的过程
+## new 的过程
 - 创建`this`对象
 - `this`对象保存构造函数的`prototype`
 - `this`对象初始化属性和方法
 - 返回`this`对象
 
-## 🔢 包装类的方法
+## 包装类的方法
 ```js
 var num = new Number(1);
 console.log(num.toString()); // "1"

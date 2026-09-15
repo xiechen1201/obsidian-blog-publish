@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/01 JavaScript 基础/18 从头探究 this 关键字/","dg-note-properties":{}}
 ---
 
----
----
 `this`对象表示当前环境的上下文，在以下场景中`this`指向有所不同。
 
 1、普通函数内的`this`

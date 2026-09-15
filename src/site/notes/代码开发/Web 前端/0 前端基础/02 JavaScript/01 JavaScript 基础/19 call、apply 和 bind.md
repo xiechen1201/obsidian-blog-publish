@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/01 JavaScript 基础/19 call、apply 和 bind/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 call() 和 apply()
+## call() 和 apply()
 `call()`和`apply()`都是用于更改函数中`this`的指向。
 
 ```js
@@ -56,7 +54,7 @@ compute.mul(1, 2);
 compute.div(1, 2);
 ```
 
-## 🔢 重写 call() 和 apply() 方法
+## 重写 call() 和 apply() 方法
 重写的思路其实是基于对象调用方法，方法里的`this`指向该对象。
 
 重写`call()`方法：
@@ -138,7 +136,7 @@ function test(a, b) {
 test.myApply({ name: "name2" }, [1, 2]);
 ```
 
-## 🔢 bind()
+## bind()
 `bind`也用于改变函数内的`this`指向。
 
 ```js
@@ -177,7 +175,7 @@ function tabClick(){
 }
 ```
 
-## 🔢 bind 后的实例化
+## bind 后的实例化
 因为`bind`改变`this`后不会立即执行，所以它不会影响我们实例化构造函数。
 
 ```js
@@ -218,7 +216,7 @@ Person.call(p);
 new Person();
 ```
 
-## 🔢 重写 bind() 方法
+## 重写 bind() 方法
 ```js
 Function.prototype.myBind = function (context) {
   var _this = this;
