@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/00 包管理器/01 yarn/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 简介
+## 简介
 yarn 是一个全新的包管理工具，但是它依然使用的是 npm 的 registry 源。yarn 提供了全新的命令对包进行管理。
 
 为什么会出现 yarn 呢？这是因为 npm 之前出现的很多问题：
@@ -84,7 +82,7 @@ yarn 给 npm 的市场带来巨大的压力，于是 npm 学习了 yarn 的理�
 
 总之，npm6 之后的版本和 yarn 已经非常接近了。
 
-## 🔢 yarn 常用命令
+## yarn 常用命令
 1、全局安装 yarn
 
 ```bash

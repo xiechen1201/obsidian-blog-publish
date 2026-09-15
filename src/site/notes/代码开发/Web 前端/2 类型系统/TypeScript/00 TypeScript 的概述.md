@@ -2,15 +2,13 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/00 TypeScript 的概述/","dg-note-properties":{}}
 ---
 
----
----
 为什么需要 TS？
 
 1、为了更好的开发体验
 
 2、为了解决 JS 中一些难以处理的问题
 
-## 🔢 JavaScript 语言的问题
+## JavaScript 语言的问题
 解决哪些难以处理的问题？例如下面这段代码：
 
 ```js
@@ -65,7 +63,7 @@ JS 的原罪：
 
 综上，前端开发中大部分时候都是在排查错误，这个时候 TS 就出来了。
 
-## 🔢 TypeScript 语言的特点
+## TypeScript 语言的特点
 官网：
 
 [JavaScript With Syntax For Types.](https://www.typescriptlang.org/zh/)

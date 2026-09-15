@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/04 类型细节/01 boolean 与字面量类型/","dg-note-properties":{}}
 ---
 
----
----
 `number`、`string`、`boolean`、`symbol`、`bigint`这些 JS 本身就支持的基础类型使用起来很简单，TS 的书写几乎感觉不到和 JS 的区别，而且支持很多种书写方式，当然中间还隐藏着一些重要的细节。
 
 例如`boolean`举例来说：

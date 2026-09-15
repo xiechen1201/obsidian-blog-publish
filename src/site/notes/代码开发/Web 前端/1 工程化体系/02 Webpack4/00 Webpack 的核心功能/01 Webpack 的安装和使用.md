@@ -2,11 +2,9 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/00 Webpack 的核心功能/01 Webpack 的安装和使用/","dg-note-properties":{}}
 ---
 
----
----
 Webpack 能帮助开发者把开发时候写的很爽的代码「转换为」运行时很爽的代码，它是基于模块化（包括又不限于 CommonJS、ESModule）的打包（构建）工具，它把一切视为模块。
 
-## 🔢 Webpack 的简介
+## Webpack 的简介
 Webpack 的大致工作流程：
 
 1、从入口文件开始分析
@@ -25,7 +23,7 @@ Webpack 的特点：
 - 「基于 Node」：由于 Webpack 在构建的过程中需要读取文件，因此它是运行在 Node 环境中的。
 - 「基于模块化」：Webpack 在构建过程中要分析依赖关系的方式就是通过模块化导入语句进行分析的，它支持各种模块化标准，包括但不限于 CommonJS、ES6 Module，最后打包处理的代码既不是 CommonJS 也不是 ESModule，而是 Webpack 自己实现的模块化函数。
 
-## 🔢 Webpack 安装
+## Webpack 安装
 要使用 Webpack 需要安装以下两个依赖：
 
 ```bash

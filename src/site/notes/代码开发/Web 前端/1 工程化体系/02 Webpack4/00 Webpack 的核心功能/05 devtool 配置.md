@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/00 Webpack 的核心功能/05 devtool 配置/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 source map
+## source map
 前端发展到现在，很多时候都不能直接运行源代码，可能需要对源代码进行合并、压缩、转换等操作，真正运行的是转换后的代码。
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/1%20%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%BD%93%E7%B3%BB/02%20Webpack4/00%20Webpack%20%E7%9A%84%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD/_assets/1693967514169-dbd15339-a596-4212-b55b-a65c1446caff.png)
@@ -25,7 +23,7 @@ source map 实际是一个配置，配置中不仅记录了所有源码内容，
 
 2、source map 不应该在生产环境中使用，source map 的文件一般较大，不仅会导致额外的网络传输，还容易暴露原始代码。即便要在生产环境中使用 source map，用于调试真实的代码运行问题，也要做出一些处理规避网络传输和代码暴露的问题。
 
-## 🔢 Webpack 中的 source map
+## Webpack 中的 source map
 Webpack 也会把源代码进行编译压缩，同样也是无法进行调试的。
 
 所以，Webpack 提供给了 devtool 这个属性让我们配置 source map：

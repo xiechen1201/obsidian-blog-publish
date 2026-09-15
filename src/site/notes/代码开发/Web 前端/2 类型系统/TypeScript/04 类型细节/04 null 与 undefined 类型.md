@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/04 类型细节/04 null 与 undefined 类型/","dg-note-properties":{}}
 ---
 
----
----
 在 JavaScript 中`null`和`undefined`都表示缺少什么，TypeScript 也支持这两个值，并且都有各自类型，类型的名称就是`null`和`undefined`。
 
 这两个类型比较特殊，在 TS 中`undefined`类型只有`undefined`一个值，`null`类型也只有`null`一个值。

@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/00 包管理器/02 pnpm/","dg-note-properties":{}}
 ---
 
----
----
 pnpm 也是一种包管理器，相比 npm 和 yarn，pnpm 具有以下优势：
 
 1、安装效率高于 npm 和 yarn

@@ -2,16 +2,14 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/17 Draggable API/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 可拖动能力
+## 可拖动能力
 默认情况下，图片、链接和文本是可拖动的，无需任何的代码就可以拖动。如果要让其他元素也可以进行拖动，那么就必须给元素设置一个 HTML5 的属性`draggable`属性，表示是否可以进行拖动。
 
 ```html
 <div draggable="true">...</div>
 ```
 
-## 🔢 拖放事件
+## 拖放事件
 Draggable 事件的关键是要分清楚每个事件在哪里触发，有的事件发生在「被拖动元素」上，有的事件则发生在「放置目标」上。
 
 在某个元素被拖动的时候，会按顺序执行以下事件：
@@ -85,7 +83,7 @@ targetBox.addEventListener("drop", targetEvent);
 
 <br/>
 
-## 🔢 自定义放置目标
+## 自定义放置目标
 默认情况下，一个`<div>`元素不会被视作为是一个「有效的放置目标」。
 
 <br/>tips
@@ -121,7 +119,7 @@ targetBox.addEventListener("drop", targetEvent);
 
 以上代码新增了一个`targetEnterOverEvent`方法，专门用于覆盖`dragenter`和`dragover`事件的默认行为，这样就成功触发了`drop`事件。
 
-## 🔢 dataTransfer 对象
+## dataTransfer 对象
 为了实现再拖放过程中数据的传递，HTML5 将`dataTransfer`对象纳入了标准，用于从被拖动元素到目标元素传递字符串数据。
 
 `dataTransfer`对象有两个主要的方法：`getData()`和`setData()`，分别用于获取值和设置值。

@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/03 Storage/","dg-note-properties":{}}
 ---
 
----
----
 HTML5 Web 存储是一个比 Cookie 更好的本地存储方式。
 
 客户端存储数据的两个对象为：
@@ -12,7 +10,7 @@ LocalStorage 用于长久保存整个网站的数据，保存的数据没有过�
 
 SessionStorage 用于临时保存同一窗口（或标签页）的数据，在关闭窗口或标签页之后将会删除这些数据。
 
-## 🔢 Storage 对象
+## Storage 对象
 `Storage`是一个构造函数，该构造函数有以下几个原型方法：
 
 - `getItem(name)`取得给定`name`的值；
@@ -23,7 +21,7 @@ SessionStorage 用于临时保存同一窗口（或标签页）的数据，在�
 
 实例化对象本身还有一个`length`属性，通过该属性可以确定`Storage`对象中保存了多少名/值对。但是无法确定对象中所有数据占用的空间大小。
 
-## 🔢 localStorage
+## localStorage
 作为在客户端持久存储数据的机制，要访问同一个`localStorage`对象，页面必须来自同一个域（子域不可以）、在相同的端口上使用相同的协议。
 
 因为`localStorage`对象是`Storage`对象的实例对象，所以可以通过`Storage`的原型方法操作数据。
@@ -36,7 +34,7 @@ localStorage.setItem("name", "Nicholas");
 localStorage.getItem("name");
 ```
 
-## 🔢 sessionStorage
+## sessionStorage
 `sessionStorage`对象只存储会话数据，这意味着数据只会存储到浏览器或者页面关闭。
 
 因为`sessionStorage`对象与服务器会话紧密相关，所以在运行本地文件时不能使用。存储在`sessionStorage`对象中的数据只能由最初存储数据的页面使用，在多页应用程序中的用处有限。
@@ -53,7 +51,7 @@ sessionStorage.setItem("name", "Nicholas");
 sessionStorage.getItem("name");
 ```
 
-## 🔢 存储事件
+## 存储事件
 每当`Storage`对象发生变化时，都会在文档上触发`window`对象的`storage`事件。
 
 这个事件有以下 4 个属性：
@@ -76,7 +74,7 @@ window.addEventListener("storage", (event) => {
 
 <br/>
 
-## 🔢 Cookie 与 Storage 对象的区别
+## Cookie 与 Storage 对象的区别
 |  | Cookie | LocalStorage | SessionStorage |
 | --- | --- | --- | --- |
 | 大小 | 约 4k | 约 10M | 约 5M |

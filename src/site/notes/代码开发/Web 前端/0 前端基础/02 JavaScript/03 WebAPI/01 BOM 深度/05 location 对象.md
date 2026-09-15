@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/01 BOM 深度/05 location 对象/","dg-note-properties":{}}
 ---
 
----
----
 `window.location`表示当前页面的`URL`信息。
 
 ```js
@@ -12,7 +10,7 @@ window.location;
 location;
 ```
 
-## 🔢 简单认识 URL
+## 简单认识 URL
 先简单对`URL`进行认识。
 
 `URL（uniform resource locator）`：统一资源定位器。
@@ -33,7 +31,7 @@ www.baidu.com 域名
 #hash 哈希值（这里没有用到）
 ```
 
-## 🔢 属性
+## 属性
 `window.location`通过相应的属性可以获得`URL`信息
 
 | 属性 | 说明 |
@@ -61,7 +59,7 @@ window.location.protocol = "https://"; // 设置
 > 用更改`hash`更改后不会刷新页面的特性还可以实现单页面应用（`SPA：Single-page Application`），简单说就是实际上只有一个页面来模拟多个页面之间的切换。
 >
 
-## 🔢 方法
+## 方法
 | 方法 | 说明 |
 | --- | --- |
 | `assign()` | 更改`URL`地址，一般用`window.location.href = "xxx"`代替 |

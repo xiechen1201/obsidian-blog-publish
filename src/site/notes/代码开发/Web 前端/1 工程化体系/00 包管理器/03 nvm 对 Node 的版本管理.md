@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/00 包管理器/03 nvm 对 Node 的版本管理/","dg-note-properties":{}}
 ---
 
----
----
 nvm 是一个用于管理 Node 版本的工具。
 
 在实际的开发中，可能会出现多个项目分别使用的是不同的 Node 版本，在这种场景下，管理不同的 Node 版本就显得尤为重要。

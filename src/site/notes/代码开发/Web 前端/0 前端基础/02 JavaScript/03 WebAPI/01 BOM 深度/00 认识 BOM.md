@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/01 BOM 深度/00 认识 BOM/","dg-note-properties":{}}
 ---
 
----
----
 我们都知道`JavaScript`是由：`ECMAScript`、`DOM`和`BOM`三大部分组成的。
 
 而`BOM`表示`Browser Object Model`浏览器对象模型。

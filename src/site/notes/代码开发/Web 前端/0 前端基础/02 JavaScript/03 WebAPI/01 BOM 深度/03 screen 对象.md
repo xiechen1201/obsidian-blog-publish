@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/01 BOM 深度/03 screen 对象/","dg-note-properties":{}}
 ---
 
----
----
 `window.screen`表示浏览器窗口外面的客户端显示器的信息。
 
 因大部分属性只支持`IE`浏览器，所以不常用。

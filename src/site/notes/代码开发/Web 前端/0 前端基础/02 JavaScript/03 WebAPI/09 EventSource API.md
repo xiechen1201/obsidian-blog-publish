@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/09 EventSource API/","dg-note-properties":{}}
 ---
 
----
----
 EventSource API 是和 WebSocket API 功能很类似的一个 API，其支持客户端通过一个 HTTP 连接接收服务器的实时更新。
 
 <br/>tips
@@ -39,7 +37,7 @@ eventSource.onerror = error => {
 eventSource.close()
 ```
 
-## 🔢 服务端实现
+## 服务端实现
 服务端向客户端发送数据，必须是 UTF-8 的编码，且具有以下的响应头：
 
 ```http

@@ -2,15 +2,13 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/02 CSS 工程化/03 结合 PostCSS 使用/","dg-note-properties":{}}
 ---
 
----
----
 到目前为止可以看得出，CSS 工程化面临着许多的问题，而解决这些问题的方案有多种多样，就是没有一个统一的、且几乎完美的解决方案。
 
 既然有这么多的问题需要处理，为何不出一个工具来集中处理呢？
 
 于是 PostCSS 就基于这个理念出现了。
 
-## 🔢 什么是 PostCSS？
+## 什么是 PostCSS？
 官方网站：
 
 [PostCSS - a tool for transforming CSS with JavaScript](https://postcss.org/)
@@ -29,7 +27,7 @@ Less 和 Sass 同样可以通过自己的 CLI 命令把源码进行转换。
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/1%20%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%BD%93%E7%B3%BB/02%20Webpack4/02%20CSS%20%E5%B7%A5%E7%A8%8B%E5%8C%96/_assets/1695697362642-e6cd1dab-b0e8-4ba6-8091-6cb02e76734b.png)
 
-## 🔢 使用 PostCSS
+## 使用 PostCSS
 要使用 PostCSS 肯定要进行安装：
 
 ```bash
@@ -58,7 +56,7 @@ module.exports = {
 
 ![配置之后](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/1%20%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%BD%93%E7%B3%BB/02%20Webpack4/02%20CSS%20%E5%B7%A5%E7%A8%8B%E5%8C%96/_assets/1695697978377-e2f86913-f508-4d24-ade4-9215d2f507ca.png)
 
-## 🔢 使用插件
+## 使用插件
 PostCSS 的强大之处就是插件的生态笔比较好，所以我们要发挥它的作用，使用一些插件。
 
 PostCSS 的插件市场：
@@ -67,7 +65,7 @@ PostCSS 的插件市场：
 
 以下是一些常用的的 PostCSS 插件：
 
-## 🔢 postcss-preset-env
+## postcss-preset-env
 在过去没有使用 PostCSS 的时候，往往会使用大量的插件来解决一些问题，这样就导致需要安装非常多的插件、配置插件非常的麻烦。
 
 postcss-preset-env 是一个 PostCSS 的预设环境，大概意思就是它集合了非常多常用的插件，并帮我们完成了基本的配置，我们只需要安装这一个插件即可，就好比安装了一堆插件！
@@ -89,7 +87,7 @@ module.exports = {
 
 ```
 
-## 🔢 自动添加厂商前缀
+## 自动添加厂商前缀
 某些情况下，我想要使用新的 CSS 功能需要在旧版本浏览器进行兼容，就需要添加一些厂商前嘴来获得支持，例如：
 
 ```css
@@ -183,7 +181,7 @@ not ie <= 8
 
 我们可以通过网站 [https://browserl.ist/](https://gitee.com/link?target=https%3A%2F%2Fbrowserl.ist%2F) 对配置结果覆盖的浏览器进行查询，查询时，多行之间使用英文逗号分割。
 
-## 🔢 未来 CSS 语法
+## 未来 CSS 语法
 CSS 的某些前沿语法正在制定过程中，没有形成真正的标准，如果希望使用这部分语法，为了浏览器兼容性，需要进行编译， postcss-preset-env 已经包含了这部分的插件。
 
 我们可以通过 postcss-preset-env 的 stage 属性配置，告知 postcss-preset-env 需要对哪个阶段的 CSS 语法进行兼容处理，它的默认值为 2。
@@ -210,7 +208,7 @@ module.exports = {
 
 这样尽管某些语法仍处于非常早期的阶段，但是有该插件存在，编译后仍然可以被浏览器识别。
 
-## 🔢 在 Webpack 中使用 PostCSS
+## 在 Webpack 中使用 PostCSS
 1、安装
 
 ```bash

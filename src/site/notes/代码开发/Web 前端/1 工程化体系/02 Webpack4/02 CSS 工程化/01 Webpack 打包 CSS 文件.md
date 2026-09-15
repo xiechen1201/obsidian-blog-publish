@@ -2,11 +2,9 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/02 CSS 工程化/01 Webpack 打包 CSS 文件/","dg-note-properties":{}}
 ---
 
----
----
 要在 Webpack 中打包 CSS 代码，就需要也把 CSS 文件视作一个模块，然后通过相关的 Loader 或者 Plugin 来进程处理，因为 Webpack 本身是可以读取文件内容的，但是无法把 CSS 代码转换为 AST 语法树。
 
-## 🔢 css-loader
+## css-loader
 css-loader 的作用就是把 CSS 代码转换为 JS 的代码，处理原理很简单，就是把 CSS 代码作为字符串返回。
 
 例如：
@@ -193,7 +191,7 @@ module.exports = {
 
 那么，css-loader 只返回了一个数组，如何应用到页面上呢？这就需要用到第二个 Loader 了：style-loader!
 
-## 🔢 style-loader
+## style-loader
 由于 css-loader 仅提供了将 CSS 转换为字符串导出的能力，剩余的事情要交给其他 Loader 或 Plugin 来处理。
 
 style-loader 可以将 css-loader 转换后的代码进一步处理，将 css-loader 导出的字符串加入到页面的style 元素中。
@@ -249,7 +247,7 @@ module.exports = {
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/1%20%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%BD%93%E7%B3%BB/02%20Webpack4/02%20CSS%20%E5%B7%A5%E7%A8%8B%E5%8C%96/_assets/1695632761462-f9851aaf-1ba6-42c7-bb90-e955ac3eb0f2.png)
 
-## 🔢 开启 css module
+## 开启 css module
 上一章我们简单提了一下 css module 功能，下面就详细看看如何使用。
 
 css-loader 默认就支持 css-module，只要给它传递一个`modules: true`的属性即可开启。
@@ -362,7 +360,7 @@ for (const key in style) {
 
 依然是正常执行！
 
-## 🔢 其他操作
+## 其他操作
 某些类名是全局的、静态的，不需要进行转换，仅需要在类名位置使用一个特殊的语法即可：
 
 ```css
@@ -392,7 +390,7 @@ for (const key in style) {
 
 <br/>
 
-## 🔢 使用预处理器 Less
+## 使用预处理器 Less
 因为预处理 Less 的文件是一个 .less 的后缀名，Webpack 解析的时候又不知道如何解析为 AST 了，需要 Less 为我们提供了对应的 less-loader 专门用来出来 less 文件。
 
 1、安装

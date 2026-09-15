@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/14 FormData 上传文件/","dg-note-properties":{}}
 ---
 
----
----
 提到文件上传就不得不表单的`input`，`input`标签的属性`type="file"`的时候表示标签这是一个文件上传的表单项
 
 ```html
@@ -64,7 +62,7 @@
   </form>
 ```
 
-## 🔢 FromData()
+## FromData()
 以上都是基于`form`进行的表单上传文件然后同步提交数据，而现在我们开发的时候基本上都是异步请求，那么如何使用`Ajax`进行上传文件呢？
 
 再说`Ajax`上传文件之前，我们必须要认识一个构造函数`FormData()`。
@@ -110,7 +108,7 @@ console.log(formData.get('user'));
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1660285215563-0d819696-6f48-49b6-80ce-e359b96a299a.png)
 
-## 🔢 Ajax 上传文件
+## Ajax 上传文件
 接着上面的文件上传，我们需要有一个`input`来选择文件
 
 ```html

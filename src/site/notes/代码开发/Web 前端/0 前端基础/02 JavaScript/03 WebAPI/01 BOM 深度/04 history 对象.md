@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/01 BOM 深度/04 history 对象/","dg-note-properties":{}}
 ---
 
----
----
 `window.history`表示浏览器当前窗口访问的历史纪录
 
 ```js

@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/04 类型细节/06 never 类型/","dg-note-properties":{}}
 ---
 
----
----
 `never`类型表示从不，绝不的意思，我们之前在交叉类型中见到过这个类型：
 
 ```ts

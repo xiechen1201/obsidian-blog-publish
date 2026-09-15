@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/02 CSS 工程化/02 抽离 CSS 文件/","dg-note-properties":{}}
 ---
 
----
----
 当目前为止，我的 CSS 文件作为模块依赖都是被打包到 JS 文件内部的，最后再由 style-loader 动态的添加到页面上去。
 
 然而，某些情况下我们希望能够把 CSS 代码单独提取出来一个 .css 文件，这就需要使用 mini-css-extract-plugin 插件了。

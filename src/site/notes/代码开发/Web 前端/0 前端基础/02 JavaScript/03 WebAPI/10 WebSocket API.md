@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/10 WebSocket API/","dg-note-properties":{}}
 ---
 
----
----
 WebSocket 的目标是通过一个长时连接实现和服务器的全双工、双向的通信。
 
 | 模式 | 特点 |
@@ -18,7 +16,7 @@ WebSocket 的目标是通过一个长时连接实现和服务器的全双工、�
 
 因为 WebSocket 使用了自定义协议，所以 URL 也不能使用 `http://`或`https://` 的协议，而是使用`ws://`或`wss://`。
 
-## 🔢 创建使用
+## 创建使用
 要使用 WebSocket 需要先进行实例化对象并传入连接：
 
 ```js
@@ -45,7 +43,7 @@ let socket = new WebSocket("ws://www.example.com/server.php");
 
 在上述的任何阶段都可以调用`.close()`方法关闭 WebSocket 的连接。
 
-## 🔢 发送和接收数据
+## 发送和接收数据
 在创建 WebSocket 连接后可以通过连接发送和接收数据。
 
 要发送数据需要调用`.send()`方法并传入一个字符串、ArrayBuffer 或者 Blob。示例：
@@ -71,7 +69,7 @@ socket.onmessage = function(event) {
 };
 ```
 
-## 🔢 其他事件
+## 其他事件
 Websocket 对象在连接生命周期中可能触发 3 个其他事件：
 
 - `open`，连接成功建的时候触发；

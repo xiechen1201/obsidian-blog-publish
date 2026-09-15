@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/04 性能优化/10 运行-ESlint/","dg-note-properties":{}}
 ---
 
----
----
 ESlint 是一个代码风格检查工具，当我们书写的代码不满足 ESlint 规则的时候它就会抛出警告或错误。
 
 [检测并修复 JavaScript 代码中的问题。 - ESLint - 插件化的 JavaScript 代码检查工具](https://zh-hans.eslint.org/)
@@ -12,7 +10,7 @@ ESlint 是一个代码风格检查工具，当我们书写的代码不满足 ESl
 
 ESlint 不会影响代码的执行，只是会对代码的书写风格进行检查，所以本文和 Webpack 的关系不大！
 
-## 🔢 使用
+## 使用
 ESlint 通常配合编辑器使用：
 
 1、在 VSCode 中安装 ESlint 的插件
@@ -41,7 +39,7 @@ $ npm init @eslint/config
 $ npx eslint --init
 ```
 
-## 🔢 配置
+## 配置
 例如下面是我默认生成的配置文件：
 
 ```js
@@ -71,13 +69,13 @@ module.exports = {
 };
 ```
 
-## 🔢 env
+## env
 改属性配置的是代码的执行环境。
 
 - browser：代码是否在浏览器环境中运行；
 - es6：是否启用 ES6 的全局 API，例如 Promise 等；
 
-## 🔢 parserOptions
+## parserOptions
 该属性配置指定 eslint 对哪些语法的支持。
 
 - ecmaVersion: 支持的 ES 语法版本
@@ -85,12 +83,12 @@ module.exports = {
     - script：传统脚本
     - module：模块化脚本
 
-## 🔢 parser
+## parser
 ESlint 的工作原理是先将代码进行解析，然后按照规则进行分析。
 
 ESlint 默认使用 Espree 作为其解析器，你可以在配置文件中指定一个不同的解析器，例如对 React、TypeScript 进行单独的解析器解析。
 
-## 🔢 globals
+## globals
 改属性用于配置可以使用的额外的全局变量。
 
 ```js
@@ -115,7 +113,7 @@ ESlint 支持注释形式的配置，在代码中使用下面的注释也可以�
 /* global var3:writable, var4:writable */
 ```
 
-## 🔢 extends
+## extends
 改属性配置要继承哪些库的配置，值为字符串或者数组。
 
 继承一些已经配置好的规则，不需要自己手动一个一个的进行配置
@@ -126,7 +124,7 @@ ESlint 支持注释形式的配置，在代码中使用下面的注释也可以�
 }
 ```
 
-## 🔢 ignorePatterns
+## ignorePatterns
 改属性配置忽略对哪些目录和文件的检查。
 
 或者新建一个 .eslintignore 文件，他们遵循同样的语法。
@@ -144,7 +142,7 @@ ESlint 支持注释形式的配置，在代码中使用下面的注释也可以�
 
 [忽略文件 - ESLint - 插件化的 JavaScript 代码检查工具](https://zh-hans.eslint.org/docs/latest/use/configure/ignore)
 
-## 🔢 rules
+## rules
 该属性配置 ESlint 的规则集。
 
 每条规则影响某个方面的代码风格。

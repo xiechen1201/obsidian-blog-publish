@@ -2,11 +2,9 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/16 Clipboard API/","dg-note-properties":{}}
 ---
 
----
----
 Clipboard API 的目的是为了取代旧的`document.execCommand()`操作剪贴板。
 
-## 🔢 权限
+## 权限
 犹豫剪贴板涉及用户的隐私，因此通常都需要用户进行授权才可以进行使用。
 
 剪贴板权限可以分为两部分：
@@ -48,7 +46,7 @@ navigator.permissions.query({
 }).then(({ state }) => console.log(state));
 ```
 
-## 🔢 读写文本
+## 读写文本
 文本是剪贴板最常见的格式，Clipboard API 提供了`readText()`和`writeText()`方法来进行操作文本的读取和写入。
 
 ```js
@@ -61,7 +59,7 @@ navigator.clipboard.writeText("Put this in the clipboard").then(() => {
 });
 ```
 
-## 🔢 剪贴板事件
+## 剪贴板事件
 当用户通过设备进行剪切、复制或者粘贴的时候，我们可以监听`cut`、`copy`和`paste`事件来执行某些操作。
 
 这些事件都会冒泡，因此可以绑定到`document`对象上进行监听：
@@ -71,7 +69,7 @@ document.addEventListener("copy", async () => {
   console.log("Copied text:", await navigator.clipboard.readText()); });
 ```
 
-## 🔢 处理非文本数据
+## 处理非文本数据
 对于非文本数据，Clipboard API 提供了`read()`和`write()`方法。这两个方法是处理数据的通用方法，需要使用 ClipboardItem 来组织数据数组，返回一个状态的 Promise。
 
 ClipboardItem 是一个构造函数，接收一个数据对象作为参数，对象使用 MIME 类型作为 Key，实际的值作为 Value。

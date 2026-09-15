@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/04 类型细节/07 any 和 unknown 类型/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 any 类型
+## any 类型
 在 TS 中，编译的时候一定要有类型，如果 TS 无法确定一个变量的类型是什么，则默认为`any`类型。这就是兜底的类型，相当于回归于 JS 的弱类型状态，是 TS 中所有类型的“教父”。
 
 ```ts
@@ -54,7 +52,7 @@ anyVar.foo.bar.fn();
 anyVar[0][1][2].prop;
 ```
 
-## 🔢 unknown 类型
+## unknown 类型
 在一些情况下，如果确实无法预知一个值的类型，不要使用`any`类型，更合理的是使用`unknown`类型。
 
 `unknown`类型也表示任何值。`unknown`就像`any`一样，能够被赋值为任意类型的值：

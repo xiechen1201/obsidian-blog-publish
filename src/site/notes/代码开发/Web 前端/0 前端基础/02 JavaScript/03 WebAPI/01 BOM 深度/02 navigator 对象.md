@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/01 BOM 深度/02 navigator 对象/","dg-note-properties":{}}
 ---
 
----
----
 `window.navigator`表示浏览器信息
 
 ```js
@@ -12,7 +10,7 @@ window.navigator;
 navigator;
 ```
 
-## 🔢 属性
+## 属性
 `navigator`常用的属性
 
 | 属性 | 说明 |
@@ -30,7 +28,7 @@ navigator;
 | geolocation | 返回设备的地理位置 |
 | watchPosition | 和`geolocation`一样获取设备地位位置，不同的是在设备的地理位置发生改变的时候自动被调用。 |
 
-## 🔢 userAgent
+## userAgent
 ```js
 console.log(navigator);
 console.log(navigator.userAgent);
@@ -210,7 +208,7 @@ function checkBrowser(){
 }
 ```
 
-## 🔢 geolocation
+## geolocation
 `geolocation.getCurrentPosition()`方法可以获取设备的地理位置，在电脑浏览器中，因为电脑没有`GPS`的装置，所以会去`Google`地图查询你的定位，所以需要科学上网！
 
 ```js
@@ -229,7 +227,7 @@ window.navigator.geolocation.getCurrentPosition((e) => {
 });
 ```
 
-## 🔢 方法
+## 方法
 常用的方法：
 
 | 方法 | 说明 |

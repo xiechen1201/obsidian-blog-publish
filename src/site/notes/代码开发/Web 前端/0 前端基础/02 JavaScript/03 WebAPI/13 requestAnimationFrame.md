@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/13 requestAnimationFrame/","dg-note-properties":{}}
 ---
 
----
----
 早期在 JS 中制造动画通常需要使用`setInterval()`来控制动画执行。
 
 ```js
@@ -21,7 +19,7 @@ setInterval(updateAnimations, 100);
 
 使用`setInterval()`虽然可以实现动画了，但是并不能保证「时间精度」。`setInterval()`的第二个参数只能保证什么时候把回调函数添加到浏览器的「任务队列」中去，而不能保证添加到队列后会立即运行。如果队列中有其他任务，那么这个定时任务就得需要进行排队。
 
-## 🔢 时间间隔问题
+## 时间间隔问题
 
 知道什么时候绘制下一帧是创建平滑动画的关键。
 
@@ -34,7 +32,7 @@ setInterval(updateAnimations, 100);
 
 IE9 之前版本的精度是 15.625 毫秒，这就意味着 0~15 范围内的任何值最终要么是 0，要么是 15，不可能是别的数。IE9 把计时器的进度改为为 4 毫秒，但这对于动画而言还是不够精准。更麻烦的是，浏览器对于切换到后台或者不活跃的 Tab 标签页中的计时器执行限流，所以就算把间隔时间设置为最优，也避免不了类似的结果。
 
-## 🔢 requestAnimationFrame
+## requestAnimationFrame
 `requestAnimationFrame()`方法源自于 Mozilla。其核心原理是浏览器知道 CSS 的过渡动画应该什么时候开始，并计算出正确的时间间隔。那么对于 JS 只需要让浏览器在开始执行动画的时候“通知” JS 就可以了，这样浏览器就可以再运行某些代码的时候进行适当的优化。
 
 `requestAnimationFrame()`方法接收一个参数，这个参数是一个要在屏幕重绘前调用的函数（一般是绘制动画的函数）。
@@ -71,7 +69,7 @@ requestAnimationFrame(updateProgress);
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1773746545555-080e8aab-316e-4d3a-aa7d-e1933d924770.png)
 
-## 🔢 cancelAnimationFrame
+## cancelAnimationFrame
 和定时器函数一样，`requestAnimationFrame()`方法也会返回一个请求 ID，调用`cancelAnimationFrame()`并传入 ID 可以取消重绘任务。
 
 ```js
@@ -81,7 +79,7 @@ let requestID = window.requestAnimationFrame(() => {
 window.cancelAnimationFrame(requestID);
 ```
 
-## 🔢 通过 requestAnimationFrame 节流
+## 通过 requestAnimationFrame 节流
 requestAnimationFrame 不只是一个动画执行的 API，在浏览器的内部，其实有一个「回调函数列表」，浏览器在每一帧准备绘制页面之前，都会把这个列表中的函数全部执行一遍。
 
 每次调用`requestAnimationFrame(fn)`的时候其实就是往这个列表中添加一个`fn`函数，然后等待浏览器要开始重新绘制的时候，再把列表中的`fn`都清空。

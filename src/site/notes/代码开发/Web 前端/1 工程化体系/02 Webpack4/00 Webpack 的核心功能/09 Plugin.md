@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/00 Webpack 的核心功能/09 Plugin/","dg-note-properties":{}}
 ---
 
----
----
 前面学习的 Loader 的定位是转换代码，当有一些其他操作的时候 Loader 就无能为力了，例如：
 
 - 当 Webpack 生成文件的时候，顺便多生成一个说明的描述文件
@@ -12,7 +10,7 @@
 
 而这种类似的功能就需要借助 Webpack 的另外一个概念 Plugin！Plugin 可以简单的理解为在 Webpack 某个事件触发后干什么事情。
 
-## 🔢 Plugin 的基本写法
+## Plugin 的基本写法
 回顾前面前面学习过的 Webpack 编译过程，编译过程分为 3 步：初始化、编译、输出。
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/1%20%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%BD%93%E7%B3%BB/02%20Webpack4/00%20Webpack%20%E7%9A%84%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD/_assets/1694571607760-760ef42d-cda3-428b-b61d-c820b9657a60.png)
@@ -53,7 +51,7 @@ module.exports = {
 }
 ```
 
-## 🔢 Compiler && Compilation 对象
+## Compiler && Compilation 对象
 `apply`函数会在初始化阶段创建一个`compiler`对象后执行。
 
 `compiler`对象是在初始阶段被创建的，整个 Webpack 打包的过程中只有一个`compiler`对象，后续完成打包工作的是`compiler`对象内部创建的`compilation`。
@@ -93,7 +91,7 @@ $ npx webpack
 
 可以看到`console.log("MyPlugin 被执行了");`只会被执行一次！
 
-## 🔢 事件
+## 事件
 `compiler`对象提供了大量的钩子函数（`hooks`，可以理解为事件），开发者可以注册这些钩子函数，参与 Webpack 编译和生成。
 
 可以在`apply`方法中使用下面的代码注册钩子函数：
@@ -184,7 +182,7 @@ class MyPlugin {
 
 [compilation 钩子](https://v4.webpack.docschina.org/api/compilation-hooks/)
 
-## 🔢 案例
+## 案例
 例如我们想要实现一个插件，插件的功能就是在 Webpack 打包完成后多出一个文件，里面记录了文件 dist 目录下的文件名称和文件的大小。
 
 新建一个 plugins/FileListPlugin.js 文件，编写我们的代码：

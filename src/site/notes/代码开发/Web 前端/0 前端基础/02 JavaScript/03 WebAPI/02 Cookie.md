@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/02 Cookie/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 Cookie 和服务器的交互
+## Cookie 和服务器的交互
 HTTP Cookie 通常也叫作 Cookie，最初用于在客户端存储会话信息。
 
 这个规范要求服务器在响应 HTTP 请求时，通过发送 Set-Cookie 字段用来设置 Cookie 到客户端，用来标识信息等。
@@ -26,11 +24,11 @@ Cookie: name=value
 Other-header: other-header-value
 ```
 
-## 🔢 限制
+## 限制
 1. Cookie 是与特定域绑定的。设置 Cookie 后，它会与请求一起发送到创建它的域。这个限制能保证Cookie 中存储的信息只对被认可的接收者开放，不被其他域访问。
 2. Cookie 在客户端为防止被恶意利用是有大小限制的。大多数浏览器对 Cookie 的限制是不超过 4096 字节，上下可以有一个字节的误差。
 
-## 🔢 Cookie 的构成
+## Cookie 的构成
 Cookie 在浏览器中是由以下参数构成的：
 
 - name:  Cookie 的名称，不区分大小写，所以 myCookie 和 MyCookie 是同一个名称；
@@ -56,7 +54,7 @@ Set-Cookie: name=value; expires=Mon, 22-Jan-07 07:10:24 GMT; domain=wrox.com
 
 <br/>
 
-## 🔢 JavaScript 中的 Cookie
+## JavaScript 中的 Cookie
 在 JavaScript 中可以使用`document.cookie`来操作 Cookie。
 
 > 使用这种方式操作 Cookie 存在一些问题，首先就是不方便！

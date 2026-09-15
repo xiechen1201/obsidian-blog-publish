@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/03 JS 兼容性/00 Babel 的安装和使用/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 简介
+## 简介
 官方文档：
 
 [Babel · Babel](https://babeljs.io/)
@@ -23,7 +21,7 @@ Babel 和 PostCSS 一样，本身只会进行语法分析，如何转换都需�
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/1%20%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%BD%93%E7%B3%BB/02%20Webpack4/03%20JS%20%E5%85%BC%E5%AE%B9%E6%80%A7/_assets/1695782594097-327b6ce8-d887-471f-ac99-fb8947baf929.png)
 
-## 🔢 安装 & 使用
+## 安装 & 使用
 Babel 可以和构建工具结合使用，也可以通过其 CLI 进行独立使用。
 
 本文只看独立使用的情况，如果要独立使用还需要安装 Babel 的 CLI 工具：
@@ -51,7 +49,7 @@ $ babel src -d dist
 
 可以看到 Babel 转换后的代码根本没有变化，这是因为 Babel 执行的时候还要依赖 Babel 的插件和预设来协助。
 
-## 🔢 配置文件
+## 配置文件
 我们通过新建一个 babel.config.js 文件：
 
 ```js
@@ -61,7 +59,7 @@ module.exports = {
 };
 ```
 
-## 🔢 插件
+## 插件
 插件就是帮助 Babel 来完成一些事情，例如我们想要把源代码中的箭头函数进行转换：
 
 安装：
@@ -103,7 +101,7 @@ module.exports = {
 
 [Plugins List · Babel 中文文档 | Babel中文网](https://www.babeljs.cn/docs/plugins-list)
 
-## 🔢 预设
+## 预设
 预设是多个插件的集合，内部集成了很多常用的插件，不再需要我们一个一个进行手动的安装。
 
 安装：
@@ -179,7 +177,7 @@ module.exports = {
 
 可是，我们发现`Promise`这样的 API 却没有被转换，这是因为预设只会「转换语法」，而 API 是新的函数，无法进行转换，这就需要使用 Babel 的「垫片 Polyfill」概念。
 
-## 🔢 Polyfill
+## Polyfill
 什么是 Polyfill？
 
 它和插件不一样，插件能帮我们进行语法的转换，把新的语法转换为旧的语法，让各个浏览器进行兼容。

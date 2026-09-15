@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/07 Fetch API/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 Fetch 概述
+## Fetch 概述
 <br/>warning
 ⚠️ 注意
 
@@ -14,7 +12,7 @@ Fetch API 并不是 ES6 新增的，而是使用了 ES6 的 Promise API。
 
 Fetch API 就是用来进行 Ajax 请求的。
 
-## 🔢 HMLHttpRequest 的问题
+## HMLHttpRequest 的问题
 1、使用繁琐，所有的功能都全部集中在同一个对象上，容易写出混乱不易维护的代码；
 
 2、采用传统的事件驱动的模式，无法适配新的 Promise API；
@@ -42,7 +40,7 @@ xhr.onreadystatechange = function() {
 xhr.send();
 ```
 
-## 🔢 Fetch 的特点
+## Fetch 的特点
 1、并非取代`XMLHttpRequest`，而是针对 AJAX 传统 API 的优化；
 
 2、精细的功能划分：头部信息、请求信息、响应信息等分到不同的对象中去，更利于处理各种复杂的 AJAX 场景；
@@ -51,7 +49,7 @@ xhr.send();
 
 4、Fetch API 并非 ES6 的内容，属于 JavaScript 的 WebAPI；
 
-## 🔢 基本使用
+## 基本使用
 如何使用 Fetch API 进行网络请求呢？
 
 ```js
@@ -120,7 +118,7 @@ fetch('https://v.api.aa1.cn/api/bilibili-rs/')
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1722563344106-7b93ef93-04a2-4145-b7b3-092bfc439cbb.png)
 
-## 🔢 Response 对象
+## Response 对象
 上面说了，当`fetch()`请求成功返回一个状态为 fulfilled 的 Promise 对象，值为`Response`对象，下面看看该对象都有哪些属性：
 
 - `ok`：布尔值，当状态码在 200-299 之间时为`true`，否则为`false`；
@@ -173,7 +171,7 @@ async function getBilibili() {
 
 <br/>
 
-## 🔢 Request 构造函数
+## Request 构造函数
 `fetch(url, options)`内部会将两个参数进行合并并封装为一个`Request`对象，因此我们可以直接传递一个`Request`对象。
 
 ```js
@@ -221,7 +219,7 @@ if (request) {
 }
 ```
 
-## 🔢 Response 构造函数
+## Response 构造函数
 `Response`对象也可以进行手动的创建，绝大多数的时候都不需要自己手动的创建，一般测试的时候可以自己手动的创建。
 
 ```js
@@ -238,7 +236,7 @@ async function getJSON(resp) {
 
 [Response() - Web API | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Response/Response)
 
-## 🔢 Headers 对象
+## Headers 对象
 在`Request`和`Response`对象中，`headers`属性都是一个`Headers`对象。同时，我们可以直接传递一个`Headers`对象，好处在于可以实现复用。
 
 如果你在控制台中展开`headers`属性，你会发现什么都看不到：

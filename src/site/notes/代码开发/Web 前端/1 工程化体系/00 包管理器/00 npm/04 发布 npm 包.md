@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/00 包管理器/00 npm/04 发布 npm 包/","dg-note-properties":{}}
 ---
 
----
----
 准备工作：
 
 1、国内的开发者有的时候可能会使用淘宝的镜像源作为 npm 包的下载地址，所以我们要删除 npm 的 registry 属性，让其使用默认的 registry 地址。

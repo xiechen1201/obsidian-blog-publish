@@ -2,11 +2,9 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/20 IndexedDB/","dg-note-properties":{}}
 ---
 
----
----
 IndexedDB 是浏览器存储结构化数据的方案，其背后的思想是提供一套 API，方便 JavaScript 对象的存储和获取，同时也支持查询和搜索。
 
-## 🔢 数据库
+## 数据库
 
 IndexedDB 是类似于 MySQL 或 Web SQL Database 的数据库。和传统数据库的区别在于，IndexedDB 使用对象存储来保存数据，而不是使用表格。
 
@@ -36,7 +34,7 @@ openRequest.onsuccess = (event) => {
 > [!tip]
 > `open()` 方法中的版本会被转换为一个 unsigned long 数值（一种整数数据类型，常见于 C/C++、系统编程和 Web API 规范中），因此不要使用小数作为版本号。
 
-## 🔢 对象存储
+## 对象存储
 
 当和数据库建立连接之后，下一步就是使用对象存储。如果数据库的版本和期待的不一致，可能需要创建对象存储。
 
@@ -84,7 +82,7 @@ openRequest.onupgradeneeded = (event) => {
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1776932443391-2de4fb97-a418-4222-90bc-2b37a88904e5.png)
 
-## 🔢 事务
+## 事务
 
 创建对象存储之后，剩下的所有操作都是通过「事务」完成的。「事务」要通过调用数据库对象的 `transaction()` 方法创建。
 
@@ -164,7 +162,7 @@ transaction.oncomplete = (event) => {
 > [!warning]
 > 不能通过「事务」的 `oncomplete` 事件的 `event` 对象来访问 `get()` 请求返回的数据。因此，仍然需要通过 `request` 请求对象的 `onsuccess` 事件来获取数据。
 
-## 🔢 插入对象
+## 插入对象
 
 在获得对象存储的引用后，就可以调用方法写入数据了。
 
@@ -184,7 +182,7 @@ request.onsuccess = () => {
 };
 ```
 
-## 🔢 通过游标查询
+## 通过游标查询
 
 使用事务可以通过一个已知的键来获取一条记录。如果要获取多条数据，则需要在事务中创建一个「游标」。游标是一个指向结果集的指针。
 
@@ -300,7 +298,7 @@ request.onsuccess = (event) => {
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1779088774223-fc232d70-0bef-4bb1-ab88-a731e33a4c09.png)
 
-## 🔢 键范围
+## 键范围
 
 使用键范围可以让游标更容易管理。键范围对应 `IDBKeyRange` 的实例，有 4 种方式指定键范围。
 
@@ -397,7 +395,7 @@ openRequest.onsuccess = (event) => {
 
 不再查询到 `"007"`。
 
-## 🔢 设置游标方向
+## 设置游标方向
 
 `openCursor()` 方法实际上可以接收两个参数，一个是 `IDBKeyRange` 实例（游标范围），另外一个是表示方向的字符串。
 
@@ -427,7 +425,7 @@ openRequest.onsuccess = (event) => {
 objectStore.openCursor(boundRange, "prevunique");
 ```
 
-## 🔢 索引
+## 索引
 
 对于某些数据集，可能需要给对象存储指定多个 key。如果同时记录了用户 ID 和用户名，那么可能需要通过任何一种方式来获取用户数据。
 
@@ -454,7 +452,7 @@ openRequest.onupgradeneeded = (event) => {
 
 该方法返回的是 `IDBIndex` 实例对象，在对象存储上调用 `index()` 可以得到同一个实例。
 
-## 🔢 并发问题
+## 并发问题
 
 IndexedDB 虽然是网页中的异步 API，但是依然存在并发问题。
 
@@ -474,13 +472,13 @@ openRequest.onsuccess = (event) => {
 
 这样就可以更好地处理 IndexedDB 相关的并发问题。
 
-## 🔢 限制
+## 限制
 
 IndexedDB 和 Web Storage 一样，数据库和页面同源绑定，所以信息不能跨域。
 
 其次，每个源可以存储的空间比 Web Storage 大很多。Chromium 系浏览器允许所有域使用 80% 的磁盘空间，单个域使用 60% 的磁盘空间（每个浏览器不同）。
 
-## 🔢 包装库
+## 包装库
 
 很少有程序员直接操作 IndexedDB API。像 Dexie.js 这样的包装库可以简化很多 JavaScript 存储 API 过程，提供更高效的接口和存储 API 进行交互，使用起来更加方便。
 

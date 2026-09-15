@@ -2,13 +2,11 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/05 URL API/","dg-note-properties":{}}
 ---
 
----
----
 在没有 URL API 的时候，对于 URL 的解析操作都需要手动的拼接，或者通过正则进行匹配等等。
 
 有了这个 API 后操作 URL 变得非常轻松。
 
-## 🔢 URL 对象
+## URL 对象
 使用`URL()`创建一个 URL 对象，它接收两个参数。
 
 - url，字符串形式的 URL；
@@ -38,7 +36,7 @@ URL 对象提供了很多属性，用于读取或修改 URL 中的内容：
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1776771203573-0d54baac-c0c0-4d72-ae96-4677e1f14c38.png)
 
-## 🔢 URLSearchParams 对象
+## URLSearchParams 对象
 `URLSearchParams`对象提供了一组标准的 API 方法，通过它们可以检查和修改查询字符串。
 
 两种方式得到`URLSearchParams`对象：

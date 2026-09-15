@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/04 性能优化/07 传输-TreeShaking/","dg-note-properties":{}}
 ---
 
----
----
 什么是 Tree Shaking？
 
 译为“摇晃树”，就好像把树上的果子都摇晃下来一样。
@@ -51,7 +49,7 @@ module.exports = {
 
 可以看到，Webpack 只会把 add 方法进行打包却没有 sub 方法。
 
-## 🔢 原理
+## 原理
 Webpack 执行构建的时候依然是从入口模块开始解析寻找依赖关系。当解析一个模块的时候，Webpack 会根据 ESModule 导入语句进行判断，该模块依赖了另一个模块的哪个导出。
 
 Webpack 之所以能对 ESModule 进行判断是因为其具有一些的特点：
@@ -113,7 +111,7 @@ console.log(math);
 
 依赖分析完毕后，Webpack 会根据每个模块每个导出是否被使用，标记其他导出为 dead code（死代码），然后交给代码压缩工具处理，代码压缩工具最终移除掉那些 dead code 代码。
 
-## 🔢 副作用问题
+## 副作用问题
 Webpack 在进行 Tree Shaking 的时候始终遵循「一定保证代码能正常运行」的原则。
 
 在满足原则的基础上，再来决定如何进行 Tree Shaking。所以，当 Webpack 无法确定某个模块是否具有副作用的时候，它将默认认为有副作用。
@@ -204,7 +202,7 @@ var n = Math.random();
 > 这种方式我们一般不处理，通常是一些第三方库在它们自己的 package.json 中标注。
 >
 
-## 🔢 CSS Tree Shaking
+## CSS Tree Shaking
 一般来说，CSS 是无法完成 Tree Shaking 的，因为 CSS 和 ESModule 没有任何的关系，但是我们可以借助 purgecss-webpack-plugin 插件来帮助我们实现类似的效果。
 
 例如我们只使用`.box`这个选择器：

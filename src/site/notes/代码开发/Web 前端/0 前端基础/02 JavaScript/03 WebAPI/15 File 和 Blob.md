@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/15 File 和 Blob/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 File 类型
+## File 类型
 HTML5 在 DOM 上为文件输入元素添加了`files`集合。
 
 当用户在文件字段中选择一个或多个文件时，这个`files`集合中会包含一组`File`对象，表示被选中的文件。
@@ -32,7 +30,7 @@ filesList.addEventListener("change", (event) => {
 });
 ```
 
-## 🔢 FileReader 类型
+## FileReader 类型
 `FileReader`类型表示一种异步文件读取机制。可以把`FileReader`想象成类似于`XMLHttpRequest`，只不过是用于从文件系统读取文件，而不是从服务器读取数据，使用`File`或`Blob`对象指定要读取的文件或数据。
 
 `FileReader`是一个构造函数，所以使用的时候要进行实例化：
@@ -120,12 +118,12 @@ filesList.addEventListener("change", (event) => {
 });
 ```
 
-## 🔢 FileReaderSync 类型
+## FileReaderSync 类型
 顾名思义，`FileReaderSync`类型就是`FileReader`的同步版本。
 
 这个类型拥有与`FileReader`相同的方法，只有在整个文件都加载到内存之后才会继续执行。`FileReaderSync`只在工作线程中可用，因为如果读取整个文件耗时太长则会影响全局。
 
-## 🔢 Blob 与 File 截取
+## Blob 与 File 截取
 某些情况下，可能需要读取部分文件而不是整个文件。为此，`File`对象提供了一个名为`slice()`的方法。
 
 `slice()`方法接收两个参数：起始字节、要读取的字节数。该方法返回一个`Blob`的实例，而`Blob`实际上是`File`的超类。
@@ -183,7 +181,7 @@ filesList.addEventListener("change", (event) => {
 
 只读取部分文件可以节省时间，特别是在只需要数据特定部分比如文件头的时候。
 
-## 🔢 对象 URL 与 Blob
+## 对象 URL 与 Blob
 对象 URL 有时候也称作 Blob URL，是指引用存储在`File`或`Blob`中数据的 URL。
 
 对象 URL 的优点是不用把文件内容读取到 JavaScript 也可以使用文件，只要在适当位置提供对象 URL 即可。
@@ -221,7 +219,7 @@ filesList.addEventListener("change", (event) => {
 
 页面卸载时，所有对象 URL 占用的内存都会被释放。
 
-## 🔢 Blob 与 File 互转
+## Blob 与 File 互转
 `File`对象转化为`Blob`对象：
 
 ```js
@@ -279,7 +277,7 @@ console.log(file);
 </script>
 ```
 
-## 🔢 读取拖放文件
+## 读取拖放文件
 组合使用 HTML5 拖放 API 与 File API 可以创建读取文件信息的有趣功能。
 
 在页面上创建放置目标后，可以从桌面上把文件拖动并放到放置目标。这样会像拖放图片或链接一样触发`drop`事件。

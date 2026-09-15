@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/03 JS 兼容性/01 在 Webpack 中使用 Babel/","dg-note-properties":{}}
 ---
 
----
----
 在 Webpack 中使用 Babel 可以说是非常的简单，Babel 也提供了一个 babel-loader 让 Webpack 转换 JS 的代码，然后运行 babel-loader 的时候会读取 Babel 的配置文件，根据配置文件来决定如何转换 JS 代码。
 
 1、安装

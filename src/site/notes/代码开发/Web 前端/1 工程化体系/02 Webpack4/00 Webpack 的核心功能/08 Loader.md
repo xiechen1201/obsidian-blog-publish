@@ -2,11 +2,9 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/00 Webpack 的核心功能/08 Loader/","dg-note-properties":{}}
 ---
 
----
----
 Webpack 做的事情仅仅是分析各个模块的依赖关系，然后产生一个资源列表，最终打包生成到指定的文件中去。而更多的功能是需要借助 Loader 和 Plugin 来完成的！
 
-## 🔢 执行流程
+## 执行流程
 Loader 本质上就是一个普通的函数，它的作用就是把源码字符串转换为另一个源码字符串后返回！
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/1%20%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%BD%93%E7%B3%BB/02%20Webpack4/00%20Webpack%20%E7%9A%84%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD/_assets/1694401020510-35c42081-8e9c-4f75-b029-6de3917ed955.png)
@@ -25,7 +23,7 @@ Loader 会在 Webpack 的模块解析过程中被调用，然后得到最终的�
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/1%20%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%BD%93%E7%B3%BB/02%20Webpack4/00%20Webpack%20%E7%9A%84%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD/_assets/1694401204876-0c416b7d-9304-45b9-8749-05d73ebce4d9.png)
 
-## 🔢 从一行代码开始
+## 从一行代码开始
 例如我们的 ./src/index.js 文件有这么一段代码：
 
 ```js
@@ -144,7 +142,7 @@ module.exports = function (sourceCode) {
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/1%20%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%BD%93%E7%B3%BB/02%20Webpack4/00%20Webpack%20%E7%9A%84%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD/_assets/1694403927538-86156726-8039-47d2-9208-e45ff1e0e705.png)
 
-## 🔢 Loader 处理样式
+## Loader 处理样式
 我们为什么要处理样式？
 
 在传统的开发模块中都是通过 HTML 文件导入 CSS 文件，随着技术的更新出现了很多 css 的预处理器（用一种专门的编程语言，进行网页样式设计，然后再编译成正常的 CSS 文件）来提高我们的开发效率。

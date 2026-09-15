@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/01 常用拓展/01 自动生成 html 文件/","dg-note-properties":{}}
 ---
 
----
----
 到目前为止，我们生产的 dist 目录下都没有 HTML 文件，如果想要运行 JS 文件就需要我们每次手动的创建一个 HTML 文件，然后手动导入打包完成的 JS 文件，这样就会非常的麻烦。
 
 我们可以使用`html-webpack-plugin`插件来帮助我们每次打包的时候自动创建一个 HTML 文件且引入打包好的 bundle 文件。

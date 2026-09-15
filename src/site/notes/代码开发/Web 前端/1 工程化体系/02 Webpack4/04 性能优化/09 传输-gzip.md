@@ -2,13 +2,11 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/1 工程化体系/02 Webpack4/04 性能优化/09 传输-gzip/","dg-note-properties":{}}
 ---
 
----
----
 一般来说，gzip 和 Webpack 没有直接的关系，那是客户端和服务端的事情。
 
 压缩文件的格式有很多种，gzip 是其中的一种。
 
-## 🔢 B/S 结构中的压缩传输
+## B/S 结构中的压缩传输
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/1%20%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%BD%93%E7%B3%BB/02%20Webpack4/04%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/_assets/1699000488522-a20504a9-8685-4000-b6fa-27edb4770aab.png)
 
 整个过程大致如下：
@@ -21,7 +19,7 @@
 
 缺点：服务器压缩需要时间，客户端的解压需要时间。
 
-## 🔢 使用 Webpack 进行压缩
+## 使用 Webpack 进行压缩
 Webpack 的压缩只是在打包完成后对文件进行压缩，本质上就是替换了服务端压缩的时间。
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/1%20%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%BD%93%E7%B3%BB/02%20Webpack4/04%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/_assets/1699000795926-4da94c2a-07e9-4977-a0ce-96bbf3cf0f7a.png)

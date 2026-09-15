@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/04 类型细节/03 symbol 类型/","dg-note-properties":{}}
 ---
 
----
----
 `symbol`类型是 ES6 新增的一种基本数据类型。
 
 `symbol`经常用于代替对象和映射的字符串键，确保使用正确的键，以防键被意外的设置。

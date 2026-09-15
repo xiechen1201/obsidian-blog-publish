@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/0 前端基础/02 JavaScript/03 WebAPI/01 BOM 深度/01 window 对象/","dg-note-properties":{}}
 ---
 
----
----
 `BOM`的核心是`window`对象，表示浏览器的实例。`window`对象在浏览器中有两重身份，一个是`ECMAScript`中的`Global`对象，另一个就是浏览器窗口的`JavaScript`接口。这意味着网页中定义的所有对象、变量和函数都以`window`作为其`Global`对象，都可以访问其上定义的`parseInt()`等全局方法。
 
 ```js
@@ -30,7 +28,7 @@ var newValue = window.oldValue;
 
 `JavaScript`中有很多对象都暴露在全局作用域中，比如`location`和`navigator`，因而它们也是`window`对象的属性。
 
-## 🔢 浏览器窗口打开/关闭
+## 浏览器窗口打开/关闭
 
 `window.open()`用来打开一个指定`url`的窗口。
 
@@ -84,7 +82,7 @@ if(win.closed){
 }
 ```
 
-## 🔢 窗口的位置
+## 窗口的位置
 <br/>color1
 `window.moveTo(坐标x, 坐标y)`
 
@@ -98,7 +96,7 @@ win.moveTo(200, 200);
 win.moveBy(10, 10);
 ```
 
-## 🔢 窗口的关系
+## 窗口的关系
 <br/>color5
 `window.top`获取最上层窗口
 
@@ -183,8 +181,8 @@ win.moveBy(10, 10);
 
 ```
 
-## 🔢 窗口的尺寸
-## 🔢 获取
+## 窗口的尺寸
+## 获取
 <br/>color2
 `window.innerHeight/window.innerWidth`返回浏览器窗口可视窗口的高/宽度（不包含浏览器边框和工具栏）
 
@@ -205,7 +203,7 @@ window.log(window.outerHeight);
 window.log(window.outerWidth);
 ```
 
-## 🔢 操作大小
+## 操作大小
 <br/>color2
 `resizeTo(宽度值, 高度值) `
 
@@ -219,8 +217,8 @@ win.resizeTo(200, 200);
 win.resizeBy(10, 10);
 ```
 
-## 🔢 窗口的滚动距离
-## 🔢 获取
+## 窗口的滚动距离
+## 获取
 <br/>success
 `window.pageXoffset`返回浏览器`X`轴滚动的距离
 
@@ -238,7 +236,7 @@ console.log(window.pageXoffset);
 console.log(window.pageYoffset);
 ```
 
-## 🔢 操作距离
+## 操作距离
 <br/>success
 `window.scrollTo(滚动X坐标, 滚动Y坐标)`，滚动到指定位置（绝对位置）。
 
@@ -291,7 +289,7 @@ document.getElementById("target").scrollBy(0, 500);
 document.getElementById("target").scroll(0, 500);
 ```
 
-## 🔢 系统对话框
+## 系统对话框
 <br/>warning
 `window.alert("提示的内容")`
 
@@ -353,10 +351,10 @@ window.print();
 print()
 ```
 
-## 🔢 定时器
+## 定时器
 `JavaScript`在浏览器中是单线程执行的，但允许使用定时器指定在某个时间之后或每隔一段时间就执行相应的代码。
 
-## 🔢 setTimeout()
+## setTimeout()
 <br/>color3
 表示一定时间后做某事（延迟器）
 
@@ -380,7 +378,7 @@ setTimeout(function(){
 > JavaScript 是单线程的，所以每次只能执行一段代码。为了调度不同代码的执行，JavaScript 维护了一个任务队列。其中的任务会按照添加到队列的先后顺序执行。setTimeout() 的第二个参数只是告诉 JavaScript 引擎在指定的毫秒数过后把任务添加到这个队列。如果队列是空的，则会立即执行该代码。如果队列不是空的，则代码必须等待前面的任务执行完才能执行。
 >
 
-## 🔢 clearTimeout()
+## clearTimeout()
 <br/>color3
 用于取消销毁`setTimeout()`延时器
 
@@ -401,7 +399,7 @@ clearTimeout(timeoutId);
 > 所有超时执行的代码（函数）都会在全局作用域中的一个匿名函数中运行，因此函数中的 `this`值在非严格模式下始终指向 window，而在严格模式下是 undefined。如果给`setTimeout()`提供了一个箭头函数，那么`this`会保留为定义它时所在的词汇作用域。
 >
 
-## 🔢 setInterval()
+## setInterval()
 <br/>color3
 表示每隔一定时间后做某事，直到定时器被取消销毁（定时器）
 
@@ -422,7 +420,7 @@ setInterval(() => alert("Hello world!"), 10000);
 > 这里的关键点是，第二个参数，也就是间隔时间，指的是向队列添加新任务之前等待的时间。比如，调用 setInterval() 的时间为 01:00:00，间隔时间为 3000 毫秒。这意味着 01:00:03 时，浏览器会把任务添加到执行队列。浏览器不关心这个任务什么时候执行或者执行要花多长时间。因此，到了 01:00:06，它会再向队列中添加一个任务。由此可看出，执行时间短、非阻塞的回调函数比较适合 setInterval()。
 >
 
-## 🔢 clearInterval()
+## clearInterval()
 <br/>color3
 用于取消销毁`setInterval()`定时器
 

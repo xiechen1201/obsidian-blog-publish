@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/04 类型细节/02 number、bigint 与 string 类型/","dg-note-properties":{}}
 ---
 
----
----
 <br/>tips
 ❕信息
 
