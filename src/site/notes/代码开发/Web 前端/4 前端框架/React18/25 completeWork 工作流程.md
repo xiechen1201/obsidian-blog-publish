@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/react18/25-complete-work/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"//web/4/react18/25-complete-work/","tags":["gardenEntry"],"dg-note-properties":{}}
 ---
-
 
 `completeWork()` 属于“归”阶段。
 和 `beginWork()` 类似，`completeWork()` 也会会根据 wip.tag 区分对待，流程上包括两个步骤：
