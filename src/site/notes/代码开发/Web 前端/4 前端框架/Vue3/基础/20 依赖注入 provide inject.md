@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//20-provide-inject/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/20 依赖注入 provide inject/","dg-note-properties":{}}
 ---
 
 provide 意为「提供」，inject 意为「注入」，它们主要通过 provide 在组件内部提供一个子组件能够访问的数据，然后子组件通过 inject 在内部注入数据。

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/react18/21-message-channel/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/React18/21 MessageChannel/","dg-note-properties":{}}
 ---
 
 我们在学习「事件循环」的时候可能都接触过下面的这个图：

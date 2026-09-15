@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//39-ref/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/39 【实现】模拟 Ref 依赖收集/","dg-note-properties":{}}
 ---
 
 现在有这么一道题目：

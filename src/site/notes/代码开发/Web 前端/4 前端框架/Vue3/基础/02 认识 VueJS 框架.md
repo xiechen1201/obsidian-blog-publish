@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//02-vue-js/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/02 认识 VueJS 框架/","dg-note-properties":{}}
 ---
 
 [Vue.js - 渐进式 JavaScript 框架 | Vue.js](https://cn.vuejs.org/)

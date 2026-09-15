@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/react18/20-fiber/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/React18/20 Fiber 双缓冲/","dg-note-properties":{}}
 ---
 
 ## 对 Fiber 的理解

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//37-api-next-tick/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/37 【组合式 API】nextTick/","dg-note-properties":{}}
 ---
 
 无论是选项式 API 还是组合式 API 我们能可以通过 Ref 来拿到元素或组件的引用。

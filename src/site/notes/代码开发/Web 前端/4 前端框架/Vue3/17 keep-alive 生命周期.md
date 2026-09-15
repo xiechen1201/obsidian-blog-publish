@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3/17-keep-alive/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/17 keep-alive 生命周期/","dg-note-properties":{}}
 ---
 
 ## 🔢 基本使用

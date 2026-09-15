@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//33-api/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/33 【组合式 API】生命周期/","dg-note-properties":{}}
 ---
 
 本篇我们将把 Vue2 和 Vue3 的生命周期函数进行对比，以下是 Vue2 整个生命周期的执行过程：

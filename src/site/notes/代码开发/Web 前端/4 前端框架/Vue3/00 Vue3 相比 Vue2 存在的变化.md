@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3/00-vue3-vue2/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/00 Vue3 相比 Vue2 存在的变化/","dg-note-properties":{}}
 ---
 
 关于这个话题，官方也给出了一份 Vue2 迁移到 Vue3 的指南，[详见](https://v3-migration.vuejs.org/zh/)。本篇文章则是对文档中没有提到的内容进行一个补充。

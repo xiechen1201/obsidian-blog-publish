@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//12-v-for/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/12 v-for 列表循环/","dg-note-properties":{}}
 ---
 
 `v-for`可以用来循环数据，基本语法是`v-for="指令表达式"`，例如循环一个数组：

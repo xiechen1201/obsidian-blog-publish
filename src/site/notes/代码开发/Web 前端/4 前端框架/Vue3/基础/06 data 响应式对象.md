@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//06-data/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/06 data 响应式对象/","dg-note-properties":{}}
 ---
 
 ## 🔢 认识 data 选项

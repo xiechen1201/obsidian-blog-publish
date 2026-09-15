@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3/06-diff/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/06 图解快速 Diff/","dg-note-properties":{}}
 ---
 
 回顾一下双端 Diff 的执行过程：

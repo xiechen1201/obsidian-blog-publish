@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//24-props/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/24 props/","dg-note-properties":{}}
 ---
 
 说到 props 就不得不提到「单向数据流」，单向数据流是一种组件化中的数据流向的规范，数据总是从父组件流向子组件，这遵循了子组件不能更改父组件流入的数据，这个数据就是 props ！

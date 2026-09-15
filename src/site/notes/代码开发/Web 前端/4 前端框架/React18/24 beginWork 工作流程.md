@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/react18/24-begin-work/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/React18/24 beginWork 工作流程/","dg-note-properties":{}}
 ---
 
 `beginWork()` 属于 Reconciler 协调器，是 Render 阶段的第二阶段工作，整个工作过程可以分为“递”和“归”：

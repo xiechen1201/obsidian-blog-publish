@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//09-computed/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/09 computed 计算属性/","dg-note-properties":{}}
 ---
 
 `computed`用于解决模版中复杂的逻辑运算，或者逻辑需要被复用的地方。

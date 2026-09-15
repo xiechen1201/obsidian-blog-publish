@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//27-v-model/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/27 组件 v-model/","dg-note-properties":{}}
 ---
 
 v-model 可以在组件上使用实现双向绑定。

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//11-class-style/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/11 class 和 style/","dg-note-properties":{}}
 ---
 
 `class`和`style`都可以是模版的属性，它们都可以通过`v-bind`动态的绑定到模版中：

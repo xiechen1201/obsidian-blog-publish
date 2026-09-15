@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//23-ref/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/23 Ref 引用/","dg-note-properties":{}}
 ---
 
 `ref`主要是引用 DOM 节点或者引用组件实例，说白了就是 Vue 本身不需要你操作 DOM，Vue 底层已经帮你做好了数据的绑定，所有视图的更新都来源于 viewModel 去做双向数据绑定。但是，某些时候你又不得不去获取 DOM 节点（或者 DOM 的某些信息），或者你要操作组件的实例，这个时候你就可以使用`ref`去引用！

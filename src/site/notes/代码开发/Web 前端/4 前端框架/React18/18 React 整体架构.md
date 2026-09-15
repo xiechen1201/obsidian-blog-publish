@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/react18/18-react/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/React18/18 React 整体架构/","dg-note-properties":{}}
 ---
 
 React15 以及之前的架构称之为 Stack 架构，从 React16 开始 React 重构了整体的架构，新的架构称之为 Fiber 架构。新的架构相比旧的架构有一个最大的特点就是能够实现时间切片。

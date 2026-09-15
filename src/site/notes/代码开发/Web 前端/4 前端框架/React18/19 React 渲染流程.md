@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/react18/19-react/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/React18/19 React 渲染流程/","dg-note-properties":{}}
 ---
 
 现代前端框架都可以总结为一个公式： UI = f（state）。

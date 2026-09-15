@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3/11-next-tick/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/11 nextTick 的实现原理/","dg-note-properties":{}}
 ---
 
 Vue 中的`nextTick()`函数我们会经常的使用。我们先用一段普通的代码来看下什么情况下应该使用`nextTick`:

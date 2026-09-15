@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//34-api-provide-inject/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/34 【组合式 API】provide 与 inject/","dg-note-properties":{}}
 ---
 
 我们之前学习选项式 API 的时候已经写过一篇文章：

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//41-api/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/41 【组合式 API】计算属性/","dg-note-properties":{}}
 ---
 
 组合式 API 中的计算属性`computed()`和选项式 API 中的`computed`作用是一样的，都是为了抽离模版中复杂的逻辑计算，让模版看起来更简洁。

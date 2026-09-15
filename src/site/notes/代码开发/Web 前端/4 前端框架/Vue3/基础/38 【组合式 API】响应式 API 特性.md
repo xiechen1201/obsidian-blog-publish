@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//38-api-api/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/38 【组合式 API】响应式 API 特性/","dg-note-properties":{}}
 ---
 
 ## 🔢 reactive()

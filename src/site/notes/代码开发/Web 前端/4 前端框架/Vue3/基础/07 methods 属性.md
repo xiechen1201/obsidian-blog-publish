@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//07-methods/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/07 methods 属性/","dg-note-properties":{}}
 ---
 
 在`Vue`中`methods`属性用于书写实例的事件处理方法，`Vue`在创建实例的时候会自动把`methods`绑定到当前实例的`this`中，写在`mthods`对象中的方法要避免使用「箭头函数」，箭头函数可能会影响到`Vue`正确的指向`Vue`的实例`this`。

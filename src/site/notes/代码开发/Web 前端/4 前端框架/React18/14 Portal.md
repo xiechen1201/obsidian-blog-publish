@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/react18/14-portal/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/React18/14 Portal/","dg-note-properties":{}}
 ---
 
 Portals 意为传送门，它要做的事情实际上和传送门确实很类似，根据官方的解释：

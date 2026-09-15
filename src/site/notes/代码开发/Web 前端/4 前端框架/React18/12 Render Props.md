@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/react18/12-render-props/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/React18/12 Render Props/","dg-note-properties":{}}
 ---
 
 在 React 中，代码复用的基本单位就是组件，可是如何组件中也存在重复的代码怎么办呢？

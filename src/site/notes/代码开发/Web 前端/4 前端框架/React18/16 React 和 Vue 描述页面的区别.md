@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/react18/16-react-vue/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/React18/16 React 和 Vue 描述页面的区别/","dg-note-properties":{}}
 ---
 
 比较简陋的一个回答是：Vue 使用的是 `template` 描述页面，而 React 使用的是 JSX。

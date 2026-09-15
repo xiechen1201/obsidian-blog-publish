@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//29-mixins/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/29 mixins 混入/","dg-note-properties":{}}
 ---
 
 mixins 是 Vue2 OptionsAPI 的产物，在 Vue3 的版本中已经不再推荐使用了。

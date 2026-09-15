@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//32-api-setup/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/32 【组合式 API】深入学习 setup 函数/","dg-note-properties":{}}
 ---
 
 `setup()`函数是组合式 API 的入口函数，所有的组合式 API 都需要放到`setup()`函数内部执行。

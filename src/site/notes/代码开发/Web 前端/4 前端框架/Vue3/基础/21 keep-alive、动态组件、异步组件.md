@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//21-keep-alive/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/21 keep-alive、动态组件、异步组件/","dg-note-properties":{}}
 ---
 
 `<keep-alive>`是 Vue 内部提供的一个组件；我们在开发的时候，一般切换组件的时候，组件中的内容都会进行重新初始化，而`<keep-alive>`组件会缓存组件内的状态，目的是避免反复渲染导致的性能问题。

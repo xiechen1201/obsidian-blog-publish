@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//35-api/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/35 【组合式 API】获取当前实例与全局属性/","dg-note-properties":{}}
 ---
 
 在 Vue2 的时候我们如果想要设置一个全局数据通常都是在 Vue 的构造函数原型上增加属性：

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3/14-v-model/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/14 v-model 的本质/","dg-note-properties":{}}
 ---
 
 `v-model`的用法，总结起来就两个场景：

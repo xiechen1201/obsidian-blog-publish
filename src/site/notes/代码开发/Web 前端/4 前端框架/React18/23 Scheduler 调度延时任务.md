@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/react18/23-scheduler/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/React18/23 Scheduler 调度延时任务/","dg-note-properties":{}}
 ---
 
 承接 [[代码开发/Web 前端/4 前端框架/React18/22 Scheduler 调度普通任务\|22 Scheduler 调度普通任务]] 中的 `unstable_scheduleCallback()` 函数，本文来看下 Scheduler 如何调度延时任务。

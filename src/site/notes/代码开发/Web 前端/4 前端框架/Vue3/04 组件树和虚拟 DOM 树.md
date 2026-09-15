@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3/04-dom/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/04 组件树和虚拟 DOM 树/","dg-note-properties":{}}
 ---
 
 在早期的前端开发时能接触到的树只有 DOM 树：

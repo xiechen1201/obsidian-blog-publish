@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3/19-key/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/19 Key 的本质/","dg-note-properties":{}}
 ---
 
 在关系型数据库中，有一个 primary key 的概念，这个其实和 Vue 中的 Key 具有一定的相似性。

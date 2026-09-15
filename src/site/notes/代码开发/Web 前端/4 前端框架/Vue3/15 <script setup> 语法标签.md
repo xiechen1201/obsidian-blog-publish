@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3/15-script-setup/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/15 <script setup> 语法标签/","dg-note-properties":{}}
 ---
 
 `<script setup>`语法标签是 Vue3 目前最推荐的写法，不过这种写法并不是一开始就是这样的，是随着版本的升级一步一步演变而来的。

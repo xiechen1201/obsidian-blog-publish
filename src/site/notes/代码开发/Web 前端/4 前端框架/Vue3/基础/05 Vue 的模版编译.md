@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//05-vue/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/05 Vue 的模版编译/","dg-note-properties":{}}
 ---
 
 `Vue`使用一种基于`HTML`的模板语法，使我们能够声明式地将其组件实例的数据绑定到呈现的`DOM`上。所有的`Vue`模板都是语法层面合法的`HTML`，可以被符合规范的浏览器和`HTML`解析器解析。

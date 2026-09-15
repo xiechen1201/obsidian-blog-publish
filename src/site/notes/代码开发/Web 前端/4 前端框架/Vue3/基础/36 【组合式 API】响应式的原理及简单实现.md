@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/vue3//36-api/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/36 【组合式 API】响应式的原理及简单实现/","dg-note-properties":{}}
 ---
 
 ## 🔢 Vue2 和 3 响应式的区别
