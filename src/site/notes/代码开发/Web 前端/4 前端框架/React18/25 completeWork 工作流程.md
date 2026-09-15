@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"//web/4/react18/25-complete-work/","tags":["gardenEntry"],"dg-note-properties":{}}
+{"dg-publish":true,"permalink":"//web/4/react18/25-complete-work/","dg-note-properties":{}}
 ---
 
 `completeWork()` 属于“归”阶段。
