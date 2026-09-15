@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/3 后端服务/00 Node/10 EventEmitter/","dg-note-properties":{}}
 ---
 
----
----
 `EventEmitter`是 Node 中事件管理的通用机制，很多核心的 API 都是围绕这个机制来触发事件的。
 
 例如：

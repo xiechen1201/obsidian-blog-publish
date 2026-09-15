@@ -6,7 +6,7 @@
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/_assets/1728377036894-e446e278-a348-412e-86ac-e010a43601d6.png)
 
-## 🔢 Vue2 经典写法
+## Vue2 经典写法
 
 Vue2 时期使用的是 Options API 语法，这是一种经典的写法。哪怕是现在的 Vue3 版本中 Options API 的语法依然是兼容的、可以使用的，没有被官方抛弃。
 
@@ -89,7 +89,7 @@ export default {
 </script>
 ```
 
-## 🔢 Vue3 初期写法
+## Vue3 初期写法
 
 Vue3 初期的时候，官方提出了 Composition API 语法，这种风格能够对组件的公共模块进行一个更好的组合复用。
 
@@ -173,7 +173,7 @@ export default {
 
 最重要的特点是对象中多了一个`setup()`函数，这是一个新的生命周期钩子方法。在该方法内，我们可以定义对应的数据和方法，并且在最后返回出去，这样在模版中就可以使用所返回的数据和方法了。
 
-## 🔢 使用 defineComponent() 编写组件
+## 使用 defineComponent() 编写组件
 
 `defineComponent()`方法是 Vue3 引入的一个「辅助函数」，主要用于定义 Vue 组件，特别是使用 TS 的时候可以提供更好的类型推断和校验。
 
@@ -258,7 +258,7 @@ export default defineComponent({
 
 根据代码可以看出，`defineComponent()`方法仅仅是一个辅助方法，和 TS 配合的好，但是没有从本质上改变初期 Composition API 的写法。
 
-## 🔢 `<script setup>` 语法标签
+## `<script setup>` 语法标签
 
 从 Vue3.2 版本开始正式引入了`<script setup>`语法糖，简化了 Composition API 的语法，使得组件定义更加的简洁和直观。
 
@@ -376,7 +376,7 @@ export default {
 
 从插件的编译分析中可以看出，`<script setup>`标签本身就是一个语法糖，目的是为了方便开发者书写代码。在编译的时候最终还是会被编译为 Composition API 的早期写法。
 
-## 🔢 expose 上的区别
+## expose 上的区别
 
 `<script setup>`标签虽说是一种语法糖，不过某些行为上的表现和原始的 Composition API 存在一些区别，例如`expose()`。
 

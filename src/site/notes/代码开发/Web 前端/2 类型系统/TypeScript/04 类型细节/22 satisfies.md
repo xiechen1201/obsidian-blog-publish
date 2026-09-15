@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/04 类型细节/22 satisfies/","dg-note-properties":{}}
 ---
 
----
----
 `satisfies`是一个类型操作符，它是 TS@4.9 的新功能，和类型断言`as`功能比较类似，但是比类型断言更加安全也更加智能，因为它能在满足类型安全的前提下，自动帮我们做类型收缩和类型提示。
 
 ```ts

@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/02 虚拟 DOM/","dg-note-properties":{}}
 ---
 
-## 🔢 DOM 的工作原理
+## DOM 的工作原理
 
 前端工程师写的是 JS 代码，但是浏览器的引擎都是 C++ 写的。
 
@@ -97,7 +97,7 @@ document.appendChild('div');
 
 那么浏览器底层在调用对应的 C++ 代码的时候，还会涉及到浏览器重新渲染的相关内容，这又会是一个很大的话题。
 
-## 🔢 虚拟 DOM 的本质
+## 虚拟 DOM 的本质
 
 虚拟 DOM 最初是由 React 团队提出的：
 
@@ -168,7 +168,7 @@ createApp({
 
 可以看到`vNode`返回的虚拟 DOM 就是一个普通的 JS 对象（至于属性是什么意思先不用管）。
 
-## 🔢 为什么需要虚拟 DOM
+## 为什么需要虚拟 DOM
 
 在早期前端开发的时候，前端都是手动的操作 DOM 节点来编写代码：
 
@@ -390,11 +390,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <br/>
 
-## 🔢 虚拟 DOM 还有哪些好处
+## 虚拟 DOM 还有哪些好处
 
 前面说了虚拟 DOM 可以以最低的开销来更新 DOM，那么它还有哪些好处呢？
 
-## 🔢 跨平台性
+## 跨平台性
 
 虚拟 DOM 实际上是增加了一层「抽象层」，相当于和原本的底层操作 DOM 进行了解耦。
 
@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 例如 React、React Native、微信小程序、uni-app...
 
-## 🔢 框架更加的灵活
+## 框架更加的灵活
 
 React15 升级到 React16 后架构层面有了很大的变化，从 Stack 架构升级到了 Fiber 架构，React 内部发生了翻天覆地的变化，但是对于开发者的入侵是极小的，开发者基本上感受不到底层的变化，仍然可以使用之前的开发模式进行开发。
 

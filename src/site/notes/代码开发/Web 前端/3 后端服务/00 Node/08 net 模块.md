@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/3 后端服务/00 Node/08 net 模块/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 回顾 http 的请求
+## 回顾 http 的请求
 在 HTTP 请求中分为两种模式：
 
 - 普通模式
@@ -15,14 +13,14 @@
     - 例如在浏览器中发起一个请求，`keep-alive`表示告诉服务器不要那么着急的关掉 TCP 服务，后续可能还有别的请求。
         * ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/3%20%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1/00%20Node/_assets/1716881469076-a15e956d-1391-4713-898c-7eee6cf3c0d3.png)
 
-## 🔢 net 模块能干什么
+## net 模块能干什么
 net 模块是一个通信模块，可以传输数据。利用它可以实现：
 
 - 进程间的通信 IPC；
 - 网络通信 TCP/IP；
 - 提供了对底层网络通信的直接访问；
 
-## 🔢 创建客户端
+## 创建客户端
 使用`createConnection()`方法创建一个客户端链接：
 
 ```js
@@ -118,7 +116,7 @@ X-Xss-Protection: 1;mode=block
 链接关闭
 ```
 
-## 🔢 创建服务器
+## 创建服务器
 使用`createServer()`方法创建一个服务器：
 
 ```js

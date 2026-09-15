@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/React18/7 Hooks/","dg-note-properties":{}}
 ---
 
-## 🔢 简介
+## 简介
 
 Hook 是 React16.8 的新增特性，它可以让你在不写「类组件」的情况下使用`state`以及其他的 React 特性。
 
@@ -66,7 +66,7 @@ Hooks 本质上就是 JavaScript 的函数，但是使用的时候有两个额�
 
 React 中内置了非常多的 Hook，我们先学两个简单的！
 
-## 🔢 useState()
+## useState()
 
 [useState – React 中文文档](https://zh-hans.react.dev/reference/react/useState)
 
@@ -125,7 +125,7 @@ function App(props) {
 export default App;
 ```
 
-## 🔢 useEffect()
+## useEffect()
 
 该 Hook 用来创建一个副作用函数。
 
@@ -340,7 +340,7 @@ useEffect(() => {
 }, []);
 ```
 
-## 🔢 自定义的 Hook
+## 自定义的 Hook
 
 除了使用官方写好的 Hooks，我们还可以自定义 Hook，自定义的 Hook 本质上就是函数，但是和普通的函数有一些区别，主要体现在两个方面：
 1. 自定义的 Hook 能够调用`useState`、`useEffct`等，而普通函数则不能。

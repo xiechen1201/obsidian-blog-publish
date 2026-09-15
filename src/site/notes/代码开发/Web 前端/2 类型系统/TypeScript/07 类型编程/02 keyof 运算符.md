@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/07 类型编程/02 keyof 运算符/","dg-note-properties":{}}
 ---
 
----
----
 `keyof`操作符可以获取对象类型的 Key 并返回一个联合类型。
 
 ```ts

@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/05 类和接口/07 this 的类型体操/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 ThisType<Type>
+## ThisType<Type>
 `ThisType<Type>`可以让`Type`充当上下文类型的标记`this`。简单说，就说限制`this`的类型，限制`this`可以访问哪些属性。
 
 示例：
@@ -55,7 +53,7 @@ const foo: Foo = {
 
 这种情况下，只是类型提示上不会产生错误，但是运行的时候会报错。
 
-## 🔢 SimpleVue
+## SimpleVue
 SimpleVue 意为简易版本的 Vue，来源于 Github 上 type-challenges 仓库的一道题目，[详见](https://github.com/type-challenges/type-challenges/blob/main/questions/00006-hard-simple-vue/README.zh-CN.md)。
 
 其实就是要求实现 Vue 中`data`、`computed`和`methods`的类型标注。
@@ -81,7 +79,7 @@ type getComputed<T> = {
 };
 ```
 
-## 🔢 chainable-options
+## chainable-options
 chainable-options 也是 Github 上 type-challenges 仓库的一道题目，[详见](https://github.com/type-challenges/type-challenges/blob/main/questions/00012-medium-chainable-options/README.zh-CN.md)。
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/2%20%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F/TypeScript/05%20%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/_assets/1735801718226-c549bac1-b389-4382-9a4f-ba5d44eee9b9.png)

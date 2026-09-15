@@ -2,15 +2,13 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/3 后端服务/00 Node/13 工具 - Sequelize/","dg-note-properties":{}}
 ---
 
----
----
 Github：
 
 [GitHub - sequelize/sequelize: Feature-rich ORM for modern Node.js and TypeScript, it supports PostgreSQL (with JSON and JSONB support), MySQL, MariaDB, SQLite, MS SQL Server, Snowflake, Oracle DB (v6), DB2 and DB2 for IBM i.](https://github.com/sequelize/sequelize)
 
 [GitHub - demopark/sequelize-docs-Zh-CN at v6](https://github.com/demopark/sequelize-docs-Zh-CN/tree/v6)
 
-## 🔢 ORM 工具
+## ORM 工具
 今天介绍一个 ORM 工具 -- Sequelize，它既支持 JS 也支持 TS，算是比较成熟的 ORM 工具了。
 
 什么是 ORM 工具？
@@ -29,7 +27,7 @@ ORM 会隐藏具体的数据库底层细节，他把数据库的表和字段，�
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/3%20%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1/00%20Node/_assets/1744967412675-f2608674-3cee-44d5-8900-ab0aa965c8a9.png)
 
-## 🔢 基础使用
+## 基础使用
 这里我举几个例子简单演示一下。
 
 首先要安装 Sequelize 工具和对应的数据库驱动程序：
@@ -65,7 +63,7 @@ module.exports = sequelize;
 
 <br/>
 
-## 🔢 定义表模型
+## 定义表模型
 接着，我们就可以定义模型了，模型是 Sequelize 的本质，是对数据库表的抽象概念，可以理解一个模型就是一张表。
 
 ```js
@@ -118,7 +116,7 @@ Admin.sync({ alter: true }).then(() => {
 
 （默认情况下，Sequelize 使用数据类型`DataTypes.DATE`自动向每个模型添加`createdAt`和`updatedAt`字段。这些字段会自动进行管理，每当使用 Sequelize 创建或更新内容时，这些字段都会被自动设置。`createdAt`字段将包含代表创建时刻的时间戳，而`updatedAt`字段将包含最新更新的时间戳。）
 
-## 🔢 操作表数据
+## 操作表数据
 最后再介绍一下如何操作表的数据。
 
 当我们通过`sequelize.define`定义一个模型后，会得到一个模型的类（例如`Admin`模型类），这个时候我们需要使用类的`build()`方法再得到一个模型的实例对象（类比为表的行数据），该对象就可以操作表的数据啦：

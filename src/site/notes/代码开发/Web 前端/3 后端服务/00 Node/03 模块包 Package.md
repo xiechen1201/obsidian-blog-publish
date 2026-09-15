@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/3 后端服务/00 Node/03 模块包 Package/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 包的入口
+## 包的入口
 在软件包的 package.json 文件中，有两个字段可以定义软件包的入口：`main`和`exports`。这两个字段同时适用于 ESM 模块和 CommonJS 模块。
 
 对于`main`字段，所有的 Node 版本都支持它，但是功能比较受限，仅仅可以定义包的入口。
@@ -57,7 +55,7 @@ const core = require("my-package/src/index.js");
 }
 ```
 
-## 🔢 子路径
+## 子路径
 使用`exports`字段时，可以把主入口点写成`"."`，同时自定义其他子路径，从而控制模块的导入方式。
 
 ```json
@@ -92,7 +90,7 @@ import packageName from "package-name/submodule.js";
 }
 ```
 
-## 🔢 有条件出口
+## 有条件出口
 条件导出提供了根据特定条件映射到不同路径的方法，CommonJS 和 ESM 都支持条件导出。
 
 ```json
@@ -144,7 +142,7 @@ Node 实现了以下条件，这些条件按照从最具体到最不具体的规
 }
 ```
 
-## 🔢 社区定义条件
+## 社区定义条件
 Node 默认只支持：
 
 - `node-addons`（原生插件）
@@ -161,7 +159,7 @@ Node 默认只支持：
 - `development`：开发模式专用，比如带调试信息的代码（和 `production` 不能共存）；
 - `production`：生产环境专用，比如优化后的代码（和 `development` 不能共存）；
 
-## 🔢 子路径导入
+## 子路径导入
 除了`exports`字段之外，还有一个`imports`字段用于创建仅适用于包内导入的「私有映射」。
 
 `imports`字段的 KEY 必须是以`#`开头的，以确保它们是和外部的软件包区分开的。
@@ -199,5 +197,5 @@ import "#dep";
 import internalZ from '#internal/z.js';
 ```
 
-## 🔢 其他字段
+## 其他字段
 详见：[https://nodejs.org/docs/latest/api/packages.html#nodejs-packagejson-field-definitions](https://nodejs.org/docs/latest/api/packages.html#nodejs-packagejson-field-definitions)

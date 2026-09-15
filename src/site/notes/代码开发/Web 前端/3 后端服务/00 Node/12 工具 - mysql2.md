@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/3 后端服务/00 Node/12 工具 - mysql2/","dg-note-properties":{}}
 ---
 
----
----
 Github：
 
 [GitHub - sidorares/node-mysql2: :zap: fast mysqljs/mysql compatible mysql driver for node.js](https://github.com/sidorares/node-mysql2)
@@ -14,7 +12,7 @@ mysql2 是适用于 Node 的 MySQL 驱动程序，让 Node 拥有了操作数据
 
 驱动程序是连接内存和其他存储介质之间的桥梁，因此 mysql2 是连接内存数据和 MySQL 数据的桥梁。
 
-## 🔢 基础使用
+## 基础使用
 关于如何安装 mysql2 就不展开叙述了，文档中写的很清楚。
 
 这里简单描述一下如何使用，安装 mysql2 驱动程序后首先需要导入它并创建一个数据库连接：
@@ -87,7 +85,7 @@ try {
 connection.end();
 ```
 
-## 🔢 防 SQL 注入
+## 防 SQL 注入
 什么是 SQL 注入？
 
 SQL 注入是指用户通过注入 SQL 语句的方式到最终查询中，导致了整个 SQL 与预期的行为不符合。
@@ -150,7 +148,7 @@ const [results, fields] = await connection.execute(
 );
 ```
 
-## 🔢 连接池
+## 连接池
 在不使用连接池且并发比较多的情况下，例如网站有 100 个用户同时访问，如果创建 100 个连接会把数据库压垮，这个时候就可以使用连接池。
 
 连接池就好像是数据库连接的共享仓库，仓库里面提取准备好了一些连接，程序需要的时候就借用一个，用完就还回去，而不是每次在程序需要的时候创建一个新的连接。

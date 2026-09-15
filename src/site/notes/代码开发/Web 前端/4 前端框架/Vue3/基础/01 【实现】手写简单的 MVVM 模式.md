@@ -47,7 +47,7 @@
 }
 ```
 
-## 🔢 App.js
+## App.js
 
 ```js
 // Vite 会自动补全 /index.js 的后缀
@@ -106,7 +106,7 @@ export { stateFormat } from "./compiler/state";
 
 接下来，就让我们看看每个文件都负责干了点啥。
 
-## 🔢 mvvm/reactive
+## mvvm/reactive
 
 该文件的`useReactive`方法在`App.js`文件中进行了调用：
 
@@ -196,7 +196,7 @@ export const mutableHandler = {
 
 以上代码，我们分别对属性的`set`和`get`拦截进行了处理，在`set`方法中，无论是新增或更改对象的属性，我们都可以拦截的到。
 
-## 🔢 mvvm/render.js
+## mvvm/render.js
 
 `render.js`文件主要负责了对视图管理，我们在`App.js`文件中调用了`useDom`方法进行视图的渲染，且在`Proxy`的`set`处理中调用了`update`进行视图的更新。
 
@@ -297,7 +297,7 @@ export function update(statePool, key, value) {
 - `eventFormat`把`DOM`和事件的对应关系进行存储。
 - `stateFormat`把`DOM`和数据的对应关系进行存储，并且替换为`state`中对应的数据。
 
-## 🔢 mvvm/compiler
+## mvvm/compiler
 
 以下是对`mvvm/compiler/event.js`文件的详解：
 
@@ -468,7 +468,7 @@ export function stateFormat(template, state) {
 }
 ```
 
-## 🔢 shared/utils.js
+## shared/utils.js
 
 `utils.js`文件主要存放的是一些工具类的方法，我们在上面案例使用到的方法，在这里都可以找得到。
 
@@ -512,7 +512,7 @@ function checkType(str) {
 export { isObject, hasOwnProperty, isEqual, randomNum, checkType };
 ```
 
-## 🔢 收尾
+## 收尾
 
 到这里，我们就把这个模式完整的解释完了，再回顾一下这个代码的结构，
 

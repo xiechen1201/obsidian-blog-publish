@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/17 keep-alive 生命周期/","dg-note-properties":{}}
 ---
 
-## 🔢 基本使用
+## 基本使用
 
 `<keep-alive>`是 Vue 中的一个内置组件，该组件用于缓存组件的实例，避免组件被频繁的销毁/重建，从而提高性能。
 
@@ -35,7 +35,7 @@
 - `activated`：首次挂载，以及组件激活时触发；
 - `deactivated`：组件卸载，以及组件失活时触发；
 
-## 🔢 `<keep-alive>` 的本质
+## `<keep-alive>` 的本质
 
 `<keep-alive>`组件的实现需要 Vue 渲染器层面的支持。当组件需要卸载的时候不能真正的卸载，否则就无法维护组件的状态了。
 
@@ -184,7 +184,7 @@ function unmount(vnode) {
 
 - `rawVNode.keepAliveInstance`属性：该属性让内部组件持有`<keep-alive>`的组件实例，回头在渲染器中的某些场景下可以通过这个属性访问`<keep-alive>`的组件实例上面的`_deActivate`以及`_activate`。
 
-## 🔢 include 和 exclude 属性
+## include 和 exclude 属性
 
 默认情况下，`<keep-alive>`组件会对所有的“内部组件”进行缓存。
 
@@ -245,7 +245,7 @@ const KeepAlive = {
 
 ```
 
-## 🔢 缓存管理
+## 缓存管理
 
 目前为止的缓存实现如下：
 
@@ -326,7 +326,7 @@ if (cachedVNode) {
 }
 ```
 
-## 🔢 总结
+## 总结
 
 最后对本篇文章进行一个总结：
 

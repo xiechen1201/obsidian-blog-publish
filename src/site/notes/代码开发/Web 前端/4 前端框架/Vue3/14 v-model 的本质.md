@@ -8,7 +8,7 @@
 
 2、父子组件传递数据；
 
-## 🔢 和表单元素的绑定
+## 和表单元素的绑定
 
 ```vue
 <template>
@@ -29,7 +29,7 @@ const message = ref('hello world');
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/_assets/1728369074041-8d920847-4a23-42b1-992e-653f40e95111.gif)
 
-## 🔢 和子组件进行绑定
+## 和子组件进行绑定
 
 ```vue
 <template>
@@ -98,7 +98,7 @@ function setRating(star) {
 </script>
 ```
 
-## 🔢 v-model 的本质
+## v-model 的本质
 
 首先我们先分析第一个场景：和表单元素进行绑定。
 

@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/05 类和接口/06 this 作为返回类型/","dg-note-properties":{}}
 ---
 
----
----
 `this`在类中可以作为值也可以作为方法的返回类型。
 
 例如实现一个简化版的`Set`：

@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/3 后端服务/00 Node/02 模块化 ESM/","dg-note-properties":{}}
 ---
 
----
----
 ESM 模块化是 JavaScript 代码进行打包和重复使用的官方标准，使用`import`导入模块，使用`export`导出模块。
 
 在 Node 中如何使用 ESM 模块化呢？
@@ -22,7 +20,7 @@ ESM 模块化是 JavaScript 代码进行打包和重复使用的官方标准，�
 
 如果缺少任何一种显式地的标记，Node 会检查模块源代码查找 ES 语法，如果发现这种语法则使用 ES 模块的形式运行代码，否则以 CommonJS 的形式运行模块。
 
-## 🔢 import 导入
+## import 导入
 `import`语句的指定符是`from`关键字后面的字符串，例如：
 
 ```js
@@ -41,14 +39,14 @@ import { sep } from 'node:path';
 import package from "package/path/index.js";
 ```
 
-## 🔢 强制文件拓展名
+## 强制文件拓展名
 使用`import`解析相对或者绝对路径的时候，必须要提供文件的拓展名，这种行为和浏览器环境保持一致：
 
 ```js
 import data from "./startup/index.js";
 ```
 
-## 🔢 URL
+## URL
 ESM 还可以加载 URL 的路径，不过必须对特殊字符串进行编码，例如 # 、¥、& 等等。
 
 默认情况下，仅支持带有`file:`、`node:`、`data:`协议的 URL，除非使用自定义的[ HTTPS 加载器](https://nodejs.org/docs/latest/api/module.html#import-from-https)，否则 Node 本身不支持`https://example.com`这样的 URL。
@@ -79,14 +77,14 @@ import _ from 'data:application/json,"world!"' with { type: 'json' };
 import fs from 'node:fs/promises';
 ```
 
-## 🔢 内置模块
+## 内置模块
 内置模块提供了公共 API 的命名导出形式，也有默认导出的形式。
 
 ```js
 import fs, { readFileSync } from 'node:fs';
 ```
 
-## 🔢 import()
+## import()
 CommonJS 和 ESM 都支持使用`import()`，在 CommonJS 中可以使用其导入 ESM 模块。
 
 ```js
@@ -106,10 +104,10 @@ export function add(a, b) {
 }
 ```
 
-## 🔢 import.meta
+## import.meta
 该对象包含了模块的一些元信息。
 
-## 🔢 import.meta.dirname（Node v23.9.0 非标准）
+## import.meta.dirname（Node v23.9.0 非标准）
 返回当前模块的目录路径。
 
 ```js
@@ -117,7 +115,7 @@ console.log(import.meta.dirname);
 // /Users/xiechen/Documents/code-personal/s-learn-code/nodejs/02/code
 ```
 
-## 🔢 import.meta.filename（Node v23.9.0 非标准）
+## import.meta.filename（Node v23.9.0 非标准）
 返回当前模块的文件路径。
 
 ```js
@@ -125,7 +123,7 @@ console.log(import.meta.filename);
 // // /Users/xiechen/Documents/code-personal/s-learn-code/nodejs/02/code/main.mjs
 ```
 
-## 🔢 import.meta.url
+## import.meta.url
 用于获取当前模块的完整 URL 路径。
 
 ```js
@@ -133,7 +131,7 @@ console.log(import.meta.url);
 // file:///Users/xiechen/Documents/code-personal/s-learn-code/nodejs/02/code/main.mjs
 ```
 
-## 🔢 import.meta.resolve()（Node v23.9.0 非标准）
+## import.meta.resolve()（Node v23.9.0 非标准）
 用于解析模块的路径，但是不加载模块。
 
 ```js
@@ -141,7 +139,7 @@ console.log(import.meta.resolve("./math.cjs"));
 // file:///Users/xiechen/Documents/code-personal/s-learn-code/nodejs/02/code/math.cjs
 ```
 
-## 🔢 加载 CommonJS 模块
+## 加载 CommonJS 模块
 `import`语句可以加载 ESM 和 CommonJS 模块，但是`import`只能在 ESM 中使用，但是`import()`同时支持 ESM 和 CommonJS。
 
 在使用`import`导入 CommonJS 的时候，通过`module.exports`导出的内容将作为默认导出。
@@ -188,7 +186,7 @@ console.log(math);
 */
 ```
 
-## 🔢 ESM 和 CommonJS 的区别
+## ESM 和 CommonJS 的区别
 1、ESM 没有`require()`、`exports`或者`module.exports`；
 
 2、在大多数情况下，ESM 的`import`可以加载 CommonJS 模块；

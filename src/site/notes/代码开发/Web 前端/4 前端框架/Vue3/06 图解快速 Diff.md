@@ -29,7 +29,7 @@ Vue3 的快速 Diff 对上面的步骤进行了优化，大致如下：
 
 可以看到快速 Diff 和双端 Diff 也存在一些相同的步骤，我们重点看一下不同的情况。
 
-## 🔢 和双端不同的步骤
+## 和双端不同的步骤
 
 经历了头头对比，尾尾对比后，新旧节点列表都有剩余，之后的步骤就和双端 Diff 不一样：
 
@@ -39,7 +39,7 @@ Vue3 的快速 Diff 对上面的步骤进行了优化，大致如下：
 4. 计算最长递增子序列；
 5. 移动和挂在节点；
 
-## 🔢 1、初始化 keyToNewIndexMap
+## 1、初始化 keyToNewIndexMap
 
 首先定义了一个用于保存「新节点下标的容器`keyToNewIndexMap`」，它的形式是`key - index`，遍历还未处理的新节点，将它们的 Key 和下标的映射关系存储到`keyToNewIndexMap`中。
 
@@ -60,7 +60,7 @@ for (let i = newStartIdx; i <= newEndIdx; i++) {
 
 总结，`keyToNewIndexMap`存储的就是所有「未处理」的「新节点」的 Key 和 Index 的映射关系。
 
-## 🔢 2、初始化 newIndexToOldIndexMap
+## 2、初始化 newIndexToOldIndexMap
 
 接着定义了一个和未处理新节点长度一致的`newIndexToOldIndexMap`数组，默认每一项都是 0。
 
@@ -77,7 +77,7 @@ const newIndexToOldIndexMap = new Array(toBePatched).fill(0);
 
 之所以一开始都初始化为 0，就是为了一开始假设所有的新节点都不存在于旧节点列表中，之后再对这个数组进行更新，如果更新完之后某项还是 0，那就表示这一位对应的新节点在旧节点中不存在。
 
-## 🔢 3、更新 newIndexToOldIndexMap
+## 3、更新 newIndexToOldIndexMap
 
 遍历所有未处理的「旧节点」，查询旧节点在新节点中的位置，决定是更新、删除还是移动；
 
@@ -165,7 +165,7 @@ if (newIndex >= maxNewIndexSoFar) {
 - 如果当前新节点的索引大于等于`maxNewIndexSoFar`，则更新`maxNewIndexSoFar`，节点的相对顺序正确，不需要标记移动；
 - 如果小于，说明节点相对顺序发生了变化，则标记移动，后续根据 LIS（最长递增子序列）决定是否移动节点；
 
-## 🔢 4、计算最长递增子序列
+## 4、计算最长递增子序列
 
 首先先补充一下什么是「最长递增子序列」。
 
@@ -221,7 +221,7 @@ Vue3 内部在计算最长递增子序列的时候，返回的是原始对应的
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/_assets/1739416998470-5c5f2ab1-fdda-42ab-88dc-2b85deb84d58.png)
 
-## 🔢 5、移动和挂载节点
+## 5、移动和挂载节点
 
 根据计算的结果，对需要进行移动和新建的节点进行处理，「倒序遍历」未处理的新节点。
 

@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/3 后端服务/00 Node/09 http 模块/","dg-note-properties":{}}
 ---
 
----
----
-## 🔢 发送请求
+## 发送请求
 http 模块也可以用来请求一个地址：
 
 ```js
@@ -105,7 +103,7 @@ request.write('name=zhangsan&age=20');
 request.end();
 ```
 
-## 🔢 创建请求
+## 创建请求
 ```js
 const http = require('http');
 
@@ -161,7 +159,7 @@ server.on('listening', function () {
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/3%20%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1/00%20Node/_assets/1717383118681-f39962b8-57ed-4675-9f51-2f3747219660.png)
 
-## 🔢 案例：创建静态资源服务器
+## 案例：创建静态资源服务器
 目录结构：
 
 ```latex

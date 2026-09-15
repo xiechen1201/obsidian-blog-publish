@@ -2,13 +2,11 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/3 后端服务/01 数据库/01 MySQL/","dg-note-properties":{}}
 ---
 
----
----
 承接上一篇文章我们知道 MySQL 是一个关系型数据库，可以很好的表达复杂的数据关系。MySQL 是瑞典 MySQL AB 公司开发的，后来被 Oracle 收购。
 
 MySQL 具有开源、轻量、快速的特点，其也是目前主流的关系型数据库。
 
-## 🔢 下载 & 安装
+## 下载 & 安装
 官方下载地址：
 
 [fw_error_www](https://dev.mysql.com/downloads/mysql/)
@@ -19,7 +17,7 @@ MySQL 具有开源、轻量、快速的特点，其也是目前主流的关系�
 
 <u></u>
 
-## 🔢 使用
+## 使用
 安装好 MySQL 后，我们要操作它需要使用 CLI 命令。
 
 1、进入 mysql 命令交互。
@@ -69,7 +67,7 @@ $ show databases;
 
 展示的结果中，TestDB 和 yuanLaoShiTestDB 都是我后来新建的，默认是没有这两个数据库的。
 
-## 🔢 Navicat
+## Navicat
 通过直接使用 CLI 的方式操作 MySQL 还是比较麻烦，我们可以借助一个数据库管理软件帮我们简化操作。
 
 Navicat 是一个非常强大的数据库管理工具，它支持多种主流的数据库。

@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/4 前端框架/Vue3/基础/00 【实现】手写简单的 MVC 模式/","dg-note-properties":{}}
 ---
 
-## 🔢 认识 MVC
+## 认识 MVC
 
 `MVC`的概念是从后端开发引入的，全名是`Model View Controller`，是模型(`model`)－视图(`view`)－控制器(`controller`)的缩写，是一种代码的设计模式。
 
@@ -19,7 +19,7 @@
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1675735145869-59244ac5-6d50-424e-a759-4136995d751e.png)
 
-## 🔢 前端中的 MVC
+## 前端中的 MVC
 
 到了前端中，`MVC`的设计模式和后端基本一致：
 
@@ -348,7 +348,7 @@
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1675736751468-c25b6782-9cf7-4500-9b7c-47332acc8b71.gif)
 
-## 🔢 MVC 的缺点
+## MVC 的缺点
 
 通过上面的案例我们发现，这样的设计模式还不是特别的完美，`View`层本应该只关注于是数据的展示。但里面却包含了`render`方法，我们希望的是有一套驱动，能把数据、视图、事件处理都放在一起集中处理，这就是`ViewModel`。
 

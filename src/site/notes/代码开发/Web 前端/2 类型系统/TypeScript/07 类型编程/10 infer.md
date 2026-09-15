@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/07 类型编程/10 infer/","dg-note-properties":{}}
 ---
 
----
----
 在 TS 中使用`infer`关键字，可以在条件类型中声明泛型类型（可以推断类型）。
 
 示例我们之前想要获取数组元素的类型：

@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/3 后端服务/00 Node/01 模块化 CommonJS/","dg-note-properties":{}}
 ---
 
----
----
 目前 Node（Node v23.9.0）已经完全支持 CommonJS 和 ESM 两种模块化标准，基于此写几篇文章学习一下用法和差异。
 
 本文先来介绍传统的 CommonJS 模块化。
@@ -63,7 +61,7 @@ console.log(module.exports); // { a: 1, b: 2 } （module.exports 没有改变）
 
 通常情况，即使所有文件模块都是 CommonJS 也应该在 package.json 文件中设置`"type"`为`"commonjs"`。
 
-## 🔢 如何使用加载 ESM（非标准）？
+## 如何使用加载 ESM（非标准）？
 <br/>warning
 ⚠️ 注意
 
@@ -207,7 +205,7 @@ export { Point as 'module.exports' }
 
 如果`require()`加载的模块包含顶层的`await`，则会抛出 `ERR_REQUIRE_ASYNC_MODULE`的错误，这种情况下应该使用`import()`去加载 ESM。
 
-## 🔢 缓存
+## 缓存
 模块在首次加载后会被缓存，当其他模块再次加载这个模块的时候，会直接从缓存中获取。
 
 只要不修改`require.cache`对象中的内容，模块就会一直被缓存。
@@ -264,7 +262,7 @@ module.exports = function () {
 
 <br/>
 
-## 🔢 内置模块
+## 内置模块
 Node 提供了非常多的内置模块，内置模块是 Node 本身就提供的模块，不需要通过包管理器安装就可以直接加载的模块。
 
 内置模块可以使用`node:`作为前缀进行标识，这种情况下会绕过`require()`的缓存。另外即使存在和内置模块同名的模块文件，也会被优先加载。
@@ -307,7 +305,7 @@ console.log(require('node:module').builtinModules);
 */
 ```
 
-## 🔢 循环调用
+## 循环调用
 当模块之间存在循环引用的时候，模块在返回时可能尚未执行完成。
 
 ```js
@@ -368,7 +366,7 @@ a done
 in main, a.done = true, b.done = true
 ```
 
-## 🔢 模块解析
+## 模块解析
 再使用`require()`加载一个没有后缀名的模块的时候，Node 会尝试添加文件的拓展名：.js、.json、.node，因此如果想要加载非这些拓展名的文件的时候，一定要写全拓展名。
 
 ```js
@@ -393,7 +391,7 @@ require('./circle');
 require("lodash");
 ```
 
-## 🔢 文件夹作为模块
+## 文件夹作为模块
 如果想要将一个文件夹作为模块，则该文件夹下面应该创建一个 package.json 文件，并拥有`main`字段指定模块的入口：
 
 ```json
@@ -422,7 +420,7 @@ require('./some-library');
 
 否则，Node 将提示找不到模块。
 
-## 🔢 从 node_modules 中加载
+## 从 node_modules 中加载
 上面说了当使用`require()`加载模块的时候，如果不是以`/`或`./`与`../`开头的路径，则会到`node_modules`目录中查找，这里还需要补充一个：同时不是 Node 的内置模块。
 
 例如：
@@ -458,7 +456,7 @@ require("lodash/filter.js")
 
 后缀路径的查找规则和上面的规则一致。
 
-## 🔢 模块封装器
+## 模块封装器
 在本文开头的时候就提到了，Node 在执行模块文件之前会使用一个函数包装器对模块代码进行包装，看起来像（并不是真实实现）：
 
 ```js
@@ -476,7 +474,7 @@ require("lodash/filter.js")
 
 下面就来介绍一下这些变量的作用。
 
-## 🔢 __dirname
+## __dirname
 返回当前模块的目录绝对路径，等同于`path.dirname()`方法。
 
 ```js
@@ -487,7 +485,7 @@ console.log(path.dirname(__filename));
 // /Users/mjr
 ```
 
-## 🔢 __filename
+## __filename
 返回当前模块的文件绝对路径。
 
 ```js
@@ -495,7 +493,7 @@ console.log(__filename);
 // /Users/mjr/example.js
 ```
 
-## 🔢 exports
+## exports
 对`module.exports`对象的引用，书写更方便，用于暴露模块的内容。
 
 ```js
@@ -506,7 +504,7 @@ function add(num1, num2){
 exports.add = add;
 ```
 
-## 🔢 require()
+## require()
 用于导入模块、JSON 和本地文件。模块的路径可以是`./`与`../`的相对路径，也可以是`/`绝对路径，或者模块名开头的裸路径。
 
 ```js
@@ -515,7 +513,7 @@ const jsonData = require('./path/filename.json');
 const crypto = require('node:crypto');
 ```
 
-## 🔢 require.cache
+## require.cache
 返回模块被加载后的缓存数据，如果某个模块从这个对象中被删除，那么下一次再加载这个模块的时候将会重新执行这个模块。
 
 ```js
@@ -533,7 +531,7 @@ console.log(require.cache);
 */
 ```
 
-## 🔢 require.main
+## require.main
 返回 Node 进程启动后所执行的入口模块，如果程序的入口不是 CommonJS 模块，则返回`undefined`。
 
 ```js
@@ -557,7 +555,7 @@ console.log(require.main);
 */
 ```
 
-## 🔢 require.resolve()
+## require.resolve()
 用于解析（查找）模块的位置，但是不加载模块，只返回解析后的模块路径。
 
 参数：
@@ -580,7 +578,7 @@ const path = require.resolve('my-package', {
 console.log(path); // /project/src/node_modules/my-package/index.js
 ```
 
-## 🔢 require.resolve.paths()
+## require.resolve.paths()
 返回 Node 在解析指定模块时会搜索的路径数组，帮助理解模块查找逻辑。
 
 ```js
@@ -607,7 +605,7 @@ console.log(require.resolve.paths("lodash"));
 */
 ```
 
-## 🔢 module
+## module
 该对象指向当前模块，里面包含一些模块的信息。
 
 ```js
@@ -633,7 +631,7 @@ console.log(module);
 */
 ```
 
-## 🔢 module.children
+## module.children
 返回当前模块加载的子模块。
 
 ```js
@@ -663,7 +661,7 @@ console.log(module.children);
 */
 ```
 
-## 🔢 module.exports
+## module.exports
 用于导出模块内的数据。
 
 ```js
@@ -699,7 +697,7 @@ const x = require("./x");
 console.log(x.a); // undefined
 ```
 
-## 🔢 exports
+## exports
 是`module.exports`的快捷方式。
 
 ```js
@@ -756,7 +754,7 @@ function require(/* ... */) {
 }
 ```
 
-## 🔢 module.filename
+## module.filename
 返回模块解析后的文件路径。
 
 ```js
@@ -765,7 +763,7 @@ console.log(module.filename);
 // /Users/xiechen/Documents/code-personal/s-learn-code/nodejs/01/code/demo4/main.js
 ```
 
-## 🔢 module.id
+## module.id
 返回模块的标识符，通常情况下是解析后的路径。
 
 ```js
@@ -775,13 +773,13 @@ console.log(module.id); // .
 // main.js 是入口文件，所以返回 .
 ```
 
-## 🔢 module.isPreloading
+## module.isPreloading
 返回模块是否在 Node 预加载阶段运行。
 
-## 🔢 module.loaded
+## module.loaded
 返回模块是否已经完成加载，或者正在加载。
 
-## 🔢 module.path
+## module.path
 返回模块的目录路径。
 
 ```js
@@ -789,7 +787,7 @@ console.log(module.path);
 // /Users/xiechen/Documents/code-personal/s-learn-code/nodejs/01/code/demo4
 ```
 
-## 🔢 module.paths
+## module.paths
 返回 Node 在查找模块时会检查的路径列表。
 
 ```js
