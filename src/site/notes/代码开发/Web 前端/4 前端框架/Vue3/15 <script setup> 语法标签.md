@@ -1,0 +1,445 @@
+---
+{"dg-publish":true,"permalink":"//web/4/vue3/15-script-setup/","dg-note-properties":{}}
+---
+
+`<script setup>`语法标签是 Vue3 目前最推荐的写法，不过这种写法并不是一开始就是这样的，是随着版本的升级一步一步演变而来的。
+
+![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/_assets/1728377036894-e446e278-a348-412e-86ac-e010a43601d6.png)
+
+## 🔢 Vue2 经典写法
+
+Vue2 时期使用的是 Options API 语法，这是一种经典的写法。哪怕是现在的 Vue3 版本中 Options API 的语法依然是兼容的、可以使用的，没有被官方抛弃。
+
+Vue2 Options API 的写法：
+
+```vue
+<template>
+  <div class="task-manager">
+    <h2>任务列表</h2>
+
+    <!-- 渲染各种待办事项 -->
+    <ul>
+      <li v-for="task in tasks" :key="task.id" :class="{ completed: task.completed }">
+        <span>{{ task.title }}</span>
+        <div class="buttons">
+          <button v-if="!task.completed" @click="completeTask(task.id)">完成</button>
+          <button v-else @click="uncompleteTask(task.id)">取消完成</button>
+        </div>
+      </li>
+    </ul>
+
+    <!-- 添加新任务 -->
+    <form @submit.prevent="addTask">
+      <input v-model="newTaskTitle" placeholder="添加新任务" />
+      <button type="submit">添加任务</button>
+    </form>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'TaskManager',
+  props: {
+    initialTasks: {
+      type: Array,
+      required: true,
+      default: () => []
+    }
+  },
+
+  data() {
+    return {
+      tasks: [...this.initialTasks],
+      newTaskTitle: '' // 新任务标题
+    }
+  },
+
+  methods: {
+    // 新增任务
+    addTask() {
+      if (this.newTaskTitle.trim() === '') {
+        return
+      }
+      // 添加新任务
+      this.tasks.push({
+        id: Date.now(),
+        title: this.newTaskTitle,
+        completed: false
+      })
+      this.newTaskTitle = '' // 清空输入框
+    },
+    // 标记任务已完成
+    completeTask(id) {
+      const task = this.tasks.find((task) => task.id === id)
+      if (task) {
+        task.completed = true
+        this.$emit('task-completed', task)
+      }
+    },
+    // 标记任务未完成
+    uncompleteTask(id) {
+      const task = this.tasks.find((task) => task.id === id)
+      if (task) {
+        task.completed = false
+        this.$emit('task-uncompleted', task)
+      }
+    }
+  }
+}
+</script>
+```
+
+## 🔢 Vue3 初期写法
+
+Vue3 初期的时候，官方提出了 Composition API 语法，这种风格能够对组件的公共模块进行一个更好的组合复用。
+
+Vue3 初期的时候写法和 Options API 大体上有很多类似的地方：
+
+```vue
+<script>
+import { ref, toRefs } from 'vue'
+
+export default {
+  name: 'TaskManager',
+
+  props: {
+    initialTasks: {
+      type: Array,
+      required: true,
+      default: () => []
+    }
+  },
+
+  emits: ['task-completed', 'task-uncompleted'],
+
+  setup(props, { emit, expose }) {
+    // setup 是一个生命周期方法
+    // 在该方法中书写数据以及函数
+    const { initialTasks } = toRefs(props)
+    const tasks = ref([...initialTasks.value]) // 任务列表
+    const newTaskTitle = ref('') // 存储新任务的标题
+
+    // 添加任务
+    const addTask = () => {
+      if (newTaskTitle.value.trim() === '') {
+        return
+      }
+      tasks.value.push({
+        id: Date.now(),
+        title: newTaskTitle.value,
+        completed: false
+      })
+      newTaskTitle.value = ''
+    }
+    // 完成任务
+    const completeTask = (taskId) => {
+      const task = tasks.value.find((task) => task.id === taskId)
+      if (task) {
+        task.completed = true
+        // 触发自定义事件
+        emit('task-completed', task)
+      }
+    }
+    // 取消完成任务
+    const uncompleteTask = (taskId) => {
+      const task = tasks.value.find((task) => task.id === taskId)
+      if (task) {
+        task.completed = false
+        // 触发自定义事件
+        emit('task-uncompleted', task)
+      }
+    }
+
+    // 指定能够暴露的方法
+    expose({
+      completeTask
+    })
+
+    // 最后需要返回一个对象
+    // 该对象里面就包含了需要在模板中使用的数据以及方法
+    return {
+      tasks,
+      newTaskTitle,
+      addTask,
+      completeTask,
+      uncompleteTask
+    }
+  }
+}
+</script>
+```
+
+根据上面的代码可以看出，早期的 Vue3 的 Composition API 写法实际上有 Options API 写法的影子，和 Vue2 语法存在一定的相似性，同样都是导出一个对象。
+
+最重要的特点是对象中多了一个`setup()`函数，这是一个新的生命周期钩子方法。在该方法内，我们可以定义对应的数据和方法，并且在最后返回出去，这样在模版中就可以使用所返回的数据和方法了。
+
+## 🔢 使用 defineComponent() 编写组件
+
+`defineComponent()`方法是 Vue3 引入的一个「辅助函数」，主要用于定义 Vue 组件，特别是使用 TS 的时候可以提供更好的类型推断和校验。
+
+通过使用`defineComponent()`方法，我们可以：
+
+1、自动推断类型：减少显示类型注解，使代码更简洁；
+
+2、减少冗余：不需要手动定义`props`接口和响应式数据的类型；
+
+3、提高可读性：使代码更易读、更易维护；
+
+例如：
+
+```vue
+<script>
+import { defineComponent, toRefs, ref } from 'vue'
+
+export default defineComponent({
+  name: 'TaskManager',
+
+  props: {
+    initialTasks: {
+      type: Array,
+      required: true,
+      default: () => []
+    }
+  },
+
+  emits: ['task-completed', 'task-uncompleted'],
+
+  setup(props, { emit }) {
+    // setup是一个生命周期方法
+    // 在该方法中书写数据以及函数
+    const { initialTasks } = toRefs(props)
+    const tasks = ref([...initialTasks.value]) // 任务列表
+    const newTaskTitle = ref('') // 存储新任务的标题
+
+    // 添加任务
+    const addTask = () => {
+      if (newTaskTitle.value.trim() === '') {
+        return
+      }
+      tasks.value.push({
+        id: Date.now(),
+        title: newTaskTitle.value,
+        completed: false
+      })
+      newTaskTitle.value = ''
+    }
+    // 完成任务
+    const completeTask = (taskId) => {
+      const task = tasks.value.find((task) => task.id === taskId)
+      if (task) {
+        task.completed = true
+        // 触发自定义事件
+        emit('task-completed', task)
+      }
+    }
+    // 取消完成任务
+    const uncompleteTask = (taskId) => {
+      const task = tasks.value.find((task) => task.id === taskId)
+      if (task) {
+        task.completed = false
+        // 触发自定义事件
+        emit('task-uncompleted', task)
+      }
+    }
+
+    // 最后需要返回一个对象
+    // 该对象里面就包含了需要在模板中使用的数据以及方法
+    return {
+      tasks,
+      newTaskTitle,
+      addTask,
+      completeTask,
+      uncompleteTask
+    }
+  }
+})
+</script>
+```
+
+根据代码可以看出，`defineComponent()`方法仅仅是一个辅助方法，和 TS 配合的好，但是没有从本质上改变初期 Composition API 的写法。
+
+## 🔢 `<script setup>` 语法标签
+
+从 Vue3.2 版本开始正式引入了`<script setup>`语法糖，简化了 Composition API 的语法，使得组件定义更加的简洁和直观。
+
+其优点主要如下：
+
+1、简化书写：在传统的`setup()`函数中，我们需要返回一个对象，其中包含需要在模版中使用的变量和方法。在`<script setup>`中这一步被省略了，所有定义的变量和方法会自动暴露给模版使用，从而减少样板代码（也就是每次都需要手动`return`的变量和方法）。
+
+2、更好的类型推断：在`<script setup>`中所定义的内容都是顶层变量，TS 的类型推断可以更加的直观和简单。
+
+写法示例：
+
+```vue
+<script setup>
+import { ref, toRefs } from 'vue'
+
+const props = defineProps({
+  initialTasks: {
+    type: Array,
+    required: true
+  }
+})
+
+const emit = defineEmits(['task-completed', 'task-uncompleted'])
+
+const { initialTasks } = toRefs(props)
+const tasks = ref([...initialTasks.value]) // 任务列表
+const newTaskTitle = ref('') // 存储新任务的标题
+
+// 添加任务
+const addTask = () => {
+  if (newTaskTitle.value.trim() === '') {
+    return
+  }
+  tasks.value.push({
+    id: Date.now(),
+    title: newTaskTitle.value,
+    completed: false
+  })
+  newTaskTitle.value = ''
+}
+// 完成任务
+const completeTask = (taskId) => {
+  const task = tasks.value.find((task) => task.id === taskId)
+  if (task) {
+    task.completed = true
+    // 触发自定义事件
+    emit('task-completed', task)
+  }
+}
+// 取消完成任务
+const uncompleteTask = (taskId) => {
+  const task = tasks.value.find((task) => task.id === taskId)
+  if (task) {
+    task.completed = false
+    // 触发自定义事件
+    emit('task-uncompleted', task)
+  }
+}
+
+defineExpose({
+  // 要暴露的成员
+  completeTask
+})
+</script>
+```
+
+在`<script setup>`中定义的数据和方法都可以直接在模版中使用。
+
+另外，通过`defineProps()`「宏函数」获取到父组件传递过来的`props`，通过`defineEmits()`「宏函数」来触发父组件的事件。
+
+那么什么是「宏」呢？
+
+宏这个概念最初是在 C 语言中引入的，C 语言是编译型语言，在开始编译之前会对宏代码进行一个文本替换的操作，这就被称之为预处理。
+
+举个例子，在 C 语言中通过`#define`来定义宏：
+
+```c
+// 定义了两个宏
+#define PI 3.14159
+#define SQUARE(x) ((x) * (x))
+
+int main() {
+    double area = PI * SQUARE(5);
+    return 0;
+}
+```
+
+在开始编译之前，会将`PI`替换为 3.14159，将`SQUARE(5)`替换为`((5) * (5))`。
+
+理解了这个，回头再看`defineProps()`和`defineEmits()`就会变得非常好理解了，这两个部分的代码回头会被替换掉，替换成 Vue3 最初的写法。
+
+`defineProps()`和`defineEmits()`将会替换成如下的内容：
+
+```js
+export default {
+  // ...
+
+  props: {
+    initialTasks: {
+      type: Array,
+      required: true,
+      default: () => []
+    }
+  },
+
+  emits: ['task-completed', 'task-uncompleted']
+
+  // ...
+};
+```
+
+这一点可以从 vite-plugin-inspect 插件的编译分析中得到验证。
+
+![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/_assets/1728380540721-d42ff359-a66d-4bf3-8b94-aedf568c8172.png)
+
+从插件的编译分析中可以看出，`<script setup>`标签本身就是一个语法糖，目的是为了方便开发者书写代码。在编译的时候最终还是会被编译为 Composition API 的早期写法。
+
+## 🔢 expose 上的区别
+
+`<script setup>`标签虽说是一种语法糖，不过某些行为上的表现和原始的 Composition API 存在一些区别，例如`expose()`。
+
+<br/>tips
+这里需要先解释一下什么是`expose()`：
+
+一般来讲，父组件管理父组件的数据和方法，子组件管理子组件的数据和方法，如果涉及到通信，那么通过`props`的方式来进行传递。
+
+但如果一个组件通过`ref`获取到组件实例，在早期的 Composition API 中，能够拿到组件内部所有数据和方法的。
+
+<br/>
+
+引用 Options API 组件：
+
+```js
+const taskCom1 = ref(null);
+
+onMounted(() => {
+  console.log(taskCom1.value);
+});
+```
+
+得到的组件数据：
+
+![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/_assets/1728380938470-c73046b5-4206-4bd2-bc7c-da246c98576a.png)
+
+这种方式是非常危险的，因为正常来讲父子组件都是通过`emit`和`props`来进行通信的。有个好处就是传递了什么就使用什么，而不是拿到组件实例所有的数据。
+
+Vue 提供了一个名为`expose()`的方法，由组件自己决定，如果外部拿到我这个组件实例，我能暴露出去哪些数据给对方。
+
+在`setup()`方法中默认行为和 Options API 是一致的。可以使用`expose()`覆盖默认的行为：
+
+```js
+export default {
+  setup(props, { emit, expose }) {
+    // ...
+
+    // 指定能够暴露的方法
+    expose({
+      completeTask
+    });
+  }
+}
+```
+
+![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/_assets/1728381215490-0539853e-3d3d-4656-90fb-b3170f058978.png)
+
+到了`<script setup>`标签语法中，则默认行为就是不向外部暴露任何的数据。
+
+![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/_assets/1728381328187-17603f28-6b60-4cf8-9933-4b1d5e375fb7.png)
+
+在父组件中无法得到数据：
+
+![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/_assets/1728381499922-0f58bced-6492-48f1-8b12-df6819de1cef.png)
+
+如果想要暴露某个成员，仍然是通过`expose`的方式，这里会涉及到一个`defineExpose`的宏。
+
+```vue
+<script setup>
+  // ...
+
+  defineExpose({
+    completeTask
+  });
+</script>
+```
