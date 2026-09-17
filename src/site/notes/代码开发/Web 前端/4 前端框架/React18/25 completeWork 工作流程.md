@@ -3,7 +3,7 @@
 ---
 
 `completeWork()` 属于“归”阶段。
-和 `beginWork()` 类似，`completeWork()` 也会会根据 wip.tag 区分对待，流程上包括两个步骤：
+和 `beginWork()` 类似，`completeWork()` 也会根据 wip.tag 区分对待，流程上包括两个步骤：
 - 创建元素或者标记元素更新；
 - flags 冒泡；
 
@@ -57,6 +57,7 @@ appendAllChildren = function(parent, workInProgress, ...){
     if(node === workInProgress) {
       return;
     }
+    
     // 如果没有兄弟 FiberNode，则向父 FiberNode 遍历
     while(node.sibling === null){
       // 终止情况 2: 回到最初执行步骤 1 所在层
@@ -104,12 +105,52 @@ function World(){
 5. 执行 `finalizeInitialChildren()` 方法完成属性初始化；
 6. 执行 `bubbleProperties()` 完成 flags 冒泡；
 
+mount 阶段流程总结：
+
+```md
+completeWork
+
+     |
+     ↓
+
+判断tag
+
+     |
+     ↓
+
+HostComponent
+
+     |
+     ↓
+
+createInstance
+创建DOM
+
+     |
+     ↓
+
+appendAllChildren
+挂载子DOM
+
+     |
+     ↓
+     
+finalizeInitialChildren
+设置属性
+
+     |
+     ↓
+
+bubbleProperties
+flags冒泡
+```
+
 ## update 阶段
 
 上面的 mount 阶段完成的是属性的初始化，那么这个 update 流程完成的就是属性的更新标记。
 
 `updateHostComponent()` 的主要逻辑是在 `diffProperties()` 里面，这个方法会包含两次遍历：
-- 第一次遍历：主要标记更新前有，更新没有的属性，实际上也就是标记删除了的属性；
+- 第一次遍历：主要标记更新前有，更新后没有的属性，实际上也就是标记删除了的属性；
 - 第二次遍历：主要是标记更新前后有变化的属性，实际上也就是标记更新了的属性；
 
 相关代码如下：
@@ -202,7 +243,7 @@ workInProgress.flags |= Update;
 
 我们知道，当整个 Reconciler 完成工作后，会得到一颗完整的 workInProgress FiberTree，这颗 wip FiberTree 是由一颗一颗 FiberNode 组成的，这些 FiberNode 中有一些是标记了 flags ，有一些没有标记，现在就存在一个问题，我们应该如何高效的找到散落在这颗 wip FiberTree 中有 flag 标记的 FiberNode，那么此时就可以使用 flags 冒泡。
 
-我们知道 completeWork 属于归阶段，整体流程是自下往上，就非常实用用来收集副作用，收集的相关代码如下：
+我们知道 completeWork 属于归阶段，整体流程是自下往上，就非常适合用来收集副作用，收集的相关代码如下：
 
 ```js
 let subtreeFlags = NoFlags;
@@ -216,5 +257,7 @@ completeWork.subtreeFlags |= subtreeFlags;
 ```
 
 这样的收集方式有一个好处，在渲染阶段通过任意一级的 FiberNode.subtreeFlags 都可以快速确定该 FiberNode 以及子树是否存在副作用，从而判断是否需要执行和副作用相关的操作。
+
+也就是说 subtreeFlags 用来标记子元素有没有副作用，flags 是用来标记自己有没有副作用。
 
 在早期的时候，React 实际上并没有使用 subtreeFlags 来通过 flags 冒泡收集副作用，而是使用 effect list（链表）来收集副作用，使用 subtreeFlags 有一个好处就是能确定某一个 FiberNode 它的子树的副作用。

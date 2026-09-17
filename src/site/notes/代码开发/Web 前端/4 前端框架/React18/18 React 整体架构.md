@@ -233,3 +233,21 @@ function shouldYield(){
 ```
 
 每次循环都会调用 `shouldYield()` 方法来判断当前的时间切片是否还有足够的剩余时间，如果没有足够的剩余时间，就暂停 Recociler 的执行，将主线程还给渲染流水线，进行下一帧的渲染操作，渲染工作完成后，在等待下一个宏任务进行后续代码的执行。
+
+## JSX、React Element 和  Fiber 的关系？
+
+一句话总结：JSX 是对开发者 UI 的描述，编译后生成 React Element。React Element 只是在描述节点的类型、属性、子级等等，但是它不负责这个节点的 state、优先级、副作用等等信息，这些工作都需要 Fiber 来进行记录。而 Fiber 是 React 内部用来调度、协调、保存状态和副作用的工作节点，Fiber 树也是最主要的内容。
+
+```md
+开发者写的 JSX
+  ↓ 编译
+React.createElement
+  ↓
+React Element 树          ← 每次渲染新建，描述 UI
+  ↓ reconcile
+Fiber 树                  ← 跨渲染复用，保存状态、DOM、副作用
+  ├─ current
+  └─ workInProgress
+  ↓ commit
+真实 DOM
+```

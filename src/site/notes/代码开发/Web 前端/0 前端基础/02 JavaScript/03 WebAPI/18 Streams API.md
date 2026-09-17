@@ -12,31 +12,27 @@ Streams API 是为了解决一个简单又基础的问题：Web 应用如何消�
 
 Stream API 直接解决的问题是处理网络请求和读写磁盘。
 
-tream API 定义了三种流：
+Stream API 定义了三种流：
 
 - 可读流，数据（网络、文件等）从某个来源不断的进入流中，然后由消费者进行处理；
 - 可写流，由提供者把数据一段一段的写进流中，流会把这些数据传递到某个目标（服务器、文件等）；
 - 转换流，相当于一个中间人，一边接收输入的流，一边输出处理后的流；
 
-## > 块、内部队列和反压
-流的基本单位是块（chunk）。块可以是任意的数据类型，但通常是定型数组`TypedArray`。
+## 块、内部队列和反压
+流的基本单位是块（chunk），块可以是任意的数据类型，但通常是定型数组`TypedArray`。
 
 每个块都是离散的流片段，可以作为一个整体来处理。更重要的是块不是固定大小的，也不一定按照固定的间隔到达。
 
 上面提到的三种流都存在「入口」和「出口」的概念，由于数据进出的速率不同，可能会出现不匹配的情况。
-
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1776740625172-1fa18a55-52cb-4be7-8a1f-054516016d81.png)
 
 1、流出口处理数据的速度比入口提供的数据速度更快。流出口经常空闲（也可能是流入口的效率低），但是只会浪费一点内存和计算资源，所以这种流的不平衡是可接受的。
-
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1776740913930-86a334a5-b949-4792-898b-e1ab48813b39.png)
 
 2、流入和流出的速度相同，这就是最理想的状态。
-
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1776740988949-b5279ba2-8683-4ce2-a49b-54171435f638.png)
 
 3、流入口提供数据的速度比出口处理数据的速度要快，这种不平衡是固有的问题，此时一定会出现数据的积压，流必须相应的做出处理。
-
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1776741230903-93522771-203f-48a8-a08a-2cbea0f2587f.png)
 
 流的不平衡是常见的问题，但是流也提供了解决这个问题的工具。
@@ -48,6 +44,7 @@ tream API 定义了三种流：
 这个阈值是由排队策略决定的，这个策略定义了内部队列可以占用的最大内存，也就是「高水位线」。
 
 ## 可读流
+
 可读流是对底层数据源的封装，允许消费者通过公共的接口读取数据。
 
 1、ReadableStreamDefaultController
@@ -77,10 +74,8 @@ const readableStream = new ReadableStream({
 });
 ```
 
-<br/>tips
+> [!tips]
 `ReadableStreamDefaultController`就等同于：往流里面塞入数据的控制器。
-
-<br/>
 
 然后调用控制器的`enqueue()`方法把数据传给流，最后通过`close()`方法关闭流。
 
@@ -150,6 +145,7 @@ console.log(readableStream.locked); // false
 然后就可以接着获取下一个读取器了。
 
 ## 可写流
+
 可写流是底层数据槽（数据最终要被写到的地方）的封装，通过流的公共接口写入数据。
 
 1、创建 WritableStream
@@ -198,12 +194,11 @@ console.log(writableStream.locked); // true
 })()
 ```
 
-<br/>tips
+> [!tips]
 `ready` 主要用于处理反压。当内部队列压力较大时，需要等待它变为可写状态后再继续写入。
 
-<br/>
-
 ## 转换流
+
 转换流用于组合可读流和可写流。数据块在两个流之间的转换是通过`transform()`方法完成的。
 
 继续复用之前的生成器示例：
@@ -262,10 +257,10 @@ const writableStreamDefaultWriter = writable.getWriter();
 ```
 
 执行结果：
-
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1776760180518-8e254bbb-6063-4421-9222-502999961b9a.png)
 
 ## 通过管道连接流
+
 流可以通过「管道」连接成一串。最常见的场景是使用`pipeThrough()`方法把可读流接入转换流。
 
 从内部来看，可读流先把自己的值传递给转换流内部的可写流，然后执行转换，接着转换后的新值又在新的可写流上出现。
@@ -322,7 +317,6 @@ const pipedStreamDefaultReader = pipedStream.getReader();
   }
 })();
 ```
-
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1776760180518-8e254bbb-6063-4421-9222-502999961b9a.png)
 
 另外也可以使用`pipeTo()`将「可读流」连接到「可写流」，整个过程和`pipeThrough()`类似：
@@ -346,19 +340,16 @@ const writableStream = new WritableStream({
 });
 const pipedStream = integerStream.pipeTo(writableStream);
 ```
-
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1776760180518-8e254bbb-6063-4421-9222-502999961b9a.png)
 
-🔔 提示
-
-当调用`pipeTo()`把可读流连接到可写流的时候，`pipeTo()`在读取到每个 chunk 后，自动调用目标可写流的`write(chunk)`写入数据。
-
-因此以上代码中，不需要在调用写入器写入数据。
-
-<br/>
+> [!tip]
+> 当调用`pipeTo()`把可读流连接到可写流的时候，`pipeTo()`在读取到每个 chunk 后，自动调用目标可写流的`write(chunk)`写入数据。
+> 因此以上代码中，不需要在调用写入器写入数据。
 
 ## 实际场景
+
 ## > 大文件分块上传
+
 核心思路：
 
 ```markdown
@@ -428,6 +419,7 @@ async function uploadChunk(chunk, index) {
 ```
 
 ## > 日志处理
+
 核心思路：
 
 ```markdown

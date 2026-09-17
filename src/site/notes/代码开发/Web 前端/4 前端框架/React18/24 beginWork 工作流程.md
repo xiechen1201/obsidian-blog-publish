@@ -6,7 +6,7 @@
 - 递：`beginWork()`
 - 归：`completeWork()`
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/React18/_assets/2023-03-10-053722.png)
-`beginWork()` 方法主要是根据传入的 FiberNode 创建下一级的 FiberNode。
+==`beginWork()` 方法主要是根据传入的 FiberNode 创建下一级的 FiberNode。==
 
 整个 `beginWork()` 方法流程如下：
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/React18/_assets/2023-03-01-015305.png)
@@ -22,7 +22,7 @@ if(current !== null){
 
 如果是 update 接下来就会判断 workInProgress FiberNode 能否进行复用，如果不可以，那么 update 和 mount 的流程基本上一致：
 - 根据 wip.tag 进行不同分支的处理；
-- 根据 reconcile 算法生成下一级的 FiberNode（diff 算法）
+- 根据 reconcile 算法生成下一级的 FiberNode（diff 算法）;
 
 无法复用的 update 流程和 mount 流程基本一致，主要区别在于是否会生成带副作用标记 flags 的 FiberNode。
 
@@ -114,7 +114,6 @@ function placeChild(newFiber, lastPlacedIndex, newIndex){
   // 说明是更新
   // 标记为 Placement
   newFiber.flags |= Placement; // 位运算
-  
 }
 ```
 
