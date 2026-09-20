@@ -148,3 +148,11 @@ function bailoutHooks(
 ```
 
 在执行 `bailoutHooks()` 方法的时候，最后一句会将当前 FiberNode 的 lanes 移除，因此当这一轮更新完成后，current.lanes 和 wip.lanes 就均为 NoLanes，所以后续点击就会命中 eagerState 策略。
+
+总结：eagerState 是 React 在 dispatch 更新阶段执行的一种性能优化策略。正常情况下 state 的计算发生在 render 阶段的 beginWork 中，而 eagerState 会在 schedule 之前提前计算下一次 state。
+
+如果提前计算发现新旧 state 相同，那么 React 可以直接跳过此次更新，不进入 schedule、render 和 commit 流程。
+
+eagerState 的前提是当前 FiberNode 不存在待执行更新，因为当前更新必须是第一个更新，这样提前计算出来的 state 才可以安全作为后续更新基础。
+
+React 的 Update 对象中会保存 hasEagerState 和 eagerState 字段，用于后续 render 阶段复用提前计算结果。

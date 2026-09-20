@@ -6,6 +6,32 @@
 - 通过 reconcile 流程生成子 FiberNode；
 - 通过命中 bailout 策略来复用子 FiberNode；
 
+先回忆一下 React 的更新流程：
+
+```md
+setState()
+    |
+    ↓
+scheduleUpdateOnFiber
+    |
+    ↓
+render阶段
+    |
+    ↓
+beginWork
+    |
+    ↓
+生成新的 Fiber Tree
+    |
+    ↓
+completeWork
+    |
+    ↓
+commit
+```
+
+重点是 render 阶段 React 会重新遍历 Fiber Tree，如果某些组件根本没有变化也就不需要重新遍历，因此 React 需要一种机制来进行判断"这个节点没变化，下面的子节点也没变化，那我直接跳过去。"，所以 ==bailout 的本质就是：判断当前 Fiber 是否需要重新 render，如果不需要，就复用之前已经创建好的 Fiber 子树。==
+
 在前面我们讲过，所有的变化都是由“自变量”的改变造成的，在 React 中自变量：
 - state
 - props
@@ -26,7 +52,7 @@
 
 注意这里做的是一个全等比较，组件在 render 之后拿到的是一个 React 元素，会针对 React 元素的 props 进行一个全等比较。但是由于每一次组件 render 的时候，会生成一个全新的对象引用，因此 oldProps 和 newProps 并不会全等，此时是没有办法命中 bailout。
 
-只有当父 FiberNode 命中 bailout 策略的时候，复用子 FiberNode，在子 FiberNode 的 beginWork 中，oldProps 才有可能和 newProps 全等。
+<u>只有当父 FiberNode 命中 bailout 策略的时候，复用子 FiberNode，在子 FiberNode 的 beginWork 中，oldProps 才有可能和 newProps 全等。</u>
 
 2、Legacy Context 没有变化
 
@@ -43,7 +69,7 @@ function App(){
 }
 ```
 
-上面的代码中，我们在 App 组件中定义了 Child 组件，那么 App 每次 render 之后都会创建新的 Child 的引用，因此对于 Child 来讲，FiberNode.type 始终是变化的，无法命中 bailout 策略。
+上面的代码中，我们在 App 组件中定义了 Child 组件，<u>那么 App 每次 render 之后都会创建新的 Child 的引用，</u>因此对于 Child 来讲，FiberNode.type 始终是变化的，无法命中 bailout 策略。
 
 因此不要在组件内部在定义组件，以免无法命中优化策略。
 
@@ -79,10 +105,11 @@ function bailoutOnAlreadyFinishedWork(current, workInProgress, renderLanes) {
   if (!includesSomeLane(renderLanes, workInProgress.childLanes)) {
     // ...
     // 整颗子树都命中 bailout 策略
-		return null;
+	return null;
   }
 
-  // 该 FiberNode 没有命中 bailout，但它的子树命中了。克隆子 FiberNode 并继续
+  // 当前 FiberNode 命中了 bailout，但是它的子树存在更新
+  // 因此不能跳过整个子树，需要复用子 FiberNode 并继续向下遍历
   cloneChildFibers(current, workInProgress);
   return workInProgress.child;
 }
@@ -222,3 +249,28 @@ function markWorkInProgressReceivedUpdate() {
   didReceiveUpdate = true;
 }
 ```
+
+总结：
+React 的 bailout 是一种性能优化策略，主要发生在 beginWork 阶段。
+
+beginWork 在生成子 Fiber 时，有两种方式：
+- 正常执行 reconcile 创建新的 Fiber；
+- 命中 bailout，复用已有 Fiber；
+
+React 判断 bailout 主要围绕 state、props、context 三个变量展开。
+
+第一次判断主要检查：
+1. oldProps 和 newProps 是否全等；
+2. Context 是否变化；
+3. FiberNode.type 是否变化；
+4. 当前 Fiber 是否存在更新。
+
+满足后进入 `bailoutOnAlreadyFinishedWork()` 方法，该方法会通过 childLanes 判断子树是否存在更新：
+- 如果子树没有更新，则直接跳过整棵子树；
+- 如果子树存在更新，则复制 child Fiber 继续向下遍历；
+
+第二次判断主要针对优化 API，例如 React.memo、PureComponent、shouldComponentUpdate。
+
+它们通过浅比较改变 bailout 判断条件，提高命中概率。
+
+另外，如果 update 存在，但是计算后的 state 与之前一致，也可以通过 bailout 跳过后续 reconcile。
