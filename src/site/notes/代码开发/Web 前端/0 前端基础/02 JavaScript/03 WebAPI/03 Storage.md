@@ -67,12 +67,10 @@ window.addEventListener("storage", (event) => {
 });
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 对于`sessionStorage`和`localStorage`上的任何更改都会触发`storage`事件，但`storage`事件不会区分这两者。
 
-对于`sessionStorage`和`localStorage`上的任何更改都会触发`storage`事件，但`storage`事件不会区分这两者。
-
-<br/>
 
 ## Cookie 与 Storage 对象的区别
 |  | Cookie | LocalStorage | SessionStorage |

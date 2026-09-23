@@ -3,12 +3,10 @@
 ---
 
 ## Fetch 概述
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> Fetch API 并不是 ES6 新增的，而是使用了 ES6 的 Promise API。
 
-Fetch API 并不是 ES6 新增的，而是使用了 ES6 的 Promise API。
-
-<br/>
 
 Fetch API 就是用来进行 Ajax 请求的。
 

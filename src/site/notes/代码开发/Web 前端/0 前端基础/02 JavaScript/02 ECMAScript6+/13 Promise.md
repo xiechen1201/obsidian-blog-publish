@@ -71,12 +71,12 @@ sendMessage(
 ## Promises/A+ 规范
 Promises/A+ 规范就是一种规范，定义了 Promise 的行为和接口，也就是说规定了如何实现 Promise。
 
-<br/>tips
-A+ 并没有特别的含义，只是用来表示这是一个增强或者改进的版本。A+ 规范是在原来的 Promises/A 的规范上进行拓展和改进下而来的。
+> [!tip]
+>
+> A+ 并没有特别的含义，只是用来表示这是一个增强或者改进的版本。A+ 规范是在原来的 Promises/A 的规范上进行拓展和改进下而来的。
+>
+> Promises/A+ 规范：[https://promisesaplus.com/](https://promisesaplus.com/)
 
-Promises/A+ 规范：[https://promisesaplus.com/](https://promisesaplus.com/)
-
-<br/>
 
 Promises/A+ 的规定：
 
@@ -267,7 +267,7 @@ console.log(pro3);
 
 「新异步任务」的状态取决于「前任务后续的处理」：
 
-- 若没有相关的后续处理，新任务的状态和前任务的状态一致，数据为前任务的数据；
+1、若没有相关的后续处理，新任务的状态和前任务的状态一致，数据为前任务的数据；
 
 ```js
 // 只处理了成功的情况，没有处理失败的情况
@@ -305,7 +305,7 @@ const pro2 = pro1.catch((data) => {
 setTimeout(() => console.log(pro2), 0); // Promise{<fulfilled>}
 ```
 
-- 若有后续处理但是还没执行，则新任务也会挂起；
+2、若有后续处理但是还没执行，则新任务也会挂起；
 
 ```js
 const pro1 = new Promise((resolve, reject) => {
@@ -324,8 +324,8 @@ const pro2 = pro1.catch((data) => {
 setTimeout(() => console.log(pro2), 0); // Promise{<pending>}
 ```
 
-- 若后续处理执行了，则根据后续处理的情况来确定新任务的状态；
-    - 后续处理执行无报错，则新任务的状态为完成，数据为后续处理的返回值；
+3、若后续处理执行了，则根据后续处理的情况来确定新任务的状态；
+3.1、后续处理执行无报错，则新任务的状态为完成，数据为后续处理的返回值；
 
 ```js
 const pro1 = new Promise((resolve, reject) => {
@@ -357,7 +357,7 @@ const pro2 = pro1.catch((error) => {
 setTimeout(() => console.log(pro2), 0); // Promise{<fulfilled>}
 ```
 
-    - 后续处理执行有错，新任务的状态为失败，数据为异常对象;
+3.2、后续处理执行有错，新任务的状态为失败，数据为异常对象;
 
 ```js
 const pro1 = new Promise((resolve, reject) => {
@@ -390,9 +390,7 @@ console.log(pro2); // Promise {<rejected>: Error: 颁奖的机构跑路了}
 
 到这里简单总结一下：如果`pro1`的状态被`.then`处理了，那么`pro2`的状态取决于后续处理过程情况（不管是成功函数还是失败函数）。
 
-<br/>
-
-    - 后续处理如果返回一个任务对象，新任务的状态和数据与该任务对象一致;
+3.3、后续处理如果返回一个任务对象，新任务的状态和数据与该任务对象一致;
 
 ```js
 const pro1 = new Promise((resolve, reject) => {

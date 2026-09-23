@@ -10,22 +10,22 @@ const http = require('http');
 const request = http.request(url[, options][, callback]);
 ```
 
-<br/>tips
-参数：
+> [!tip]
+>
+> 参数：
+>
+> - url：请求地址
+> - options：可选参数
+>     - headers：请求头
+>     - method：请求方法
+>     - ...
+> - callback：回调函数
+>     - 回调函数的参数为 http.IncomingMessage 实例对象。该实例对象可以拿到请求到的状态码和响应头信息，但是拿不到响应体的内容，因为服务返回的内容可能会很大，所以没有提供获取响应体的属性，需要使用流的方式读取！
+>
+> 返回值：
+>
+> 返回  http.ClientRequest 对象实例。
 
-- url：请求地址
-- options：可选参数
-    - headers：请求头
-    - method：请求方法
-    - ...
-- callback：回调函数
-    - 回调函数的参数为 http.IncomingMessage 实例对象。该实例对象可以拿到请求到的状态码和响应头信息，但是拿不到响应体的内容，因为服务返回的内容可能会很大，所以没有提供获取响应体的属性，需要使用流的方式读取！
-
-返回值：
-
-返回  http.ClientRequest 对象实例。
-
-<br/>
 
 案例：
 
@@ -110,20 +110,20 @@ const http = require('http');
 const server = http.createServer([options][, requestListener]);
 ```
 
-<br/>tips
-参数：
+> [!tip]
+>
+> 参数：
+>
+> - options：可选的参数
+>     - ...
+> - requestListener：请求监听函数，函数会得到两个参数 ：
+>     - http.IncomingMessage 可以获取客户端请求的信息
+>     - http.ServerResponse 写入信息可以返回到客户端
+>
+> 返回：
+>
+> 返回 http.Server 实例对象，继承 net.Server 类。
 
-- options：可选的参数
-    - ...
-- requestListener：请求监听函数，函数会得到两个参数 ：
-    - http.IncomingMessage 可以获取客户端请求的信息
-    - http.ServerResponse 写入信息可以返回到客户端
-
-返回：
-
-返回 http.Server 实例对象，继承 net.Server 类。
-
-<br/>
 
 示例：
 

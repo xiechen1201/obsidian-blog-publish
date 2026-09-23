@@ -27,14 +27,12 @@ let foo; // ✅
 function func(foo, bar) { } // ❌参数“foo”隐式具有“any”类型
 ```
 
-<br/>warning
-🔔 提示
+> [!warning]
+>
+> 默认情况下，Typescript 是宽容的，在推导出类型为`any`时其实不会报错，如果在 tsconfig.json 中启用了`noImplcitAny`标志，就会遇到隐式`any`类型时报错。
+>
+> `noImplcitAny`隶属于 TSC 的`strict`标志家族，如果已经在 tsconfig.json 中启用了`strict`，那就不需要专门设置`noImplcitAny`标志了，效果是一样的。
 
-默认情况下，Typescript 是宽容的，在推导出类型为`any`时其实不会报错，如果在 tsconfig.json 中启用了`noImplcitAny`标志，就会遇到隐式`any`类型时报错。
-
-`noImplcitAny`隶属于 TSC 的`strict`标志家族，如果已经在 tsconfig.json 中启用了`strict`，那就不需要专门设置`noImplcitAny`标志了，效果是一样的。
-
-<br/>
 
 如果给函数的参数显式的定义为`any`类型则不会错误：
 

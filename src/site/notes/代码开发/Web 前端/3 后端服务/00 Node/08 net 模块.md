@@ -300,14 +300,12 @@ Cookie: sidebarStatus=1; Authorization=bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX
 链接关闭了
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 从上面的打印结果来看，发现有两次「有客户端链接到服务器~」的打印是为什么？
+>
+> 这是因为有一次是测试请求。
 
-从上面的打印结果来看，发现有两次「有客户端链接到服务器~」的打印是为什么？
-
-这是因为有一次是测试请求。
-
-<br/>
 
 使用 net 监听响应并返回数据内容：
 

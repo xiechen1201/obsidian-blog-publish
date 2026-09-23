@@ -10,10 +10,10 @@
 
 这个方法接收一个 URL 和有效的数据载荷，并且会发送一个 POST 请求。如果请求成功进入了最终要发送的队列，则该方法返回`true`。
 
-<br/>tips
-有效的数据载荷有`ArrayBufferView`、`Blob`、DOMString、`FormData`实例。
+> [!tip]
+>
+> 有效的数据载荷有`ArrayBufferView`、`Blob`、DOMString、`FormData`实例。
 
-<br/>
 
 示例：
 

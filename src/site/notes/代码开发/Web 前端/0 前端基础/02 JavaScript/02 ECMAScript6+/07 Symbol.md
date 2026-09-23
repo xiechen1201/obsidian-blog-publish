@@ -266,11 +266,8 @@ let obj = {
 console.log(obj); // {Symbol(foo): 3}
 ```
 
-⚠️ 注意
-
-该方法只能获取`Symbol.for()`返回的 symbol。
-
-<br/>
+> [!tip]
+> 该方法只能获取`Symbol.for()`返回的 symbol。
 
 ## 知名符号
 知名符号是一些具有特殊含义的共享符号，通过`Symbol`的静态属性得到。

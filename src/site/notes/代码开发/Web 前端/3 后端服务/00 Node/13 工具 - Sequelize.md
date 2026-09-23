@@ -56,12 +56,10 @@ module.exports = sequelize;
 
 这样我们就得到了一个`sequelize`的模型实例对象，它表示与一个数据库的连接。
 
-<br/>tips
-❕信息
+> [!tip]
+>
+> 需要提前创建好一个名为“orm_myschool_db_2”的数据库。
 
-需要提前创建好一个名为“orm_myschool_db_2”的数据库。
-
-<br/>
 
 ## 定义表模型
 接着，我们就可以定义模型了，模型是 Sequelize 的本质，是对数据库表的抽象概念，可以理解一个模型就是一张表。

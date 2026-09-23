@@ -33,12 +33,8 @@ console.log(Person.__proto__); // ƒ () { [native code] }
 console.log(Person.__proto__ === Function.prototype); // true
 ```
 
-<br/>warning
-⚠️ 注意
-
-`Person.__proto__`实际上指向的是`Function.prototype`，其实就是函数的原型对象。所有函数（包括`Person`）本质上是由`Function`构造器创建的，所以`Person`的原型指向了`Function.prototype`。
-
-<br/>
+> [!tip]
+> `Person.__proto__`实际上指向的是`Function.prototype`，其实就是函数的原型对象。所有函数（包括`Person`）本质上是由`Function`构造器创建的，所以`Person`的原型指向了`Function.prototype`。
 
 因此，`Person`属于`Function`的实例：
 

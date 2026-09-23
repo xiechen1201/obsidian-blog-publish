@@ -83,12 +83,12 @@ if(win.closed){
 ```
 
 ## 窗口的位置
-<br/>color1
-`window.moveTo(坐标x, 坐标y)`
+> [!info]
+>
+> `window.moveTo(坐标x, 坐标y)`
+>
+> `window.moveBy(向下移动的像素, 向右移动的像素)`
 
-`window.moveBy(向下移动的像素, 向右移动的像素)`
-
-<br/>
 
 ```js
 var win = widnow.open("https://baidu.com", "width=500,height=500");
@@ -97,14 +97,14 @@ win.moveBy(10, 10);
 ```
 
 ## 窗口的关系
-<br/>color5
-`window.top`获取最上层窗口
+> [!note]
+>
+> `window.top`获取最上层窗口
+>
+> `window.parent`获取当前窗口的父窗口
+>
+> `window.self`获取当前窗口（之所以还要暴露 self，就是为了和 top、parent 保持一致）
 
-`window.parent`获取当前窗口的父窗口
-
-`window.self`获取当前窗口（之所以还要暴露 self，就是为了和 top、parent 保持一致）
-
-<br/>
 
 举个例子 🌰：
 
@@ -183,17 +183,17 @@ win.moveBy(10, 10);
 
 ## 窗口的尺寸
 ## 获取
-<br/>color2
-`window.innerHeight/window.innerWidth`返回浏览器窗口可视窗口的高/宽度（不包含浏览器边框和工具栏）
+> [!success]
+>
+> `window.innerHeight/window.innerWidth`返回浏览器窗口可视窗口的高/宽度（不包含浏览器边框和工具栏）
+>
+> `window.outerHeight/window.outerWidth`返回浏览器窗口可视窗口的高/宽度（包含浏览器边框和工具栏）
 
-`window.outerHeight/window.outerWidth`返回浏览器窗口可视窗口的高/宽度（包含浏览器边框和工具栏）
 
-<br/>
+> [!warning]
+>
+> 📌 `IE8`及以下版本浏览器不支持！
 
-<br/>warning
-📌 `IE8`及以下版本浏览器不支持！
-
-<br/>
 
 ```js
 console.log(window.innerHeight);
@@ -204,12 +204,12 @@ window.log(window.outerWidth);
 ```
 
 ## 操作大小
-<br/>color2
-`resizeTo(宽度值, 高度值) `
+> [!success]
+>
+> `resizeTo(宽度值, 高度值) `
+>
+> `resizeBy(宽度像素, 高度像素)`
 
-`resizeBy(宽度像素, 高度像素)`
-
-<br/>
 
 ```js
 var win = widnow.open("https://baidu.com", "width=500,height=500");
@@ -219,17 +219,17 @@ win.resizeBy(10, 10);
 
 ## 窗口的滚动距离
 ## 获取
-<br/>success
-`window.pageXoffset`返回浏览器`X`轴滚动的距离
+> [!success]
+>
+> `window.pageXoffset`返回浏览器`X`轴滚动的距离
+>
+> `window.pageYoffset`返回浏览器`Y`轴滚动的距离
 
-`window.pageYoffset`返回浏览器`Y`轴滚动的距离
 
-<br/>
+> [!warning]
+>
+> 📌 `IE8`及以下版本浏览器不支持！
 
-<br/>warning
-📌 `IE8`及以下版本浏览器不支持！
-
-<br/>
 
 ```js
 console.log(window.pageXoffset);
@@ -237,14 +237,14 @@ console.log(window.pageYoffset);
 ```
 
 ## 操作距离
-<br/>success
-`window.scrollTo(滚动X坐标, 滚动Y坐标)`，滚动到指定位置（绝对位置）。
+> [!success]
+>
+> `window.scrollTo(滚动X坐标, 滚动Y坐标)`，滚动到指定位置（绝对位置）。
+>
+> `window.scrollBy(滚动X像素, 滚动Y像素)`，相对于当前滚动位置移动（相对位置）。
+>
+> `window.scroll(滚动X坐标, 滚动Y坐标)`，本质上是`scrollTo`的别名。
 
-`window.scrollBy(滚动X像素, 滚动Y像素)`，相对于当前滚动位置移动（相对位置）。
-
-`window.scroll(滚动X坐标, 滚动Y坐标)`，本质上是`scrollTo`的别名。
-
-<br/>
 
 `X`、`Y`这两个参数在前两个方法中表示要滚动到的坐标，在最后一个方法中表示滚动的距离。
 
@@ -276,12 +276,10 @@ window.scrollBy({
 });
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> `scroll()`、`scrollTo()`、`scrollBy()`这三个属性在现代浏览器中也存在于 Element 属性中。
 
-`scroll()`、`scrollTo()`、`scrollBy()`这三个属性在现代浏览器中也存在于 Element 属性中。
-
-<br/>
 
 ```js
 document.getElementById("target").scrollTo(0, 500);
@@ -290,28 +288,28 @@ document.getElementById("target").scroll(0, 500);
 ```
 
 ## 系统对话框
-<br/>warning
-`window.alert("提示的内容")`
+> [!warning]
+>
+> `window.alert("提示的内容")`
+>
+> 该方法在使用的时候可以不带`window`
+>
+> 页面上显示一个提示框，会阻塞程序的执行
 
-该方法在使用的时候可以不带`window`
-
-页面上显示一个提示框，会阻塞程序的执行
-
-<br/>
 
 ```js
 window.alert("输入错误！");
 alert("输入错误！");
 ```
 
-<br/>warning
-`window.confirm("提示的内容")`
+> [!warning]
+>
+> `window.confirm("提示的内容")`
+>
+> 该方法在使用的时候可以不带`window`
+>
+> 页面上显示一个确认框，返回一个布尔值，会阻塞程序的执行
 
-该方法在使用的时候可以不带`window`
-
-页面上显示一个确认框，返回一个布尔值，会阻塞程序的执行
-
-<br/>
 
 ```js
 let res = window.confirm("确认删除？");
@@ -321,14 +319,14 @@ if(res){
 }
 ```
 
-<br/>warning
-`window.prompt("提示的内容")`
+> [!warning]
+>
+> `window.prompt("提示的内容")`
+>
+> 该方法在使用的时候可以不带`window`
+>
+> 页面上显示一个输入框，返回输入的字符串，会阻塞程序的执行
 
-该方法在使用的时候可以不带`window`
-
-页面上显示一个输入框，返回输入的字符串，会阻塞程序的执行
-
-<br/>
 
 ```js
 let res = window.prompt("请输入姓名");
@@ -337,14 +335,14 @@ let res = prompt("请输入姓名");
 console.log(res);
 ```
 
-<br/>warning
-`window.print()`
+> [!warning]
+>
+> `window.print()`
+>
+> 该方法在使用的时候可以不带`window`
+>
+> 将页面进行打印
 
-该方法在使用的时候可以不带`window`
-
-将页面进行打印
-
-<br/>
 
 ```js
 window.print();
@@ -355,16 +353,16 @@ print()
 `JavaScript`在浏览器中是单线程执行的，但允许使用定时器指定在某个时间之后或每隔一段时间就执行相应的代码。
 
 ## setTimeout()
-<br/>color3
-表示一定时间后做某事（延迟器）
+> [!warning]
+>
+> 表示一定时间后做某事（延迟器）
+>
+> 返回一个延时的`ID`
+>
+> 参数1：要执行的回调函数
+>
+> 参数2：要延迟的时间（毫秒）
 
-返回一个延时的`ID`
-
-参数1：要执行的回调函数
-
-参数2：要延迟的时间（毫秒）
-
-<br/>
 
 ```js
 // 在 1 秒后显示警告框
@@ -379,12 +377,12 @@ setTimeout(function(){
 >
 
 ## clearTimeout()
-<br/>color3
-用于取消销毁`setTimeout()`延时器
+> [!warning]
+>
+> 用于取消销毁`setTimeout()`延时器
+>
+> 参数1：`setTimeout()`返回的`ID`
 
-参数1：`setTimeout()`返回的`ID`
-
-<br/>
 
 ```js
 // 设置超时任务
@@ -400,16 +398,16 @@ clearTimeout(timeoutId);
 >
 
 ## setInterval()
-<br/>color3
-表示每隔一定时间后做某事，直到定时器被取消销毁（定时器）
+> [!warning]
+>
+> 表示每隔一定时间后做某事，直到定时器被取消销毁（定时器）
+>
+> 返回一个定时器的`ID`
+>
+> 参数1：要执行的回调函数
+>
+> 参数2：要定时等待的时间（毫秒）
 
-返回一个定时器的`ID`
-
-参数1：要执行的回调函数
-
-参数2：要定时等待的时间（毫秒）
-
-<br/>
 
 ```js
 setInterval(() => alert("Hello world!"), 10000);
@@ -421,12 +419,12 @@ setInterval(() => alert("Hello world!"), 10000);
 >
 
 ## clearInterval()
-<br/>color3
-用于取消销毁`setInterval()`定时器
+> [!warning]
+>
+> 用于取消销毁`setInterval()`定时器
+>
+> 参数1：`setInterval()`返回的`ID`
 
-参数1：`setInterval()`返回的`ID`
-
-<br/>
 
 ```js
 // 设置延迟执行任务

@@ -36,12 +36,10 @@ $ mysql -uroot -p
 $ show variables like 'character\_set\_%';
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 在 MySQL CLI 执行其他命令必须添加分号`;`。
 
-在 MySQL CLI 执行其他命令必须添加分号`;`。
-
-<br/>
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/3%20%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1/01%20%E6%95%B0%E6%8D%AE%E5%BA%93/_assets/1744250767535-00824241-ae88-4fc3-9d1d-4a57bdb2144e.png)
 

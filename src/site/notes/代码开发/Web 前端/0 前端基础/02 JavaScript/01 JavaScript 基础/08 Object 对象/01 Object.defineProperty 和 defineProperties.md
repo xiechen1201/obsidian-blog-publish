@@ -58,10 +58,10 @@ console.log(obj1); // {a: 2}
 console.log(obj2); // {b: 2}
 ```
 
-<br/>color5
-结果：使用`Object.defineProperty()`定义的属性无法更改属性值。
+> [!note]
+>
+> 结果：使用`Object.defineProperty()`定义的属性无法更改属性值。
 
-<br/>
 
 然后我们去遍历两个对象：
 
@@ -77,12 +77,12 @@ for (const key in obj2) {
 // 无任何输出
 ```
 
-<br/>color5
-结果：使用`Object.defineProperty()`定义的属性无法枚举
+> [!note]
+>
+> 结果：使用`Object.defineProperty()`定义的属性无法枚举
+>
+> 枚举就是将项列举出来。
 
-枚举就是将项列举出来。
-
-<br/>
 
 最后我们去删除两个对象的属性：
 
@@ -94,10 +94,10 @@ console.log(obj1); // {}
 console.log(obj2); // {b: 2}
 ```
 
-<br/>color5
-结果：使用`Object.defineProperty()`定义的属性无法删除
+> [!note]
+>
+> 结果：使用`Object.defineProperty()`定义的属性无法删除
 
-<br/>
 
 🌴 总结：
 
@@ -213,14 +213,12 @@ console.log(dateArr.getArr()); // [{val: 123}, {val: 234}]
 ```
 
 ## 互斥
-<br/>danger
-注意 ⚠️
+> [!danger]
+>
+> 如果配置中只有`enumerable`、`configurable`的时候该配置是对数据描述。
+>
+> 如果配置中同时存在 「`value`、`writable`」和 「`get`、`set`」 是互斥的！！！
 
-如果配置中只有`enumerable`、`configurable`的时候该配置是对数据描述。
-
-如果配置中同时存在 「`value`、`writable`」和 「`get`、`set`」 是互斥的！！！
-
-<br/>
 
 ```js
 var obj = {};

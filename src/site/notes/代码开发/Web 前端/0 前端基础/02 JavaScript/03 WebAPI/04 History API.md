@@ -105,9 +105,6 @@ window.history.replaceState({newFoo: "newBar"}, "New title");
 
 传给`pushState()`和`replaceState()`的`state`对象应该只包含可以被序列化的信息。因此，`DOM`元素之类并不适合放到状态对象里保存。
 
-<br/>warning
-⚠️ 注意
-
-使用`HTML5`状态管理时，要确保通过`pushState()`创建的每个“假”`URL`背后都对应着服务器上一个真实的物理`URL`。否则，单击“刷新”按钮会导致 404 错误。所有单页应用程序（`SPA，Single Page Application`）框架都必须通过服务器或客户端的某些配置解决这个问题。
-
-<br/>
+> [!warning]
+>
+> 使用`HTML5`状态管理时，要确保通过`pushState()`创建的每个“假”`URL`背后都对应着服务器上一个真实的物理`URL`。否则，单击“刷新”按钮会导致 404 错误。所有单页应用程序（`SPA，Single Page Application`）框架都必须通过服务器或客户端的某些配置解决这个问题。

@@ -30,18 +30,18 @@ AJAX 在 1999 年之前都是通过 HTML 的资源发起 HTTP 请求，而 IE5.0
 
 `XMLHttpRequest`是浏览器内置的构造函数，需要进行实例化，例如`new Object()`、`new Date()`、`new Regexp()`等都一样。
 
-<br/>tips
-Info
+> [!tip]
+>
+> Info
+>
+> `XMLHttpRequest`的名字中为什么包含 XML 呢？
+>
+> 因为当时异步请求只支持 XML，现在我们通常请求的是多种资源，故这个名字已经不准确了，这个名字只是延用。
+>
+> AJAX 请求 XML 并解析的示例：
+>
+> ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1742351992974-540e9f60-3f8e-4ef1-9dc2-60925cf672bf.png)
 
-`XMLHttpRequest`的名字中为什么包含 XML 呢？
-
-因为当时异步请求只支持 XML，现在我们通常请求的是多种资源，故这个名字已经不准确了，这个名字只是延用。
-
-AJAX 请求 XML 并解析的示例：
-
-![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1742351992974-540e9f60-3f8e-4ef1-9dc2-60925cf672bf.png)
-
-<br/>
 
 ## 创建实例
 创建 AJAX 实例对象：
@@ -122,12 +122,10 @@ xhr.send(null);
 - 3: 请求处理中；
 - 4: 请求已完成，且响应已就绪；
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> `readyState`仅仅是针对请求的状态码，获取资源是否成功取决于`status`的状态。
 
-`readyState`仅仅是针对请求的状态码，获取资源是否成功取决于`status`的状态。
-
-<br/>
 
 每次`readyState`从一个值变成另一个值，都会触发`readystatechange`事件。
 

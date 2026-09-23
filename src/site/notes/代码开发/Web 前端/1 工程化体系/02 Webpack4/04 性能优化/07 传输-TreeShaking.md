@@ -310,9 +310,6 @@ module.exports = {
 };
 ```
 
-<br/>warning
-⚠️ 注意
-
-但是，该库对 CSS Module 是无效的，因为 CSS Module 返回的是转换后的类名，它无法匹配到正确的内容！
-
-<br/>
+> [!warning]
+>
+> 但是，该库对 CSS Module 是无效的，因为 CSS Module 返回的是转换后的类名，它无法匹配到正确的内容！

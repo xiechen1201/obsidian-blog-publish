@@ -518,12 +518,12 @@ console.log(reg.exec(str));
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1655708244477-283eaf50-0d1d-4d13-9950-ee9d44f820a7.png)
 
-<br/>color3
-另外字符串还有`match()`、`replace()`可以和正则搭配使用。
+> [!warning]
+>
+> 另外字符串还有`match()`、`replace()`可以和正则搭配使用。
+>
+> 详见：
 
-详见：
-
-<br/>
 
 [String 字符串相关的方法](https://www.yuque.com/xiechen/px9euv/uulxg4)
 

@@ -33,10 +33,10 @@ $ npm logout
 
 6、编写工程代码
 
-<br/>tips
-编写包的时候，如果依赖了其他的 npm 包，则必须正确的安装到 package.json 文件的`dependencies`或`devDependencies`中。
+> [!tip]
+>
+> 编写包的时候，如果依赖了其他的 npm 包，则必须正确的安装到 package.json 文件的`dependencies`或`devDependencies`中。
 
-<br/>
 
 7、创建并编写 README 文件
 

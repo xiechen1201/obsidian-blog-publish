@@ -62,14 +62,12 @@ console.log(module.exports); // { a: 1, b: 2 } （module.exports 没有改变）
 通常情况，即使所有文件模块都是 CommonJS 也应该在 package.json 文件中设置`"type"`为`"commonjs"`。
 
 ## 如何使用加载 ESM（非标准）？
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 写这篇文章的时候参考的是 Node v23.9.0 的文档，这个版本加载 ESM 的方式已经成为了 1.2 候选发布版本。
+>
+> 关于新特性的版本，详见：[https://nodejs.org/docs/latest/api/documentation.html#stability-index](https://nodejs.org/docs/latest/api/documentation.html#stability-index)
 
-写这篇文章的时候参考的是 Node v23.9.0 的文档，这个版本加载 ESM 的方式已经成为了 1.2 候选发布版本。
-
-关于新特性的版本，详见：[https://nodejs.org/docs/latest/api/documentation.html#stability-index](https://nodejs.org/docs/latest/api/documentation.html#stability-index)
-
-<br/>
 
 `require()`仅支持符合下面要求的 ESM 模块：
 
@@ -255,12 +253,10 @@ module.exports = function () {
 };
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 模块的名称是区分大小写的，因此`require("foo")`和`require("FOO")`是两个不同的模块。
 
-模块的名称是区分大小写的，因此`require("foo")`和`require("FOO")`是两个不同的模块。
-
-<br/>
 
 ## 内置模块
 Node 提供了非常多的内置模块，内置模块是 Node 本身就提供的模块，不需要通过包管理器安装就可以直接加载的模块。
@@ -675,12 +671,10 @@ module.exports = {
 }
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 不能将`module.exports`放在任何回调中。
 
-不能将`module.exports`放在任何回调中。
-
-<br/>
 
 ```js
 // x.js

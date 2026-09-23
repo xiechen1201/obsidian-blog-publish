@@ -18,23 +18,19 @@
 }
 ```
 
-<br/>warning
-⚠️ 注意
-
-设为 Flex 布局以后，Flex Item（弹性元素）的`float`、`clear`、`vertical-align`属性将失效。
-
-<br/>
+> [!tip]
+> 设为 Flex 布局以后，Flex Item（弹性元素）的`float`、`clear`、`vertical-align`属性将失效。
 
 在正式学习弹性盒模型之前我们需要了解几个概念：
 
 1、弹性布局是一种一维布局，一次只能处理一条线的布局，我们称为「主轴」，和主轴相交叉的轴我们称为「交叉轴」（或侧轴）。
-
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667134216322-be75615b-9e14-49a7-a9cb-8dfd2f03f9fa.png)
 
 2、弹性容器 Flex Contanier 下所有的子成员都会变为 Flex Item（弹性项目）。
 
 ## 弹性容器属性
 ## flex-direction
+
 用于设置弹性容器的主轴方向，默认是横向的！
 
 语法：
@@ -64,14 +60,12 @@ flex-direction: value;
 ```
 
 ![row](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667134478388-0c4a87cf-eb71-40a6-bb2d-e2539419d785.png)
-
 ![row-reverse](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667134498706-23818ed7-c4d3-436b-abaf-744d4d44cf30.png)
-
 ![column](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667134519971-274093c2-ab10-4250-aea5-99a780e1cde8.png)
-
 ![column-reverse](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667134541072-6edf4793-85e2-436c-9aa1-6df3f195bea8.png)
 
 ## flex-wrap
+
 当弹性容器内有多个子项目占不下一行的时候，会把所有的子项目进行压缩，强制在一行，该属性就是用于设置是否换行。
 
 语法：
@@ -101,12 +95,12 @@ flex-wrap: value;
 ```
 
 ![nowrap](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667134989228-467cf617-62ac-4218-9644-0511cdadc605.png)
-
 ![wrap](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667135055591-ff1048f6-7bf0-4ce6-a120-2e780c255330.png)
 
 ![wrap-reverse](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667135077207-c75236c2-59f9-44b6-a909-18d555c7df3f.png)
 
 ## flex-flow
+
 该属性是`flex-direction`和`flex-wrap`两个属性的复合属性。
 
 ```css
@@ -120,6 +114,7 @@ flex-wrap: value;
 ```
 
 ## justify-content
+
 该属性用于设置子项目在弹性容器内在主轴上的对齐方式。
 
 语法：
@@ -161,6 +156,7 @@ justify-content: value;
 ![space-around](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667135450985-c63fb652-f22f-4f96-9645-97cc4312449d.png)
 
 ## align-items
+
 该属性用于设置「单列」弹性项目在交叉轴（侧轴）上的对齐方式。
 
 语法：
@@ -200,10 +196,10 @@ align-items: value;
 ![center](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667136304415-4195dff1-6115-4979-b202-1609f131386e.png)
 
 ![baseline](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667136453952-06497aeb-75ef-4e2d-bcfc-08a01c107b19.png)
-
 ![stretch](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667136778118-b575ad23-55f9-4213-9fae-072fa081f4c8.png)
 
 ## align-content
+
 定义多根主轴线的对齐方式，如果父元只有一根轴线，该属性不起作用，必须设置`flex-wrap: wrap;`。
 
 语法：
@@ -250,6 +246,7 @@ align-content: value;
 
 ## 弹性项目属性
 ## flex-grow
+
 该属性用于设置弹性项目放大比例，前提弹性容器有空间剩余才会生效！
 
 语法：
@@ -319,6 +316,7 @@ flex-grow: number;
 - 300 + 200 = 500px
 
 ## flex-shrink
+
 该属性用于设置弹性项目缩小比例，前提是空间不足的时候才会缩小。
 
 语法：
@@ -368,6 +366,7 @@ flex-shrink: number;
 ```
 
 ## flex-basis
+
 放大和缩小都是按照基准线来计算的，该属性就是更改基准值的。
 
 语法：
@@ -383,6 +382,7 @@ flex-basis: value;
     - 具体宽度像素；
 
 ## flex
+
 该属性是`flex-grow`、`flex-shrink`和`flex-basis`的复合值。
 
 ```css
@@ -393,6 +393,7 @@ flex-basis: value;
 ```
 
 ## order
+
 设置弹性项排序优先级。
 
 语法：
@@ -441,6 +442,7 @@ order: number;
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/01%20CSS3/_assets/1667138156374-9a805839-4454-48f1-98f0-7d37cc47a40c.png)
 
 ## align-self
+
 单独设置单个弹性项目在侧轴的对齐方式。
 
 语法：

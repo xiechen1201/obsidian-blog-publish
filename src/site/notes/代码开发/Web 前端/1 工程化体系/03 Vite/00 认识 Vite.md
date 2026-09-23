@@ -32,16 +32,14 @@ Vite 也是这种情况：
 - 脚手架：可以搭建各种各样的项目（例如 Vue、React、Sevlte、Solid）；
 - 构建：包括两个构建工具。Esbuild 用于测试环境，Rollup 用于生产环境；
 
-<br/>tips
-❕信息
+> [!tip]
+>
+> Vite 为什么要内置两个构建工具？
+>
+> Vite 的原话是这么说的：Vite 目前的插件 API 与使用 Esbuild 作为打包器并不兼容。尽管 Esbuild 速度更快，但 Vite 采用了 Rollup 灵活的插件 API 和基础建设，这对 Vite 在生态中的成功起到了重要作用。
+>
+> Vite 主要使用 Esbuild 主要是进行开发环境的依赖预构建。
 
-Vite 为什么要内置两个构建工具？
-
-Vite 的原话是这么说的：Vite 目前的插件 API 与使用 Esbuild 作为打包器并不兼容。尽管 Esbuild 速度更快，但 Vite 采用了 Rollup 灵活的插件 API 和基础建设，这对 Vite 在生态中的成功起到了重要作用。
-
-Vite 主要使用 Esbuild 主要是进行开发环境的依赖预构建。
-
-<br/>
 
 ## Vite 的核心原理
 Vite 的初衷是为了提升开发体验，那么使用 Webpack 的痛点在哪里？

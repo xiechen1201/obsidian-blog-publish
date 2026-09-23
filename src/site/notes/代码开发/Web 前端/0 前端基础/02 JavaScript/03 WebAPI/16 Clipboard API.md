@@ -24,16 +24,16 @@ navigator.permissions.query({name: "clipboard-read"}).then(result => {
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1776481612093-87438354-0c9c-4ae0-a9a2-3d980b27868a.png)
 
-<br/>tips
-`result.state`的返回值：
+> [!tip]
+>
+> `result.state`的返回值：
+>
+> - `granted`权限已允许，可以直接使用对应能力；
+> - `denied`权限已拒绝，调用相关能力通常会失败；
+> - `prompt`还没有明确允许或拒绝，真正使用能力时可能弹出授权提示；
+>
+> `navigator.permissions.query`不会让页面展示授权的弹窗，只有调用 Clipboard API 的时候才会展示。
 
-- `granted`权限已允许，可以直接使用对应能力；
-- `denied`权限已拒绝，调用相关能力通常会失败；
-- `prompt`还没有明确允许或拒绝，真正使用能力时可能弹出授权提示；
-
-`navigator.permissions.query`不会让页面展示授权的弹窗，只有调用 Clipboard API 的时候才会展示。
-
-<br/>
 
 另外浏览器只允许页面在激活状态下使用 Clipboard API，如果页面没有获得焦点的时候进行读取、写入剪贴板，那么浏览器会抛出`“DOMException: Document is not focused.”`的错误。
 
@@ -74,10 +74,10 @@ document.addEventListener("copy", async () => {
 
 ClipboardItem 是一个构造函数，接收一个数据对象作为参数，对象使用 MIME 类型作为 Key，实际的值作为 Value。
 
-<br/>tips
-ClipboardItem 允许传入多种对象，支持多种数据类型。例如一个同一份内容的时候既可以表示为纯文本，也可以表示为 HTML 两种格式。这样用户就可以支持 HTML 的应用中粘贴为 HTML，否则粘贴为纯文本。
+> [!tip]
+>
+> ClipboardItem 允许传入多种对象，支持多种数据类型。例如一个同一份内容的时候既可以表示为纯文本，也可以表示为 HTML 两种格式。这样用户就可以支持 HTML 的应用中粘贴为 HTML，否则粘贴为纯文本。
 
-<br/>
 
 例如给 ClipboardItem 传入一个图片 Blob：
 

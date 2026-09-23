@@ -47,12 +47,10 @@ Cookie 在浏览器中是由以下参数构成的：
 Set-Cookie: name=value; expires=Mon, 22-Jan-07 07:10:24 GMT; domain=wrox.com
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 域、路径、过期时间和 secure 标志用于告诉浏览器什么情况下才能在请求中包含 Cookie。 这些参数并不会随请求发送给服务器，实际发送的只有 Cookie 的键/值对。
 
-域、路径、过期时间和 secure 标志用于告诉浏览器什么情况下才能在请求中包含 Cookie。 这些参数并不会随请求发送给服务器，实际发送的只有 Cookie 的键/值对。
-
-<br/>
 
 ## JavaScript 中的 Cookie
 在 JavaScript 中可以使用`document.cookie`来操作 Cookie。

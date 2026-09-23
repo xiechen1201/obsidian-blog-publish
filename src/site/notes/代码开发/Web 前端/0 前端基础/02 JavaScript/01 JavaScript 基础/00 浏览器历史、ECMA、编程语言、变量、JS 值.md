@@ -14,10 +14,10 @@
 | firefox | gecko |
 | opera | presto |
 
-<br/>color5
-浏览器的内核可以分为「渲染引擎」和「`JS`解析引擎」等！！！
+> [!note]
+>
+> 浏览器的内核可以分为「渲染引擎」和「`JS`解析引擎」等！！！
 
-<br/>
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/01%20JavaScript%20%E5%9F%BA%E7%A1%80/_assets/1666698859590-e56ba7b5-2db0-4e40-b849-237757f24da9.png)
 

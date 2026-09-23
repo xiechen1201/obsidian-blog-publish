@@ -129,9 +129,6 @@ module.exports = {
 
 所以，所以后面只能是一些纯粹的转换代码的功能，不依赖 Webpack 功能的 Loader。
 
-<br/>warning
-⚠️ 注意
-
-开启和管理线程需要消耗时间，在小型项目中使用 thread-loader 反而会增加构建时间。
-
-<br/>
+> [!warning]
+>
+> 开启和管理线程需要消耗时间，在小型项目中使用 thread-loader 反而会增加构建时间。

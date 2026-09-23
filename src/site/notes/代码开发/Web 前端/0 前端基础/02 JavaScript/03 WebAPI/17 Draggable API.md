@@ -76,23 +76,21 @@ targetBox.addEventListener("drop", targetEvent);
 
 如果被拖动元素放在了目标元素上，则会触发`drop`事件，而不是`dragleave`事件。
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 要触发`drop`事件有个前提，详见下一小节。
 
-要触发`drop`事件有个前提，详见下一小节。
-
-<br/>
 
 ## 自定义放置目标
 默认情况下，一个`<div>`元素不会被视作为是一个「有效的放置目标」。
 
-<br/>tips
-默认有效的放置目标：
+> [!tip]
+>
+> 默认有效的放置目标：
+>
+> - `<input />`或`<textarea>`
+> - 设置了`contenteditable`属性的可编辑元素
 
-- `<input />`或`<textarea>`
-- 设置了`contenteditable`属性的可编辑元素
-
-<br/>
 
 如果把元素拖动到一个非有效的目标放置元素上，那么这些元素是不允许放置的，无论用户怎么操作都不会触发`drop`事件。
 

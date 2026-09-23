@@ -23,14 +23,12 @@ WebSocket 的目标是通过一个长时连接实现和服务器的全双工、�
 let socket = new WebSocket("ws://www.example.com/server.php");
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 传递给`WebSocket`的连接必须是一个绝对的 URL。
+>
+> 另外，同源策略不适用于 WebSocket，所以可以访问任意站点的数据（如果服务器有响应）。
 
-传递给`WebSocket`的连接必须是一个绝对的 URL。
-
-另外，同源策略不适用于 WebSocket，所以可以访问任意站点的数据（如果服务器有响应）。
-
-<br/>
 
 浏览器会在初始化`WebSocket`对象之后立即创建连接。该对象也有一个状态属性`readyState`用来查看当前状态，取值如下：
 

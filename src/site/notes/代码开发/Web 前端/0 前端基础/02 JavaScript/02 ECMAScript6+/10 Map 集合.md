@@ -188,12 +188,10 @@ m.forEach((value, key, map) => {
 */
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> `map.forEach()`和`set.forEach()`函数一样，`callback()`回调函数的第二个参数并不是`index`下标，而是对象的`key`。
 
-`map.forEach()`和`set.forEach()`函数一样，`callback()`回调函数的第二个参数并不是`index`下标，而是对象的`key`。
-
-<br/>
 
 3、使用`.keys()`、`.values()`、`.entries()`方法。这三个方法都返回的是迭代器对象！
 

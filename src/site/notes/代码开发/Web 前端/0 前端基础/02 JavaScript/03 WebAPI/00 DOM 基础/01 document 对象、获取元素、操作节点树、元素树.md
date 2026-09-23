@@ -22,10 +22,10 @@ console.log(html.parentElement);
 
 <br/>
 
-<br/>danger
-`IE8`及以下浏览器不区分大小写
+> [!danger]
+>
+> `IE8`及以下浏览器不区分大小写
 
-<br/>
 
 ```js
 document.getElementById("testid");
@@ -47,10 +47,10 @@ document.getElementsByTagName("p");
 
 <br/>
 
-<br/>danger
-`IE8`及以下浏览器没有该方法
+> [!danger]
+>
+> `IE8`及以下浏览器没有该方法
 
-<br/>
 
 ```js
 document.getElementsByClassName(".header");
@@ -252,10 +252,10 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 <br/>
 
-<br/>danger
-`IE8`及以下版本浏览器不支持
+> [!danger]
+>
+> `IE8`及以下版本浏览器不支持
 
-<br/>
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653025365167-e526bae3-30e3-4bd1-8446-6e42252f1c91.png)
 
@@ -277,10 +277,10 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 <br/>
 
-<br/>danger
-`IE8`及以下版本浏览器不支持
+> [!danger]
+>
+> `IE8`及以下版本浏览器不支持
 
-<br/>
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653026258000-7032c760-0097-43e2-a02a-ad9af6a3579a.png)
 
@@ -290,10 +290,10 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 <br/>
 
-<br/>danger
-`IE9`及以下版本浏览器不支持
+> [!danger]
+>
+> `IE9`及以下版本浏览器不支持
 
-<br/>
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653026331740-4c4592b1-bf4f-4314-8b06-382e070959e3.png)
 
@@ -303,10 +303,10 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 <br/>
 
-<br/>danger
-`IE9`及以下版本浏览器不支持
+> [!danger]
+>
+> `IE9`及以下版本浏览器不支持
 
-<br/>
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653026456263-05740627-00dc-40d4-97b6-0fd0738fff7e.png)
 
@@ -316,10 +316,10 @@ console.log(lis); // NodeList(4) [li, li, li, li]
 
 <br/>
 
-<br/>danger
-`IE9`及以下版本浏览器不支持
+> [!danger]
+>
+> `IE9`及以下版本浏览器不支持
 
-<br/>
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/00%20DOM%20%E5%9F%BA%E7%A1%80/_assets/1653026384820-46043ef8-d36e-4a28-8b36-024e8e18727d.png)
 

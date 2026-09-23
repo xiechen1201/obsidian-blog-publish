@@ -10,7 +10,7 @@
 
 > [!tip]
 > `null`和`undefined`在没有开启`strictNullChecks: true`的严格检查情况下，它们会被视作为其他类型的子类型，例如`string`类型则会被认为包含了`null`和`undefined`。
-> 
+>
 > tsconfig.json 中设置了`strict:true`默认开启，如果想关闭，可以设置`strictNullChecks:false`。
 
 tsconfig.json 中设置了`strict:true`默认开启，如果想关闭，可以设置`strictNullChecks:false`。

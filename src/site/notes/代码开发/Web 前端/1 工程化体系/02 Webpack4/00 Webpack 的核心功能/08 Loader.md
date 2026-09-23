@@ -72,12 +72,10 @@ module.exports = {
 };
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> Loader 规则是「从后往前」执行的，结合上面的案例也就说先执行 test2-loader 再执行 test1-loader！！！
 
-Loader 规则是「从后往前」执行的，结合上面的案例也就说先执行 test2-loader 再执行 test1-loader！！！
-
-<br/>
 
 例如，我们就针对`变量 a = 1;`代码，把“变量”替换为`var`声明：
 

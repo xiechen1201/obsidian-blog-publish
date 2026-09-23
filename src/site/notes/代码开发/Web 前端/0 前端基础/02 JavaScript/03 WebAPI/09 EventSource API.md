@@ -4,12 +4,10 @@
 
 EventSource API 是和 WebSocket API 功能很类似的一个 API，其支持客户端通过一个 HTTP 连接接收服务器的实时更新。
 
-<br/>tips
-WebSocket 更强大和灵活，因为它是全双工通道，可以双向通信。
-
-SSE 是单向通道，只能服务器向浏览器发送，因为流信息本质上就是下载。如果浏览器向服务器发送信息，就变成了另一次 HTTP 请求。
-
-<br/>
+> [!tip]
+> WebSocket 更强大和灵活，因为它是全双工通道，可以双向通信。
+>
+>SSE 是单向通道，只能服务器向浏览器发送，因为流信息本质上就是下载。如果浏览器向服务器发送信息，就变成了另一次 HTTP 请求。
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/0%20%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/02%20JavaScript/03%20WebAPI/_assets/1776827909537-bead0cb9-3fff-40ce-ada7-a96e69d071cb.png)
 

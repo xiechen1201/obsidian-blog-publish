@@ -95,7 +95,7 @@ function ChildReconciler(shouldTrackSideEffects) {}
 > [!tip] 
 > 如何理解这里的副作用？
 > Fiber 在 Render 阶段计算过程中，发现这个节点未来在 Commit 阶段需要对真实 DOM 做某些操作，于是提前打一个标记。
-> 
+>
 > 也就说 Render 阶段负责发现变化，Commit 阶段负责执行变化。
 
 在 `ChildReconciler()` 方法内部，就会根据 `shouldTrackSideEffects` 做一些不同的处理：

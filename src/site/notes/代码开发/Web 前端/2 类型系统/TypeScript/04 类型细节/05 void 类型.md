@@ -36,12 +36,10 @@ console.log(m1, m2, m3);
 
 `fn1()`和`fn2()`的返回值类型都会被隐式的推导为`void`，只有显式的返回了`undefined`的`fn3()`其返回值类型才会被推导为`undefined`。
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> `fn3()`只有在`tsconfig.json`中开启了`strictNullChecks:true`的情况下，其返回值类型才会被推导为`undefined`，如果没有开启`strict`模式，或者设置了`strictNullChecks: flase`，`fn3()`函数的返回值类型会被默认推导为`any`。
 
-`fn3()`只有在`tsconfig.json`中开启了`strictNullChecks:true`的情况下，其返回值类型才会被推导为`undefined`，如果没有开启`strict`模式，或者设置了`strictNullChecks: flase`，`fn3()`函数的返回值类型会被默认推导为`any`。
-
-<br/>
 
 虽然`fn3()`函数的返回值类型被推导为`undefined`，但是仍然可以使用`void`类型进行标注：
 

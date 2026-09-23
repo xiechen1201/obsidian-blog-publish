@@ -2,14 +2,10 @@
 {"dg-publish":true,"permalink":"/代码开发/Web 前端/2 类型系统/TypeScript/04 类型细节/02 number、bigint 与 string 类型/","dg-note-properties":{}}
 ---
 
-<br/>tips
-❕信息
-
-`bigint`是 ES11(ES2020) 新增的一种基本数据类型，在 JS 中，可以用 Number 表示的最大整数为 2^53 - 1，可以写为`Number.MAX_SAFE_INTEGER`。如果超过了这个界限，那么就可以用 BigInt 来表示，它可以表示任意大的整数。
-
-在一个整数字面量后面加`n`的方式定义一个`bigint`，或者调用函数`BigInt()`。
-
-<br/>
+> [!info]
+> `bigint`是 ES11(ES2020) 新增的一种基本数据类型，在 JS 中，可以用 Number 表示的最大整数为 2^53 - 1，可以写为`Number.MAX_SAFE_INTEGER`。如果超过了这个界限，那么就可以用 BigInt 来表示，它可以表示任意大的整数。
+>
+> 在一个整数字面量后面加`n`的方式定义一个`bigint`，或者调用函数`BigInt()`。
 
 有了`boolean`类型的讲述，其他的基本数据类型基本一致。
 

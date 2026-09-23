@@ -379,16 +379,14 @@ for (const key in style) {
 
 使用了 local的 类名表示局部类名，是可能会造成冲突的类名，会被 css module 进行转换。
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> - css module 往往配合构建工具使用
+> - css module 仅处理顶级类名，尽量不要书写嵌套的类名，也没有这个必要
+> - css module 仅处理类名，不处理其他选择器
+> - css module 还会处理 id 选择器，不过任何时候都没有使用 id 选择器的理由
+> - 使用了 css module 后，只要能做到让类名望文知意即可，不需要遵守其他任何的命名规范
 
-- css module 往往配合构建工具使用
-- css module 仅处理顶级类名，尽量不要书写嵌套的类名，也没有这个必要
-- css module 仅处理类名，不处理其他选择器
-- css module 还会处理 id 选择器，不过任何时候都没有使用 id 选择器的理由
-- 使用了 css module 后，只要能做到让类名望文知意即可，不需要遵守其他任何的命名规范
-
-<br/>
 
 ## 使用预处理器 Less
 因为预处理 Less 的文件是一个 .less 的后缀名，Webpack 解析的时候又不知道如何解析为 AST 了，需要 Less 为我们提供了对应的 less-loader 专门用来出来 less 文件。
