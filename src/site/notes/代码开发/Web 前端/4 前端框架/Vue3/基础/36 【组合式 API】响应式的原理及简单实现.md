@@ -90,12 +90,10 @@ function defineReactive(data, key, value) {
 }
 ```
 
-<br/>tips
-🔔 提示
+> [!tip]
+>
+> 本案例只有数据拦截的大概原理，不涉及到`update()`更新视图的逻辑！
 
-本案例只有数据拦截的大概原理，不涉及到`update()`更新视图的逻辑！
-
-<br/>
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1686292135077-24f1d772-7728-433a-b824-aa9c9ab57e72.png)
 

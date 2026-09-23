@@ -4,12 +4,10 @@
 
 [Vue.js - 渐进式 JavaScript 框架 | Vue.js](https://cn.vuejs.org/)
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 本文档都是基于`Vue3`进行输出描述的！！！
 
-本文档都是基于`Vue3`进行输出描述的！！！
-
-<br/>
 
 ## 渐进式框架
 

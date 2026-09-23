@@ -248,12 +248,10 @@ export default {
 </script>
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 请注意，仅当 ref 是模板渲染上下文的顶层属性时才适用自动“解包”。 例如， `object`是顶层属性，但`object.foo `不是。
 
-请注意，仅当 ref 是模板渲染上下文的顶层属性时才适用自动“解包”。 例如， `object`是顶层属性，但`object.foo `不是。
-
-<br/>
 
 ```vue
 <template>

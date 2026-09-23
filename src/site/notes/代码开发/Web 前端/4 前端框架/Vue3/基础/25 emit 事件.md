@@ -214,14 +214,12 @@ export default {
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1684311555425-11e7a4e9-247b-4463-91af-9d5181ee3352.gif)
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 如果你是 Vue2 的版本，同样的问题，你需要通过修饰符`.navtive`去解决，例如：`<my-counter @click.navtive="getCount" />`
+>
+> 通过`.navtive`来描述代替原生事件！！！
 
-如果你是 Vue2 的版本，同样的问题，你需要通过修饰符`.navtive`去解决，例如：`<my-counter @click.navtive="getCount" />`
-
-通过`.navtive`来描述代替原生事件！！！
-
-<br/>
 
 ## 事件校验
 

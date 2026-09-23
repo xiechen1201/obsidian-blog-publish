@@ -64,12 +64,10 @@ export default {
 };
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 虽然`getCurrentInstance()`能获取到组件的实例对象，但是 Vue 官方是不推荐我们使用的！！！所以更不要使用`getCurrentInstance()`来替代选项式 API 中的`this`！！！
 
-虽然`getCurrentInstance()`能获取到组件的实例对象，但是 Vue 官方是不推荐我们使用的！！！所以更不要使用`getCurrentInstance()`来替代选项式 API 中的`this`！！！
-
-<br/>
 
 但是你会有疑问，能使用`getCurrentInstance()`获取到全局的数据，但是官方又不推荐使用，这不是很矛盾吗？
 

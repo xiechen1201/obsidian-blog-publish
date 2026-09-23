@@ -193,12 +193,10 @@ export default {
 </keep-alive>
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> `exclude`和`include`都推荐数组的写法！
 
-`exclude`和`include`都推荐数组的写法！
-
-<br/>
 
 3、`max`表示限制可被缓存的最大组件实例数量；
 

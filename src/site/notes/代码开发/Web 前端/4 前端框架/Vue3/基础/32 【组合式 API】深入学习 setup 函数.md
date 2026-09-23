@@ -371,11 +371,8 @@ export default {
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1685694169185-6a083489-3757-4279-9c5c-88f522565dc7.png)
 
-<br/>warning
-⚠️ 注意
-
-但是 Vue3 不建议在应用代码中进行使用，也不建议使用`getCurrentInstance()`来代替`this`对象！！！
-
-另外，`getCurrentInstance()`函数只能在`setup()`内部执行。
-
-<br/>
+> [!warning]
+>
+> 但是 Vue3 不建议在应用代码中进行使用，也不建议使用`getCurrentInstance()`来代替`this`对象！！！
+>
+> 另外，`getCurrentInstance()`函数只能在`setup()`内部执行。

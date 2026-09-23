@@ -18,12 +18,12 @@ Cookie 是保存在客户端的，虽然可以给服务器减少了很多的压�
 
 正确的做法应该是服务器返回一个 Sessoin ID，同时服务器保存这个 Sessoin ID 和对应的内容。
 
-<br/>tips
-Info
+> [!tip]
+>
+> Info
+>
+> Sessoin 和 Cookie 一样也是键值对的数据，只不过 Sessoin 是保存在服务器上。
 
-Sessoin 和 Cookie 一样也是键值对的数据，只不过 Sessoin 是保存在服务器上。
-
-<br/>
 
 这样就可以避免 Cookie 的缺陷，当客户端获取验证码的时候，服务器收到请求，将真实的短信验证码通过短信的形式发送给指定的手机号，并在 Sessoin 中记录一条数据。然后将 Sessoin ID 通过 set-cookie 的头信息返回到客户端，客户端的 Cookie 会自动保存这个 ID。
 

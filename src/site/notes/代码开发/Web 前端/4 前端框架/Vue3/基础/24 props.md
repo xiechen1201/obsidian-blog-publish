@@ -325,12 +325,10 @@ props 也可以设置默认值，当父组件没有传递对应属性的时候�
 </script>
 ```
 
-<br/>warning
-⚠️ 注意
+> [!warning]
+>
+> 如果声明了 default 值，那么在 prop 的值被解析为 undefined 时，无论 prop 是未被传递还是显式指明的 undefined，都会改为 default 值。
 
-如果声明了 default 值，那么在 prop 的值被解析为 undefined 时，无论 prop 是未被传递还是显式指明的 undefined，都会改为 default 值。
-
-<br/>
 
 如果你需要给一个对象设置默认值，应该通过函数返回一个对象，这和组件内 data 返回一个对象道理是一致的：
 
@@ -545,9 +543,6 @@ props 还可以编写自定义验证函数：
 </script>
 ```
 
-<br/>warning
-⚠️ 注意
-
-`props.*.validator`验证是在当前组件实例创建之前参数的，所以你不能使用 data、computed 中的数据！！！
-
-<br/>
+> [!warning]
+>
+> `props.*.validator`验证是在当前组件实例创建之前参数的，所以你不能使用 data、computed 中的数据！！！

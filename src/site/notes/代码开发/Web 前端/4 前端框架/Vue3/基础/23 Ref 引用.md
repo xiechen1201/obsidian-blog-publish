@@ -261,9 +261,6 @@ export default{
 
 ![](/img/user/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/Web%20%E5%89%8D%E7%AB%AF/4%20%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/Vue3/%E5%9F%BA%E7%A1%80/_assets/1683794602733-3907757c-74c3-4a09-a6c3-074ca0331e1b.png)
 
-<br/>warning
-⚠️ 注意
-
-应该注意的是，ref 数组并不保证与源数组相同的顺序。
-
-<br/>
+> [!warning]
+>
+> 应该注意的是，ref 数组并不保证与源数组相同的顺序。

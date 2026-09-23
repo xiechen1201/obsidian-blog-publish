@@ -83,12 +83,12 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsaWNlbnNlIjoibWFkZSBieSB3YW5neSIsInJhbmR
 
 设置好 header 之后就可以生成 header 部分了，具体生成方式也非常的简单，就是把 header 部分使用 Base64 URL 进行编码即可。
 
-<br/>tips
-Base64 URL 不是一个加密算法，而是一种编码方式，它是在 Base64 算法的基础上对 +、-、/ 这三个字符做出特俗处理的算法。
+> [!tip]
+>
+> Base64 URL 不是一个加密算法，而是一种编码方式，它是在 Base64 算法的基础上对 +、-、/ 这三个字符做出特俗处理的算法。
+>
+> 而 Base64 是使用 64 个可打印字符来表示一个二进制数据。
 
-而 Base64 是使用 64 个可打印字符来表示一个二进制数据。
-
-<br/>
 
 浏览器也提供了`btoa()`函数可以对数据进行编码：
 

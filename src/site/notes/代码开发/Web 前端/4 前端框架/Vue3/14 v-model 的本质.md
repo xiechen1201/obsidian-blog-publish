@@ -75,12 +75,10 @@ function setRating(star) {
 
 在本案例中，父组件通过`v-model`讲自身的数据传递给子组件，子组件通过`defineModel()`编译宏来拿到父组件传递过来的数据。拿到数据之后不仅可以进行使用，还可以进行更改。
 
-<br/>tips
-🔔 提示
+> [!tip]
+>
+> 从 Vue3.4 版本开始，官方推荐的实现方式是使用`[defineModel()](https://cn.vuejs.org/api/sfc-script-setup.html#definemodel)`宏。
 
-从 Vue3.4 版本开始，官方推荐的实现方式是使用`[defineModel()](https://cn.vuejs.org/api/sfc-script-setup.html#definemodel)`宏。
-
-<br/>
 
 下面是 Vue3.4 版本之前的写法：
 
